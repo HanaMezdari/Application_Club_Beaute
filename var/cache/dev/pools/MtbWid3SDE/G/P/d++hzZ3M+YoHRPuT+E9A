@@ -1,0 +1,3 @@
+<?php //App%255CController%255CCentresdebeaute%255CCentresdebeauteCrudController%2523configureFields
+
+return [PHP_INT_MAX, []];
