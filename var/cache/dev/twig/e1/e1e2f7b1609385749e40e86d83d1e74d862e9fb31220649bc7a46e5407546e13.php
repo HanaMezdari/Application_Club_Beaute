@@ -77,7 +77,7 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
   <a class=\"navbar-brand text-dark\"  href=\"";
         // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"> <img class=\"mySlides\" src=\"";
+        echo "\"> <img  src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/logo/logo.png"), "html", null, true);
         echo "\" alt=\"image\" style=\"height: 50px;width:80px;margin-left:10px;border-radius: 50%;\"></a>
   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -186,7 +186,7 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
         echo "\" style=\"width: 180px;height:150px;border-radius: 50%;\" alt=\"image\" /></a>
                                     </div>
                                     <div class=\"text\">
-                                        <p>Lorem ipsum dolor amet consectetur adipisicing elit sed eiusm tempor incididunt ut labore dolore magna aliqua enim ad minim veniam.</p>
+                                        <p>Club Beauté est l'application de prise de rendez-vous beauté qui va changer votre facon de vous organiser.L'idée,vous éviter de perdre un temps précieux en vous permettant de prendre rendez-vous dans l'un de nos centres de beauté partenaire,en quelques clics et 24h/24h!</p>
                                        
                                     </div>
                                 </div>
@@ -382,7 +382,7 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
         
    <nav class=\"navbar navbar-expand-lg navbar-white fixed-top \" >
         
-  <a class=\"navbar-brand text-dark\"  href=\"{{ path('home') }}\"> <img class=\"mySlides\" src=\"{{ asset('css/logo/logo.png') }}\" alt=\"image\" style=\"height: 50px;width:80px;margin-left:10px;border-radius: 50%;\"></a>
+  <a class=\"navbar-brand text-dark\"  href=\"{{ path('home') }}\"> <img  src=\"{{ asset('css/logo/logo.png') }}\" alt=\"image\" style=\"height: 50px;width:80px;margin-left:10px;border-radius: 50%;\"></a>
   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
     <span class=\"navbar-toggler-icon\"></span>
   </button>
@@ -453,7 +453,7 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
                                         <a href=\"#\"><img src=\"{{ asset('css/logo/logo.png') }}\" style=\"width: 180px;height:150px;border-radius: 50%;\" alt=\"image\" /></a>
                                     </div>
                                     <div class=\"text\">
-                                        <p>Lorem ipsum dolor amet consectetur adipisicing elit sed eiusm tempor incididunt ut labore dolore magna aliqua enim ad minim veniam.</p>
+                                        <p>Club Beauté est l'application de prise de rendez-vous beauté qui va changer votre facon de vous organiser.L'idée,vous éviter de perdre un temps précieux en vous permettant de prendre rendez-vous dans l'un de nos centres de beauté partenaire,en quelques clics et 24h/24h!</p>
                                        
                                     </div>
                                 </div>
@@ -551,6 +551,6 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
       <script src=\"{{ asset('js/popper.min.js')}}\"></script>  
     </body>
 </html>
-", "base.html.twig", "/opt/lampp/htdocs/ClubBeaute/templates/base.html.twig");
+", "base.html.twig", "/opt/lampp/htdocs/App_Beaute/templates/base.html.twig");
     }
 }
