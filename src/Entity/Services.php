@@ -34,26 +34,14 @@ class Services
      */
     private $centresdebeaute;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Sousservice::class, mappedBy="services")
-     */
-    private $no;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=Sousservice::class, mappedBy="services")
-     */
-    private $sousservices;
+    
 
     /**
      * @ORM\Column(type="text")
      */
     private $description;
 
-    public function __construct()
-    {
-        $this->no = new ArrayCollection();
-        $this->sousservices = new ArrayCollection();
-    }
+   
 
     public function getId(): ?int
     {
@@ -99,59 +87,6 @@ class Services
         return $this->nom;
     }
 
-    /**
-     * @return Collection|Sousservice[]
-     */
-    public function getNo(): Collection
-    {
-        return $this->no;
-    }
-
-    public function addNo(Sousservice $no): self
-    {
-        if (!$this->no->contains($no)) {
-            $this->no[] = $no;
-            $no->addService($this);
-        }
-
-        return $this;
-    }
-
-    public function removeNo(Sousservice $no): self
-    {
-        if ($this->no->removeElement($no)) {
-            $no->removeService($this);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Sousservice[]
-     */
-    public function getSousservices(): Collection
-    {
-        return $this->sousservices;
-    }
-
-    public function addSousservice(Sousservice $sousservice): self
-    {
-        if (!$this->sousservices->contains($sousservice)) {
-            $this->sousservices[] = $sousservice;
-            $sousservice->addService($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSousservice(Sousservice $sousservice): self
-    {
-        if ($this->sousservices->removeElement($sousservice)) {
-            $sousservice->removeService($this);
-        }
-
-        return $this;
-    }
 
     public function getDescription(): ?string
     {

@@ -64,18 +64,16 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
          <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\"
          integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\"
          crossorigin=\"\"/>
+
     </head>
     <body>
-      
-
-      
-
+     
     <header>
         
    <nav class=\"navbar navbar-expand-lg navbar-white fixed-top \" >
         
   <a class=\"navbar-brand text-dark\"  href=\"";
-        // line 24
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\"> <img  src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/logo/logo.png"), "html", null, true);
@@ -88,19 +86,19 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
     <ul class=\"navbar-nav mx-auto mb-2 mb-lg-0\">
       <li class=\"nav-item \">
         <a class=\"nav-link\" href=\"";
-        // line 32
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Accuiel</a>
       </li>
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"";
-        // line 35
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("centresdebeaute");
         echo "\">Centres de beaute</a>
       </li>
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"";
-        // line 38
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("services");
         echo "\">Nos services</a>
       </li>
@@ -115,21 +113,21 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
       <ul class=\"navbar-nav d-flex justify-content-end\">
 
        ";
-        // line 50
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "user", [], "any", false, false, false, 50)) {
-            // line 51
+        // line 48
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48)) {
+            // line 49
             echo "                      
        <li class=\"nav-item \">
         <a class=\"nav-link\" >";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53), "nom", [], "any", false, false, false, 53), "html", null, true);
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "nom", [], "any", false, false, false, 51), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53), "prenom", [], "any", false, false, false, 53), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "prenom", [], "any", false, false, false, 51), "html", null, true);
             echo "</a>
       </li>
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"";
-            // line 56
+            // line 54
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
       </li>
@@ -137,23 +135,23 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
 
        ";
         } else {
-            // line 61
+            // line 59
             echo "       <li class=\"nav-item \">
         <a class=\"nav-link\" href=\"";
-            // line 62
+            // line 60
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
             echo "\">Inscription</a>
       </li>
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"";
-            // line 65
+            // line 63
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
       </li>
       
        ";
         }
-        // line 69
+        // line 67
         echo "     
     </ul>
     
@@ -161,9 +159,9 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
 </nav>
        </header>   
         ";
-        // line 75
+        // line 73
         $this->displayBlock('body', $context, $blocks);
-        // line 76
+        // line 74
         echo "      
 
        <footer class=\"main-footer\">
@@ -181,7 +179,7 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
                                 <div class=\"footer-widget about-widget\">
                                     <div class=\"logo\">
                                         <a href=\"#\"><img src=\"";
-        // line 92
+        // line 90
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/logo/logo.png"), "html", null, true);
         echo "\" style=\"width: 180px;height:150px;border-radius: 50%;\" alt=\"image\" /></a>
                                     </div>
@@ -279,19 +277,19 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
 
 
       <script src=\"";
-        // line 187
+        // line 185
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/index.js"), "html", null, true);
         echo "\"></script>
       <script src=\"";
-        // line 188
+        // line 186
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
       <script src=\"";
-        // line 189
+        // line 187
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-3.5.1.slim.min.js"), "html", null, true);
         echo "\"></script>
       <script src=\"";
-        // line 190
+        // line 188
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/popper.min.js"), "html", null, true);
         echo "\"></script>  
     </body>
@@ -324,7 +322,7 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
 
     }
 
-    // line 75
+    // line 73
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -354,7 +352,7 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
 
     public function getDebugInfo()
     {
-        return array (  328 => 75,  309 => 5,  295 => 190,  291 => 189,  287 => 188,  283 => 187,  185 => 92,  167 => 76,  165 => 75,  157 => 69,  150 => 65,  144 => 62,  141 => 61,  133 => 56,  125 => 53,  121 => 51,  119 => 50,  104 => 38,  98 => 35,  92 => 32,  79 => 24,  61 => 9,  57 => 8,  51 => 5,  45 => 1,);
+        return array (  326 => 73,  307 => 5,  293 => 188,  289 => 187,  285 => 186,  281 => 185,  183 => 90,  165 => 74,  163 => 73,  155 => 67,  148 => 63,  142 => 60,  139 => 59,  131 => 54,  123 => 51,  119 => 49,  117 => 48,  102 => 36,  96 => 33,  90 => 30,  77 => 22,  61 => 9,  57 => 8,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -372,12 +370,10 @@ class __TwigTemplate_3da0ce71d5816bf02eb7ad03d0ac14246d358ef022a1fb021327401d9eb
          <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\"
          integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\"
          crossorigin=\"\"/>
+
     </head>
     <body>
-      
-
-      
-
+     
     <header>
         
    <nav class=\"navbar navbar-expand-lg navbar-white fixed-top \" >

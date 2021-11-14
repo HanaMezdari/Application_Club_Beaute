@@ -3,8 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Entity\Services;
 use App\Entity\Publicite;
 use App\Entity\Commentaire;
+use App\Entity\Centresdebeaute;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -32,6 +34,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('user', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('publicite', 'fas fa-ad', Publicite::class);
         yield MenuItem::linkToCrud('commentaire', 'fas fa-comment', Commentaire::class);
+        yield MenuItem::linkToCrud('centresdebeaute', 'fas fa-comment', Centresdebeaute::class);
+        yield MenuItem::linkToCrud('services', 'fas fa-comment', Services::class);
         
     }
 }

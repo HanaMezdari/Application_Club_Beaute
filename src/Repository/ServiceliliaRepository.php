@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Sousservice;
+use App\Entity\Servicelilia;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Sousservice|null find($id, $lockMode = null, $lockVersion = null)
- * @method Sousservice|null findOneBy(array $criteria, array $orderBy = null)
- * @method Sousservice[]    findAll()
- * @method Sousservice[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Servicelilia|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Servicelilia|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Servicelilia[]    findAll()
+ * @method Servicelilia[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SousserviceRepository extends ServiceEntityRepository
+class ServiceliliaRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Sousservice::class);
+        parent::__construct($registry, Servicelilia::class);
     }
 
     // /**
-    //  * @return Sousservice[] Returns an array of Sousservice objects
+    //  * @return Servicelilia[] Returns an array of Servicelilia objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class SousserviceRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Sousservice
+    public function findOneBySomeField($value): ?Servicelilia
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')

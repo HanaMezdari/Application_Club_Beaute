@@ -14,13 +14,17 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
-        '/centre' => [[['_route' => 'centre', '_controller' => 'App\\Controller\\Centresdebeaute\\CentresdebeauteController::index'], null, null, null, false, false, null]],
         '/centresdebeaute' => [[['_route' => 'centresdebeaute', '_controller' => 'App\\Controller\\CentresdebeauteController::index'], null, null, null, false, false, null]],
+        '/Fleur' => [[['_route' => 'Fleur', '_controller' => 'App\\Controller\\Fleurdelys\\FleurdelysController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/Lilia' => [[['_route' => 'Lilia', '_controller' => 'App\\Controller\\Liliabenaziza\\LiliabenazizaController::index'], null, null, null, false, false, null]],
+        '/Mahassen' => [[['_route' => 'Mahassen', '_controller' => 'App\\Controller\\Mahassen\\MahassenController::index'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegisterController::index'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/deconnexion' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/services' => [[['_route' => 'services', '_controller' => 'App\\Controller\\ServicesController::index'], null, null, null, false, false, null]],
+        '/sousservice' => [[['_route' => 'sousservice', '_controller' => 'App\\Controller\\SousserviceController::index'], null, null, null, false, false, null]],
+        '/Violette' => [[['_route' => 'Violette', '_controller' => 'App\\Controller\\Violette\\VioletteController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Centresdebeaute;
+namespace App\Controller\Admin;
 
 use App\Entity\Centresdebeaute;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -21,7 +21,6 @@ class CentresdebeauteCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-           
             TextField::new('nom'),
             TextareaField::new('description'),
             TextField::new('adresse'),
@@ -36,5 +35,5 @@ class CentresdebeauteCrudController extends AbstractCrudController
                ->setUploadedFileNamePattern('[randomhash].[extension]'),
         ];
     }
-   
+    
 }

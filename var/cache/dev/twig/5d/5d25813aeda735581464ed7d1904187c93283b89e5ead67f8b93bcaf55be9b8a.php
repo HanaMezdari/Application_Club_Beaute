@@ -128,6 +128,6 @@ class __TwigTemplate_2b2e2cb88ba9baf8ee05d94f7b8bc105f3a645115afe7f74b9979601123
     background-color: rgb(252, 228, 192); 
   }
 </style>
-{% endblock %}", "centresdebeaute/interface.html.twig", "/opt/lampp/htdocs/ClubBeaute/templates/centresdebeaute/interface.html.twig");
+{% endblock %}", "centresdebeaute/interface.html.twig", "/opt/lampp/htdocs/App_Beaute/templates/centresdebeaute/interface.html.twig");
     }
 }

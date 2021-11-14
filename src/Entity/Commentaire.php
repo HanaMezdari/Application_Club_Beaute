@@ -37,10 +37,7 @@ class Commentaire
      */
     private $admin;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Sousservice::class)
-     */
-    private $sousservice;
+    
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class)
@@ -102,18 +99,6 @@ class Commentaire
     public function setAdmin(?Admin $admin): self
     {
         $this->admin = $admin;
-
-        return $this;
-    }
-
-    public function getSousservice(): ?Sousservice
-    {
-        return $this->sousservice;
-    }
-
-    public function setSousservice(?Sousservice $sousservice): self
-    {
-        $this->sousservice = $sousservice;
 
         return $this;
     }

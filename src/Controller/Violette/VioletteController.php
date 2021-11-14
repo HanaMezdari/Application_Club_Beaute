@@ -1,38 +1,35 @@
 <?php
 
-namespace App\Controller\Centresdebeaute;
+namespace App\Controller\Violette;
 
 use App\Entity\Services;
-use App\Entity\Sousservice;
-use App\Entity\Centresdebeaute;
+use App\Entity\Serviceviolette;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
-class CentresdebeauteController extends AbstractDashboardController
+class VioletteController extends AbstractDashboardController
 {
     /**
-     * @Route("/centre", name="centre")
+     * @Route("/Violette", name="Violette")
      */
     public function index(): Response
     {
-        return $this->render('centresdebeaute/interface.html.twig');
+        return parent::index();
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('ClubBeaute');
+            ->setTitle('App Beaute');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home' );
-        yield MenuItem::linkToCrud('centresdebeaute', 'fas fa-list', Centresdebeaute::class);
-        yield MenuItem::linkToCrud('sousservice', 'fas fa-list', Sousservice::class);
+        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('serviceviolette', 'fas fa-list', Serviceviolette::class);
         yield MenuItem::linkToCrud('services', 'fas fa-list', Services::class);
-    
     }
 }

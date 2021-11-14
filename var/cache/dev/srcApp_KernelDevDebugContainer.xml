@@ -348,6 +348,14 @@
     <service id="kernel" class="App\Kernel" public="true" synthetic="true">
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Admin\CentresdebeauteCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\CommentaireCrudController" class="App\Controller\Admin\CommentaireCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="ea.crud_controller"/>
@@ -372,44 +380,20 @@
         <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Admin\PubliciteCrudController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\ServicesCrudController" class="App\Controller\Admin\ServicesCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Admin\ServicesCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="ea.crud_controller"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Admin\UserCrudController"/>
-      </call>
-    </service>
-    <service id="App\Controller\Centresdebeaute\CentresdebeauteController" class="App\Controller\Centresdebeaute\CentresdebeauteController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="ea.dashboard_controller"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.JEaLqsX.App\Controller\Centresdebeaute\CentresdebeauteController"/>
-      </call>
-    </service>
-    <service id="App\Controller\Centresdebeaute\CentresdebeauteCrudController" class="App\Controller\Centresdebeaute\CentresdebeauteCrudController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="ea.crud_controller"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Centresdebeaute\CentresdebeauteCrudController"/>
-      </call>
-    </service>
-    <service id="App\Controller\Centresdebeaute\ServicesCrudController" class="App\Controller\Centresdebeaute\ServicesCrudController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="ea.crud_controller"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Centresdebeaute\ServicesCrudController"/>
-      </call>
-    </service>
-    <service id="App\Controller\Centresdebeaute\SousserviceCrudController" class="App\Controller\Centresdebeaute\SousserviceCrudController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="ea.crud_controller"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Centresdebeaute\SousserviceCrudController"/>
       </call>
     </service>
     <service id="App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" public="true" autowire="true" autoconfigure="true">
@@ -420,12 +404,84 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CentresdebeauteController"/>
       </call>
     </service>
+    <service id="App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.dashboard_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.JEaLqsX.App\Controller\Fleurdelys\FleurdelysController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\ServicefleurdelysCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Fleurdelys\ServicesCrudController" class="App\Controller\Fleurdelys\ServicesCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\ServicesCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\HomeController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.dashboard_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.JEaLqsX.App\Controller\Liliabenaziza\LiliabenazizaController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ServiceliliaCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Liliabenaziza\ServicesCrudController" class="App\Controller\Liliabenaziza\ServicesCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ServicesCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.dashboard_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.JEaLqsX.App\Controller\Mahassen\MahassenController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Mahassen\ServicemahassenCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Mahassen\ServicesCrudController" class="App\Controller\Mahassen\ServicesCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Mahassen\ServicesCrudController"/>
       </call>
     </service>
     <service id="App\Controller\RegisterController" class="App\Controller\RegisterController" public="true" autowire="true" autoconfigure="true">
@@ -450,6 +506,37 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ServicesController"/>
       </call>
     </service>
+    <service id="App\Controller\SousserviceController" class="App\Controller\SousserviceController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\SousserviceController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Violette\ServicesCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Violette\ServicevioletteCrudController" class="App\Controller\Violette\ServicevioletteCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Violette\ServicevioletteCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Violette\VioletteController" class="App\Controller\Violette\VioletteController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.dashboard_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.JEaLqsX.App\Controller\Violette\VioletteController"/>
+      </call>
+    </service>
     <service id="App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -468,6 +555,18 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\FleurdelysRepository" class="App\Repository\FleurdelysRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\LiliabenazizaRepository" class="App\Repository\LiliabenazizaRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\MahassenRepository" class="App\Repository\MahassenRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\PubliciteRepository" class="App\Repository\PubliciteRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -476,7 +575,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\ServicefleurdelysRepository" class="App\Repository\ServicefleurdelysRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ServiceliliaRepository" class="App\Repository\ServiceliliaRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ServicemahassenRepository" class="App\Repository\ServicemahassenRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -484,11 +591,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\SousserviceRepository" class="App\Repository\SousserviceRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\ServicevioletteRepository" class="App\Repository\ServicevioletteRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\VioletteRepository" class="App\Repository\VioletteRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -4139,7 +4250,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.2RvVnVS"/>
+      <argument type="service" id=".service_locator..AFT2jT"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5514,6 +5625,10 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry"/>
       <deprecated>Since easycorp/easyadmin-bundle 3.2.0: The "%service_id% service is deprecated, use "EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator" instead.</deprecated>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CommentaireCrudController" class="App\Controller\Admin\CommentaireCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CommentaireCrudController" class="App\Controller\Admin\CommentaireCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\CommentaireCrudController" class="App\Controller\Admin\CommentaireCrudController" autowire="true" abstract="true"/>
@@ -5526,32 +5641,56 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\PubliciteCrudController" class="App\Controller\Admin\PubliciteCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\PubliciteCrudController" class="App\Controller\Admin\PubliciteCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\PubliciteCrudController" class="App\Controller\Admin\PubliciteCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ServicesCrudController" class="App\Controller\Admin\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ServicesCrudController" class="App\Controller\Admin\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\ServicesCrudController" class="App\Controller\Admin\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\ServicesCrudController" class="App\Controller\Admin\ServicesCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Centresdebeaute\CentresdebeauteController" class="App\Controller\Centresdebeaute\CentresdebeauteController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Centresdebeaute\CentresdebeauteController" class="App\Controller\Centresdebeaute\CentresdebeauteController" autowire="true" abstract="true"/>
-    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Centresdebeaute\CentresdebeauteController" class="App\Controller\Centresdebeaute\CentresdebeauteController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Centresdebeaute\CentresdebeauteController" class="App\Controller\Centresdebeaute\CentresdebeauteController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Centresdebeaute\CentresdebeauteCrudController" class="App\Controller\Centresdebeaute\CentresdebeauteCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Centresdebeaute\CentresdebeauteCrudController" class="App\Controller\Centresdebeaute\CentresdebeauteCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Centresdebeaute\CentresdebeauteCrudController" class="App\Controller\Centresdebeaute\CentresdebeauteCrudController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Centresdebeaute\CentresdebeauteCrudController" class="App\Controller\Centresdebeaute\CentresdebeauteCrudController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Centresdebeaute\ServicesCrudController" class="App\Controller\Centresdebeaute\ServicesCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Centresdebeaute\ServicesCrudController" class="App\Controller\Centresdebeaute\ServicesCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Centresdebeaute\ServicesCrudController" class="App\Controller\Centresdebeaute\ServicesCrudController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Centresdebeaute\ServicesCrudController" class="App\Controller\Centresdebeaute\ServicesCrudController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Centresdebeaute\SousserviceCrudController" class="App\Controller\Centresdebeaute\SousserviceCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Centresdebeaute\SousserviceCrudController" class="App\Controller\Centresdebeaute\SousserviceCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Centresdebeaute\SousserviceCrudController" class="App\Controller\Centresdebeaute\SousserviceCrudController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Centresdebeaute\SousserviceCrudController" class="App\Controller\Centresdebeaute\SousserviceCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Fleurdelys\ServicesCrudController" class="App\Controller\Fleurdelys\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Fleurdelys\ServicesCrudController" class="App\Controller\Fleurdelys\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Fleurdelys\ServicesCrudController" class="App\Controller\Fleurdelys\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Fleurdelys\ServicesCrudController" class="App\Controller\Fleurdelys\ServicesCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Liliabenaziza\ServicesCrudController" class="App\Controller\Liliabenaziza\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\ServicesCrudController" class="App\Controller\Liliabenaziza\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Liliabenaziza\ServicesCrudController" class="App\Controller\Liliabenaziza\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Liliabenaziza\ServicesCrudController" class="App\Controller\Liliabenaziza\ServicesCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Mahassen\ServicesCrudController" class="App\Controller\Mahassen\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Mahassen\ServicesCrudController" class="App\Controller\Mahassen\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Mahassen\ServicesCrudController" class="App\Controller\Mahassen\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Mahassen\ServicesCrudController" class="App\Controller\Mahassen\ServicesCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5561,6 +5700,21 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SousserviceController" class="App\Controller\SousserviceController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SousserviceController" class="App\Controller\SousserviceController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SousserviceController" class="App\Controller\SousserviceController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Violette\ServicevioletteCrudController" class="App\Controller\Violette\ServicevioletteCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Violette\ServicevioletteCrudController" class="App\Controller\Violette\ServicevioletteCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Violette\ServicevioletteCrudController" class="App\Controller\Violette\ServicevioletteCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Violette\ServicevioletteCrudController" class="App\Controller\Violette\ServicevioletteCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Violette\VioletteController" class="App\Controller\Violette\VioletteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Violette\VioletteController" class="App\Controller\Violette\VioletteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Violette\VioletteController" class="App\Controller\Violette\VioletteController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Violette\VioletteController" class="App\Controller\Violette\VioletteController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" abstract="true"/>
@@ -5571,18 +5725,30 @@
     <service id=".abstract.instanceof.App\Repository\CentresdebeauteRepository" class="App\Repository\CentresdebeauteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CommentaireRepository" class="App\Repository\CommentaireRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CommentaireRepository" class="App\Repository\CommentaireRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FleurdelysRepository" class="App\Repository\FleurdelysRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\FleurdelysRepository" class="App\Repository\FleurdelysRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LiliabenazizaRepository" class="App\Repository\LiliabenazizaRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\LiliabenazizaRepository" class="App\Repository\LiliabenazizaRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MahassenRepository" class="App\Repository\MahassenRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MahassenRepository" class="App\Repository\MahassenRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PubliciteRepository" class="App\Repository\PubliciteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PubliciteRepository" class="App\Repository\PubliciteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\QuestionRepository" class="App\Repository\QuestionRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\QuestionRepository" class="App\Repository\QuestionRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServicefleurdelysRepository" class="App\Repository\ServicefleurdelysRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ServicefleurdelysRepository" class="App\Repository\ServicefleurdelysRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServiceliliaRepository" class="App\Repository\ServiceliliaRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ServiceliliaRepository" class="App\Repository\ServiceliliaRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServicemahassenRepository" class="App\Repository\ServicemahassenRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ServicemahassenRepository" class="App\Repository\ServicemahassenRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServicesRepository" class="App\Repository\ServicesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ServicesRepository" class="App\Repository\ServicesRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SousserviceRepository" class="App\Repository\SousserviceRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\SousserviceRepository" class="App\Repository\SousserviceRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServicevioletteRepository" class="App\Repository\ServicevioletteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ServicevioletteRepository" class="App\Repository\ServicevioletteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VioletteRepository" class="App\Repository\VioletteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\VioletteRepository" class="App\Repository\VioletteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Filter\FilterConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" public="false" abstract="true"/>
     <service id=".abstract.instanceof.EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" public="false" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Filter\FilterConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\CommonConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\CommonConfigurator" public="false" abstract="true"/>
@@ -6025,9 +6191,30 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.uHH96aa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.E89Z3b7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Admin\CommentaireCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Admin\CommentaireCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Admin\CommentaireCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -6071,6 +6258,27 @@
         <argument key="App\Controller\Admin\PubliciteCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Admin\PubliciteCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Admin\PubliciteCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Admin\UserCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Admin\UserCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Admin\UserCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -6093,72 +6301,201 @@
         <argument key="App\Controller\Admin\UserCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Admin\UserCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\CentresdebeauteController::show" type="service_closure" id=".service_locator.8rpL3Ir"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\FleurdelysController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\LiliabenazizaController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\MahassenController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\RegisterController::index" type="service_closure" id=".service_locator.jmvbEvf"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.g.xob4v"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\VioletteController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\CentresdebeauteCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Admin\CommentaireCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Admin\CommentaireCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Admin\CommentaireCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -6202,6 +6539,27 @@
         <argument key="App\Controller\Admin\PubliciteCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Admin\PubliciteCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Admin\PubliciteCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Admin\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Admin\UserCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Admin\UserCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Admin\UserCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -6224,72 +6582,180 @@
         <argument key="App\Controller\Admin\UserCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Admin\UserCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\CentresdebeauteController:show" type="service_closure" id=".service_locator.8rpL3Ir"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\CentresdebeauteCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Centresdebeaute\SousserviceCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\FleurdelysController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\LiliabenazizaController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\MahassenController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicemahassenCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\RegisterController:index" type="service_closure" id=".service_locator.jmvbEvf"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.g.xob4v"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\ServicevioletteCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\VioletteController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
       </argument>
     </service>
     <service id=".service_locator.Y7gDuDN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -6542,18 +7008,24 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.2RvVnVS" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator..AFT2jT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
         <argument key="App\Repository\CentresdebeauteRepository" type="service_closure" id="App\Repository\CentresdebeauteRepository"/>
         <argument key="App\Repository\CommentaireRepository" type="service_closure" id="App\Repository\CommentaireRepository"/>
+        <argument key="App\Repository\FleurdelysRepository" type="service_closure" id="App\Repository\FleurdelysRepository"/>
+        <argument key="App\Repository\LiliabenazizaRepository" type="service_closure" id="App\Repository\LiliabenazizaRepository"/>
+        <argument key="App\Repository\MahassenRepository" type="service_closure" id="App\Repository\MahassenRepository"/>
         <argument key="App\Repository\PubliciteRepository" type="service_closure" id="App\Repository\PubliciteRepository"/>
         <argument key="App\Repository\QuestionRepository" type="service_closure" id="App\Repository\QuestionRepository"/>
-        <argument key="App\Repository\ReservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
+        <argument key="App\Repository\ServicefleurdelysRepository" type="service_closure" id="App\Repository\ServicefleurdelysRepository"/>
+        <argument key="App\Repository\ServiceliliaRepository" type="service_closure" id="App\Repository\ServiceliliaRepository"/>
+        <argument key="App\Repository\ServicemahassenRepository" type="service_closure" id="App\Repository\ServicemahassenRepository"/>
         <argument key="App\Repository\ServicesRepository" type="service_closure" id="App\Repository\ServicesRepository"/>
-        <argument key="App\Repository\SousserviceRepository" type="service_closure" id="App\Repository\SousserviceRepository"/>
+        <argument key="App\Repository\ServicevioletteRepository" type="service_closure" id="App\Repository\ServicevioletteRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="App\Repository\VioletteRepository" type="service_closure" id="App\Repository\VioletteRepository"/>
       </argument>
     </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
@@ -6580,18 +7052,28 @@
       <argument>/opt/lampp/htdocs/App_Beaute/var/cache/dev</argument>
       <argument type="collection">
         <argument>App\Controller\Admin\DashboardController</argument>
-        <argument>App\Controller\Centresdebeaute\CentresdebeauteController</argument>
+        <argument>App\Controller\Fleurdelys\FleurdelysController</argument>
+        <argument>App\Controller\Liliabenaziza\LiliabenazizaController</argument>
+        <argument>App\Controller\Mahassen\MahassenController</argument>
+        <argument>App\Controller\Violette\VioletteController</argument>
       </argument>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry" public="false">
       <argument>%env(APP_SECRET)%</argument>
       <argument type="collection">
+        <argument>App\Controller\Admin\CentresdebeauteCrudController</argument>
         <argument>App\Controller\Admin\CommentaireCrudController</argument>
         <argument>App\Controller\Admin\PubliciteCrudController</argument>
+        <argument>App\Controller\Admin\ServicesCrudController</argument>
         <argument>App\Controller\Admin\UserCrudController</argument>
-        <argument>App\Controller\Centresdebeaute\CentresdebeauteCrudController</argument>
-        <argument>App\Controller\Centresdebeaute\ServicesCrudController</argument>
-        <argument>App\Controller\Centresdebeaute\SousserviceCrudController</argument>
+        <argument>App\Controller\Fleurdelys\ServicefleurdelysCrudController</argument>
+        <argument>App\Controller\Fleurdelys\ServicesCrudController</argument>
+        <argument>App\Controller\Liliabenaziza\ServiceliliaCrudController</argument>
+        <argument>App\Controller\Liliabenaziza\ServicesCrudController</argument>
+        <argument>App\Controller\Mahassen\ServicemahassenCrudController</argument>
+        <argument>App\Controller\Mahassen\ServicesCrudController</argument>
+        <argument>App\Controller\Violette\ServicesCrudController</argument>
+        <argument>App\Controller\Violette\ServicevioletteCrudController</argument>
       </argument>
     </service>
     <service id=".service_locator.V.o0zE7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -6640,6 +7122,12 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Admin\CentresdebeauteCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CentresdebeauteCrudController"/>
+      <argument>App\Controller\Admin\CentresdebeauteCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
     <service id=".service_locator.ky4eP1x.App\Controller\Admin\CommentaireCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Admin\CommentaireCrudController"/>
       <argument>App\Controller\Admin\CommentaireCrudController</argument>
@@ -6677,33 +7165,15 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ky4eP1x" method="withContext"/>
     </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Admin\ServicesCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\ServicesCrudController"/>
+      <argument>App\Controller\Admin\ServicesCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
     <service id=".service_locator.ky4eP1x.App\Controller\Admin\UserCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Admin\UserCrudController"/>
       <argument>App\Controller\Admin\UserCrudController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.ky4eP1x" method="withContext"/>
-    </service>
-    <service id=".service_locator.JEaLqsX.App\Controller\Centresdebeaute\CentresdebeauteController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\Centresdebeaute\CentresdebeauteController"/>
-      <argument>App\Controller\Centresdebeaute\CentresdebeauteController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.JEaLqsX" method="withContext"/>
-    </service>
-    <service id=".service_locator.ky4eP1x.App\Controller\Centresdebeaute\CentresdebeauteCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\Centresdebeaute\CentresdebeauteCrudController"/>
-      <argument>App\Controller\Centresdebeaute\CentresdebeauteCrudController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.ky4eP1x" method="withContext"/>
-    </service>
-    <service id=".service_locator.ky4eP1x.App\Controller\Centresdebeaute\ServicesCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\Centresdebeaute\ServicesCrudController"/>
-      <argument>App\Controller\Centresdebeaute\ServicesCrudController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.ky4eP1x" method="withContext"/>
-    </service>
-    <service id=".service_locator.ky4eP1x.App\Controller\Centresdebeaute\SousserviceCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\Centresdebeaute\SousserviceCrudController"/>
-      <argument>App\Controller\Centresdebeaute\SousserviceCrudController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ky4eP1x" method="withContext"/>
     </service>
@@ -6730,11 +7200,65 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.JEaLqsX.App\Controller\Fleurdelys\FleurdelysController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Fleurdelys\FleurdelysController"/>
+      <argument>App\Controller\Fleurdelys\FleurdelysController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.JEaLqsX" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Fleurdelys\ServicefleurdelysCrudController"/>
+      <argument>App\Controller\Fleurdelys\ServicefleurdelysCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\ServicesCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Fleurdelys\ServicesCrudController"/>
+      <argument>App\Controller\Fleurdelys\ServicesCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.JEaLqsX.App\Controller\Liliabenaziza\LiliabenazizaController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Liliabenaziza\LiliabenazizaController"/>
+      <argument>App\Controller\Liliabenaziza\LiliabenazizaController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.JEaLqsX" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ServiceliliaCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Liliabenaziza\ServiceliliaCrudController"/>
+      <argument>App\Controller\Liliabenaziza\ServiceliliaCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ServicesCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Liliabenaziza\ServicesCrudController"/>
+      <argument>App\Controller\Liliabenaziza\ServicesCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
+    <service id=".service_locator.JEaLqsX.App\Controller\Mahassen\MahassenController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Mahassen\MahassenController"/>
+      <argument>App\Controller\Mahassen\MahassenController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.JEaLqsX" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Mahassen\ServicemahassenCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Mahassen\ServicemahassenCrudController"/>
+      <argument>App\Controller\Mahassen\ServicemahassenCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Mahassen\ServicesCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Mahassen\ServicesCrudController"/>
+      <argument>App\Controller\Mahassen\ServicesCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
     </service>
     <service id=".service_locator.vdmMuyE.App\Controller\RegisterController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\RegisterController"/>
@@ -6753,6 +7277,30 @@
       <argument>App\Controller\ServicesController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\SousserviceController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\SousserviceController"/>
+      <argument>App\Controller\SousserviceController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Violette\ServicesCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Violette\ServicesCrudController"/>
+      <argument>App\Controller\Violette\ServicesCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Violette\ServicevioletteCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Violette\ServicevioletteCrudController"/>
+      <argument>App\Controller\Violette\ServicevioletteCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
+    <service id=".service_locator.JEaLqsX.App\Controller\Violette\VioletteController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Violette\VioletteController"/>
+      <argument>App\Controller\Violette\VioletteController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.JEaLqsX" method="withContext"/>
     </service>
     <service id=".service_locator.XSes1R5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -6910,12 +7458,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.uHH96aa"/>
+      <argument type="service" id=".service_locator.E89Z3b7"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.uHH96aa"/>
+      <argument type="service" id=".service_locator.E89Z3b7"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7340,7 +7888,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.uHH96aa"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.E89Z3b7"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

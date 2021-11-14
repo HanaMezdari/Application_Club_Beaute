@@ -241,10 +241,15 @@ $catalogue = new MessageCatalogue('en', array (
     'login_page.username' => 'Username',
     'login_page.password' => 'Password',
     'login_page.sign_in' => 'Sign in',
+    'login_page.forgot_password' => 'Forgot Your Password?',
+    'login_page.remember_me' => 'Remember me',
     'exception.entity_not_found' => 'This item is no longer available.',
     'exception.entity_remove' => 'This item can\'t be deleted because other items depend on it.',
     'exception.forbidden_action' => 'The requested action can\'t be performed on this item.',
     'exception.insufficient_entity_permission' => 'You don\'t have permission to access this item.',
+    'autocomplete.no-results-found' => 'No results found',
+    'autocomplete.no-more-results' => 'No more results',
+    'autocomplete.loading-more-results' => 'Loading more results…',
   ),
 ));
 
