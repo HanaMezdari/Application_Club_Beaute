@@ -2,9 +2,13 @@
 
 namespace App\Repository;
 
+use App\App\Data\SearchData;
 use App\Entity\Servicelilia;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+
+use Knp\Component\Pager\PaginatorInterface;
+use Knp\Bundle\PaginatorBundle\Pagination\SlidingPagination;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Servicelilia|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,37 +18,69 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ServiceliliaRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+
+    /**
+     * @var PaginatorInterface
+     */
+
+    private $paginator;
+    
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, Servicelilia::class);
+        $this->paginator = $paginator;
     }
 
-    // /**
-    //  * @return Servicelilia[] Returns an array of Servicelilia objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+    /**
+     * Récupère les servicelilia en lien avec une recherche 
+     * @return PaginatorInterface
+     */
 
-    /*
-    public function findOneBySomeField($value): ?Servicelilia
+ 
+    public function findSearch(SearchData $search):SlidingPagination
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $query = $this
+       
+             ->createQueryBuilder('servicelilia')
+             ->select('services', 'servicelilia')
+             ->join('servicelilia.services', 'services');
+
+          if (!empty($search->q)){
+              $query = $query
+                ->andwhere('l.nom LIKE :q')
+                ->setParameter('q', $search->q);
+          }
+
+          if (!empty($search->min)){
+            $query = $query
+              ->andwhere('servicelilia.prix >= :min')
+              ->setParameter('min', $search->min);
+         }
+
+         if (!empty($search->max)){
+            $query = $query
+              ->andwhere('servicelilia.prix <= :max')
+              ->setParameter('max', $search->max);
+         }
+
+         if (!empty($search->promo)){
+            $query = $query
+              ->andwhere('servicelilia.promo = 1');
+              
+         }
+
+         if (!empty($search->services)){
+            $query = $query
+              ->andwhere('services.id IN  (:services)')
+              ->setParameter('services', $search->services);
+              
+         }
+         $query = $query->getQuery();
+          
+         return $this->paginator->paginate(
+             $query,
+             $search->page,
+             10
+            );
     }
-    */
 }

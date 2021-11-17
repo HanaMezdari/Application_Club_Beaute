@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous nos services Lilia{% endblock %}
+
+{% block body %}
+    <div class="container-fluid"style="margin-top:100px;">
+         <div class="row">
+             <div class="col-md-3">
+              <div class="filter" style="display:block;position:sticky;top:20px;">
+               {{ form_start(form, {attr: {class: 'filter'}}) }}
+                  {{ form_row(form.q) }}
+
+                  <h4>Services</h4>
+                  {{ form_row(form.services) }}
+
+                  <h4>Prix</h4>
+                  <div class="row">
+                     <div class="col-md-6">
+                        {{ form_row(form.min) }}
+                     </div>
+                     <div class="col-md-6">
+                        {{ form_row(form.max) }}
+                     </div>
+                  </div>
+                  <h4>Promotion</h4>
+                  {{ form_row(form.promo) }}
+
+                  <button type="submit" class="btn btn-primary w-100">Filtrer </button>
+
+
+               {{ form_end(form) }}
+            </div>
+             </div>
+             <div class="col-md-9">
+             
+                <div class="grid">
+                {% for item in servicelilia %}
+                    <div class="card">
+                        <h5 class="card-title">{{ item.nom }}</h5>
+                        <div class="card-title text-primary" style="font-weight: bold;font-size:1.5rem;">
+                         {{ item.prix | number_format(0,',',' ') }} D
+                          {% if item.promo %}
+
+                         <div class="text text-warning">Promo !</div>
+                          {% endif %}
+                        </div>
+                        <div>
+                  
+                        <em class="text-muted text-primary text-italic">#{{ item.services }}</em>
+              
+                       </div>
+                    </div>
+                {% endfor %}
+                
+                </div>
+                <div class="mt-4">
+                    {{ knp_pagination_render(servicelilia) }}
+                </div>
+             </div>
+         
+         </div>
+          
+    
+    </div>
+{% endblock %}

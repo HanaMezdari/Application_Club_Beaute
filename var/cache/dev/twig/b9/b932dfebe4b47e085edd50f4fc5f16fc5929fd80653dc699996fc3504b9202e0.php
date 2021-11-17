@@ -87,7 +87,7 @@ class __TwigTemplate_b122524bbf24e380e64b567f91546b6a4bc888c68c3620ee8cfeaa51118
         // line 6
         echo " <header>
        
-       <div class=\"content-width\" style=\"margin-top:100px;\">
+       <div class=\"content-width\" style=\"margin-top:80px;\">
   <div class=\"slideshow\">
     <!-- Slideshow Items -->
     <div class=\"slideshow-items\">
@@ -116,12 +116,12 @@ class __TwigTemplate_b122524bbf24e380e64b567f91546b6a4bc888c68c3620ee8cfeaa51118
         <div class=\"item-image-container\">
           <img class=\"item-image\" src=\"";
         // line 29
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/slide/s3.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/slide/s4.jpg"), "html", null, true);
         echo "\" alt=\"image\" style=\"height: 500px;width: 100%;\" />
         </div>
         <!-- Staggered Header Elements -->
         <div class=\"item-header\">
-          <span class=\"vertical-part\"><b>Bienvenu : <em style=\"color:#8c0c3c;\">Fleur De Lys</em></b></span>
+          <span class=\"vertical-part\"><b>Bienvenu : <em style=\"color:#8c0c3c;\">Mahassen</em></b></span>
         </div>
         <!-- Staggered Description Elements -->
         <div class=\"item-description\">
@@ -137,12 +137,12 @@ class __TwigTemplate_b122524bbf24e380e64b567f91546b6a4bc888c68c3620ee8cfeaa51118
         <div class=\"item-image-container\">
           <img class=\"item-image\" src=\"";
         // line 44
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/slide/s1.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/slide/s3.jpg"), "html", null, true);
         echo "\" alt=\"image\" style=\"height: 500px;width: 100%;\" />
         </div>
         <!-- Staggered Header Elements -->
         <div class=\"item-header\">
-          <span class=\"vertical-part\"><b>Bienvenu :<em style=\"color:#8c0c3c;\">Violette</b></span>
+          <span class=\"vertical-part\"><b>Bienvenu : <em style=\"color:#8c0c3c;\">Fleur De Lys</em></b></span>
         </div>
         <!-- Staggered Description Elements -->
         <div class=\"item-description\">
@@ -154,12 +154,34 @@ class __TwigTemplate_b122524bbf24e380e64b567f91546b6a4bc888c68c3620ee8cfeaa51118
           </span>
         </div>
       </div>
+      <div class=\"item\">
+        <div class=\"item-image-container\">
+          <img class=\"item-image\" src=\"";
+        // line 59
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/slide/s1.jpg"), "html", null, true);
+        echo "\" alt=\"image\" style=\"height: 500px;width: 100%;\" />
+        </div>
+        <!-- Staggered Header Elements -->
+        <div class=\"item-header\">
+          <span class=\"vertical-part\"><b>Bienvenu :<em style=\"color:#8c0c3c;\">Violette</b></span>
+        </div>
+        <!-- Staggered Description Elements -->
+        <div class=\"item-description\">
+          <span class=\"vertical-part\">
+             <a href=\"";
+        // line 68
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("services");
+        echo "\" style=\"color:#fff;\" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
+          </span>
+        </div>
+      </div>
     </div>
     <div class=\"controls\">
       <ul>
         <li class=\"control\" data-index=\"0\"></li>
         <li class=\"control\" data-index=\"1\"></li>
         <li class=\"control\" data-index=\"2\"></li>
+        <li class=\"control\" data-index=\"3\"></li>
       </ul>
     </div>
   </div>
@@ -440,7 +462,7 @@ slider.init();
   <div class=\"container-fluid\" >
      <div class=\"row\">
         <div class=\"column col-lg-4 col-md-8 col-sm-12\" style=\"float:right;\" >
- <div id=\"maCarte\" style=\"border-radius: 5px;border: 20px solid #fff;margin-top:25px;\"></div>
+ <div id=\"maCarte\" ></div>
    </div>
 
  <script src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"
@@ -458,21 +480,21 @@ crossorigin=\"\"></script>
        }).addTo(carte);
 
        ";
-        // line 360
+        // line 376
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["centresdebeaute"]) || array_key_exists("centresdebeaute", $context) ? $context["centresdebeaute"] : (function () { throw new RuntimeError('Variable "centresdebeaute" does not exist.', 360, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["centresdebeaute"]) || array_key_exists("centresdebeaute", $context) ? $context["centresdebeaute"] : (function () { throw new RuntimeError('Variable "centresdebeaute" does not exist.', 376, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             echo "  
            // On crée le marqueur et on lui attribue une popup
            var marqueur = L.marker([";
-            // line 362
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "lat", [], "any", false, false, false, 362), "html", null, true);
+            // line 378
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "lat", [], "any", false, false, false, 378), "html", null, true);
             echo ", ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "lon", [], "any", false, false, false, 362), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "lon", [], "any", false, false, false, 378), "html", null, true);
             echo "]).addTo(carte); //.addTo(carte);
            marqueur.bindPopup(\"<h3>";
-            // line 363
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 363), "html", null, true);
+            // line 379
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 379), "html", null, true);
             echo "</h3>\");
 
        ";
@@ -480,7 +502,7 @@ crossorigin=\"\"></script>
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 366
+        // line 382
         echo "</script>
   <div class=\"column col-lg-8 col-md-10 col-sm-12\" style=\"float:left;\" >    
   <div class=\"cardcontainer\">
@@ -488,26 +510,26 @@ crossorigin=\"\"></script>
                       
     <div class=\"column col-lg-4 col-md-6 col-sm-12\"> 
         ";
-        // line 372
+        // line 388
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["centresdebeaute"]) || array_key_exists("centresdebeaute", $context) ? $context["centresdebeaute"] : (function () { throw new RuntimeError('Variable "centresdebeaute" does not exist.', 372, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["centresdebeaute"]) || array_key_exists("centresdebeaute", $context) ? $context["centresdebeaute"] : (function () { throw new RuntimeError('Variable "centresdebeaute" does not exist.', 388, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 373
+            // line 389
             echo "   
    <div class=\"card\" style=\"margin-top:35px;\">
        
         <img src=\"/centre/";
-            // line 376
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, false, 376), "html", null, true);
+            // line 392
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, false, 392), "html", null, true);
             echo "\" alt=\"image\">
         <div class=\"con-text\">
             <h3>";
-            // line 378
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 378), "html", null, true);
+            // line 394
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 394), "html", null, true);
             echo "</h3>
             <p>";
-            // line 379
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "email", [], "any", false, false, false, 379), "html", null, true);
+            // line 395
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "email", [], "any", false, false, false, 395), "html", null, true);
             echo "</p>   
         </div>
      </div>
@@ -516,24 +538,24 @@ crossorigin=\"\"></script>
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 383
+        // line 399
         echo "    </div>
     <div class=\"column col-lg-4 col-md-6 col-sm-12\"> 
         ";
-        // line 385
+        // line 401
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["centresdebeaute"]) || array_key_exists("centresdebeaute", $context) ? $context["centresdebeaute"] : (function () { throw new RuntimeError('Variable "centresdebeaute" does not exist.', 385, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["centresdebeaute"]) || array_key_exists("centresdebeaute", $context) ? $context["centresdebeaute"] : (function () { throw new RuntimeError('Variable "centresdebeaute" does not exist.', 401, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 386
+            // line 402
             echo "       <div class=\"content\" style=\"margin-top:35px;\" >
            <br>
-           <h3>";
-            // line 388
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 388), "html", null, true);
+           <h3 style=\"color:rgb(14, 13, 13);\">";
+            // line 404
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 404), "html", null, true);
             echo "</h3><br>
-           <h6>";
-            // line 389
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "description", [], "any", false, false, false, 389), "html", null, true);
+           <h6 style=\"color:rgb(14, 13, 13);\">";
+            // line 405
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "description", [], "any", false, false, false, 405), "html", null, true);
             echo "</h6>
        </div>
        ";
@@ -541,33 +563,33 @@ crossorigin=\"\"></script>
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 392
+        // line 408
         echo "    </div>
     
     <div class=\"column col-lg-4 col-md-6 col-sm-12\">
         ";
-        // line 395
+        // line 411
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["centresdebeaute"]) || array_key_exists("centresdebeaute", $context) ? $context["centresdebeaute"] : (function () { throw new RuntimeError('Variable "centresdebeaute" does not exist.', 395, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["centresdebeaute"]) || array_key_exists("centresdebeaute", $context) ? $context["centresdebeaute"] : (function () { throw new RuntimeError('Variable "centresdebeaute" does not exist.', 411, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             echo "  
        <div class=\"detail\"  >
             <br><br><br><br>
-            <h6>Adresse : ";
-            // line 398
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "adresse", [], "any", false, false, false, 398), "html", null, true);
+            <h6 style=\"color:rgb(14, 13, 13);\">Adresse : ";
+            // line 414
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "adresse", [], "any", false, false, false, 414), "html", null, true);
             echo "</h6><br>
-            <h6>Email : ";
-            // line 399
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "email", [], "any", false, false, false, 399), "html", null, true);
+            <h6 style=\"color:rgb(14, 13, 13);\">Email : ";
+            // line 415
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "email", [], "any", false, false, false, 415), "html", null, true);
             echo "</h6><br>
              <a href=\"";
-            // line 400
+            // line 416
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("services");
             echo "\" class=\"btn btn-secondary \">Prendre RDV </a> 
               <a href=\"";
-            // line 401
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("centresdebeaute_show", ["id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 401)]), "html", null, true);
+            // line 417
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("centresdebeaute_show", ["id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 417)]), "html", null, true);
             echo "\" class=\"btn btn-secondary \"style=\"float:right;\">Commenter ! </a> 
        </div>
         ";
@@ -575,7 +597,7 @@ crossorigin=\"\"></script>
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 404
+        // line 420
         echo "    </div>
    </div> 
   </div> 
@@ -688,7 +710,7 @@ crossorigin=\"\"></script>
 
     public function getDebugInfo()
     {
-        return array (  579 => 404,  570 => 401,  566 => 400,  562 => 399,  558 => 398,  550 => 395,  545 => 392,  536 => 389,  532 => 388,  528 => 386,  524 => 385,  520 => 383,  510 => 379,  506 => 378,  501 => 376,  496 => 373,  492 => 372,  484 => 366,  475 => 363,  469 => 362,  462 => 360,  152 => 53,  140 => 44,  131 => 38,  119 => 29,  110 => 23,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  601 => 420,  592 => 417,  588 => 416,  584 => 415,  580 => 414,  572 => 411,  567 => 408,  558 => 405,  554 => 404,  550 => 402,  546 => 401,  542 => 399,  532 => 395,  528 => 394,  523 => 392,  518 => 389,  514 => 388,  506 => 382,  497 => 379,  491 => 378,  484 => 376,  173 => 68,  161 => 59,  152 => 53,  140 => 44,  131 => 38,  119 => 29,  110 => 23,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -700,7 +722,7 @@ crossorigin=\"\"></script>
 {% block body %}
  <header>
        
-       <div class=\"content-width\" style=\"margin-top:100px;\">
+       <div class=\"content-width\" style=\"margin-top:80px;\">
   <div class=\"slideshow\">
     <!-- Slideshow Items -->
     <div class=\"slideshow-items\">
@@ -717,6 +739,21 @@ crossorigin=\"\"></script>
           <span class=\"vertical-part\">
             <a href=\"{{ path('services') }}\"style=\"color:#fff;\" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
           </span>  
+        </div>
+      </div>
+      <div class=\"item\">
+        <div class=\"item-image-container\">
+          <img class=\"item-image\" src=\"{{ asset('css/slide/s4.jpg') }}\" alt=\"image\" style=\"height: 500px;width: 100%;\" />
+        </div>
+        <!-- Staggered Header Elements -->
+        <div class=\"item-header\">
+          <span class=\"vertical-part\"><b>Bienvenu : <em style=\"color:#8c0c3c;\">Mahassen</em></b></span>
+        </div>
+        <!-- Staggered Description Elements -->
+        <div class=\"item-description\">
+          <span class=\"vertical-part\">
+             <a href=\"{{ path('services') }}\" style=\"color:#fff;\" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
+          </span>
         </div>
       </div>
       <div class=\"item\">
@@ -755,6 +792,7 @@ crossorigin=\"\"></script>
         <li class=\"control\" data-index=\"0\"></li>
         <li class=\"control\" data-index=\"1\"></li>
         <li class=\"control\" data-index=\"2\"></li>
+        <li class=\"control\" data-index=\"3\"></li>
       </ul>
     </div>
   </div>
@@ -1035,7 +1073,7 @@ slider.init();
   <div class=\"container-fluid\" >
      <div class=\"row\">
         <div class=\"column col-lg-4 col-md-8 col-sm-12\" style=\"float:right;\" >
- <div id=\"maCarte\" style=\"border-radius: 5px;border: 20px solid #fff;margin-top:25px;\"></div>
+ <div id=\"maCarte\" ></div>
    </div>
 
  <script src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"
@@ -1080,8 +1118,8 @@ crossorigin=\"\"></script>
         {% for item in centresdebeaute %}
        <div class=\"content\" style=\"margin-top:35px;\" >
            <br>
-           <h3>{{ item.nom }}</h3><br>
-           <h6>{{ item.description }}</h6>
+           <h3 style=\"color:rgb(14, 13, 13);\">{{ item.nom }}</h3><br>
+           <h6 style=\"color:rgb(14, 13, 13);\">{{ item.description }}</h6>
        </div>
        {% endfor %}
     </div>
@@ -1090,8 +1128,8 @@ crossorigin=\"\"></script>
         {% for item in centresdebeaute %}  
        <div class=\"detail\"  >
             <br><br><br><br>
-            <h6>Adresse : {{ item.adresse }}</h6><br>
-            <h6>Email : {{ item.email }}</h6><br>
+            <h6 style=\"color:rgb(14, 13, 13);\">Adresse : {{ item.adresse }}</h6><br>
+            <h6 style=\"color:rgb(14, 13, 13);\">Email : {{ item.email }}</h6><br>
              <a href=\"{{ path('services') }}\" class=\"btn btn-secondary \">Prendre RDV </a> 
               <a href=\"{{ path('centresdebeaute_show', {'id':item.id } ) }}\" class=\"btn btn-secondary \"style=\"float:right;\">Commenter ! </a> 
        </div>
@@ -1188,6 +1226,6 @@ crossorigin=\"\"></script>
 
 
 {% endblock %}
-", "centresdebeaute/index.html.twig", "/opt/lampp/htdocs/ClubBeaute/templates/centresdebeaute/index.html.twig");
+", "centresdebeaute/index.html.twig", "/opt/lampp/htdocs/App_Beaute/templates/centresdebeaute/index.html.twig");
     }
 }

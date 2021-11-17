@@ -207,6 +207,6 @@ class __TwigTemplate_8197f1af75896d963d66f42f5987a8aeb574ed28d1e9a5a1c5256cc475c
  </section>
  {% endblock %}
 
- ", "centresdebeaute/show.html.twig", "/opt/lampp/htdocs/ClubBeaute/templates/centresdebeaute/show.html.twig");
+ ", "centresdebeaute/show.html.twig", "/opt/lampp/htdocs/App_Beaute/templates/centresdebeaute/show.html.twig");
     }
 }

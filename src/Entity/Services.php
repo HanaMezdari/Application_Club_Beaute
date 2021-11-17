@@ -41,6 +41,16 @@ class Services
      */
     private $description;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Servicelilia::class)
+     */
+    private $servicelilia;
+
+    public function __construct()
+    {
+        $this->servicelilia = new ArrayCollection();
+    }
+
    
 
     public function getId(): ?int
@@ -96,6 +106,30 @@ class Services
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Servicelilia[]
+     */
+    public function getServicelilia(): Collection
+    {
+        return $this->servicelilia;
+    }
+
+    public function addServicelilium(Servicelilia $servicelilium): self
+    {
+        if (!$this->servicelilia->contains($servicelilium)) {
+            $this->servicelilia[] = $servicelilium;
+        }
+
+        return $this;
+    }
+
+    public function removeServicelilium(Servicelilia $servicelilium): self
+    {
+        $this->servicelilia->removeElement($servicelilium);
 
         return $this;
     }

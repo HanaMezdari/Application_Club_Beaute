@@ -22,6 +22,7 @@
       <parameter key="TwigExtraBundle">Twig\Extra\TwigExtraBundle\TwigExtraBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
       <parameter key="EasyAdminBundle">EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -75,6 +76,10 @@
       <parameter key="EasyAdminBundle" type="collection">
         <parameter key="path">/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src</parameter>
         <parameter key="namespace">EasyCorp\Bundle\EasyAdminBundle</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -153,6 +158,7 @@
     <parameter key="twig.exception_listener.controller">null</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_4_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">/opt/lampp/htdocs/App_Beaute/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -255,6 +261,11 @@
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="easyadmin.config" type="collection"/>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -348,6 +359,7 @@
     <service id="kernel" class="App\Kernel" public="true" synthetic="true">
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\App\Data\SearchData" class="App\App\Data\SearchData" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="ea.crud_controller"/>
@@ -402,6 +414,13 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CentresdebeauteController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ContactController" class="App\Controller\ContactController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ContactController"/>
       </call>
     </service>
     <service id="App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" public="true" autowire="true" autoconfigure="true">
@@ -499,18 +518,18 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Controller\ServiceliliaController" class="App\Controller\ServiceliliaController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ServiceliliaController"/>
+      </call>
+    </service>
     <service id="App\Controller\ServicesController" class="App\Controller\ServicesController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ServicesController"/>
-      </call>
-    </service>
-    <service id="App\Controller\SousserviceController" class="App\Controller\SousserviceController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\SousserviceController"/>
       </call>
     </service>
     <service id="App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" public="true" autowire="true" autoconfigure="true">
@@ -541,6 +560,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true">
@@ -582,6 +604,7 @@
     <service id="App\Repository\ServiceliliaRepository" class="App\Repository\ServiceliliaRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+      <argument type="service" id="knp_paginator"/>
     </service>
     <service id="App\Repository\ServicemahassenRepository" class="App\Repository\ServicemahassenRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -1026,6 +1049,7 @@
       <argument type="collection">
         <argument>App\Form\CommentaireType</argument>
         <argument>App\Form\RegisterType</argument>
+        <argument>App\Form\SearchForm</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1364,7 +1388,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.T5bgU.F"/>
+      <argument type="service" id=".service_locator.HMdQpp2"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1675,6 +1699,7 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.ar.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.ar.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.ar.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.az.xlf</argument>
@@ -1691,6 +1716,7 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.bg.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.bg.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.bg.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.bs.xlf</argument>
@@ -1708,6 +1734,7 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.cs.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.cs.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.cs.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.cy.xlf</argument>
@@ -1717,12 +1744,14 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.da.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.da.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.da.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.de.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.de.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.de.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.de.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.el.xlf</argument>
@@ -1735,12 +1764,14 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.en.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.en.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.en.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.es.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.es.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.es.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
@@ -1752,24 +1783,28 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.eu.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.eu.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.eu.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.fa.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.fa.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.fa.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.fa.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.fi.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.fi.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.fi.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.fi.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.fr.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.fr.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.fr.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.fr.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
@@ -1787,12 +1822,14 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.hr.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.hr.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.hr.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.hu.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.hu.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.hu.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.hu.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.hy.xlf</argument>
@@ -1803,17 +1840,20 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.id.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.id.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.id.xlf</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.it.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.it.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.it.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.it.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.ja.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.ja.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.ja.xlf</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.lb.xlf</argument>
@@ -1825,6 +1865,7 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.lt.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.lt.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.lt.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.lv.xlf</argument>
@@ -1846,6 +1887,7 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.nl.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.nl.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.nl.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.nn.xlf</argument>
@@ -1857,12 +1899,14 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.no.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.no.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.no.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.pl.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.pl.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.pl.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.pl.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.pt.xlf</argument>
@@ -1875,18 +1919,21 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.pt_BR.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.pt_BR.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.pt_BR.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.ro.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.ro.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.ro.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.ro.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.ru.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.ru.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.ru.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.ru.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.sk.xlf</argument>
@@ -1919,6 +1966,7 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.sv.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.sv.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.sv.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.th.xlf</argument>
@@ -1935,12 +1983,14 @@
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.tr.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.tr.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.tr.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.tr.xliff</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.uk.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations/validators.uk.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations/security.uk.xlf</argument>
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.uk.php</argument>
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="uz" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations/validators.uz.xlf</argument>
@@ -1966,12 +2016,19 @@
           <argument key="sr_RS" type="collection">
             <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.sr_RS.php</argument>
           </argument>
+          <argument key="ky" type="collection">
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sw.xliff</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/validator/Resources/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/form/Resources/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/security-core/Resources/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/translations</argument>
+          <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/framework-bundle/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/src/Resources/FrameworkBundle/translations</argument>
@@ -1998,6 +2055,7 @@
           <argument>/opt/lampp/htdocs/App_Beaute/vendor/symfony/web-server-bundle/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/src/Resources/WebServerBundle/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/src/Resources/EasyAdminBundle/translations</argument>
+          <argument>/opt/lampp/htdocs/App_Beaute/src/Resources/KnpPaginatorBundle/translations</argument>
           <argument>/opt/lampp/htdocs/App_Beaute/src/Resources/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
@@ -2006,6 +2064,7 @@
             <argument>vendor/symfony/form/Resources/translations</argument>
             <argument>vendor/symfony/security-core/Resources/translations</argument>
             <argument>vendor/easycorp/easyadmin-bundle/src/Resources/translations</argument>
+            <argument>vendor/knplabs/knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
             <argument>vendor/symfony/framework-bundle/translations</argument>
             <argument>src/Resources/FrameworkBundle/translations</argument>
@@ -2032,6 +2091,7 @@
             <argument>vendor/symfony/web-server-bundle/translations</argument>
             <argument>src/Resources/WebServerBundle/translations</argument>
             <argument>src/Resources/EasyAdminBundle/translations</argument>
+            <argument>src/Resources/KnpPaginatorBundle/translations</argument>
             <argument>src/Resources/translations</argument>
           </argument>
         </argument>
@@ -2493,6 +2553,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service_closure" id="response_listener"/>
@@ -2931,6 +2999,46 @@
           <argument>onKernelController</argument>
         </argument>
         <argument>128</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
       </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver" public="false">
@@ -3452,6 +3560,9 @@
       <call method="addExtension">
         <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -3575,6 +3686,14 @@
       <call method="addPath">
         <argument>/opt/lampp/htdocs/App_Beaute/vendor/easycorp/easyadmin-bundle/src/Resources/views</argument>
         <argument>!EasyAdmin</argument>
+      </call>
+      <call method="addPath">
+        <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>/opt/lampp/htdocs/App_Beaute/vendor/knplabs/knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>/opt/lampp/htdocs/App_Beaute/templates</argument>
@@ -5625,6 +5744,52 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry"/>
       <deprecated>Since easycorp/easyadmin-bundle 3.2.0: The "%service_id% service is deprecated, use "EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator" instead.</deprecated>
     </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <tag name="proxy" interface="Knp\Component\Pager\PaginatorInterface"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+          <argument key="pageOutOfRange">ignore</argument>
+          <argument key="defaultLimit">10</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\CentresdebeauteCrudController" class="App\Controller\Admin\CentresdebeauteCrudController" autowire="true" abstract="true"/>
@@ -5652,6 +5817,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
@@ -5697,12 +5865,12 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ServiceliliaController" class="App\Controller\ServiceliliaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ServiceliliaController" class="App\Controller\ServiceliliaController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ServiceliliaController" class="App\Controller\ServiceliliaController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SousserviceController" class="App\Controller\SousserviceController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SousserviceController" class="App\Controller\SousserviceController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\SousserviceController" class="App\Controller\SousserviceController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Violette\ServicesCrudController" class="App\Controller\Violette\ServicesCrudController" autowire="true" abstract="true"/>
@@ -5719,6 +5887,8 @@
     <service id=".abstract.instanceof.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CentresdebeauteRepository" class="App\Repository\CentresdebeauteRepository" autowire="true" abstract="true"/>
@@ -6191,7 +6361,13 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.E89Z3b7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.zs.f5lW" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repository" type="service_closure" id="App\Repository\ServiceliliaRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.RVjtf3L" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CentresdebeauteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
@@ -6432,6 +6608,7 @@
         <argument key="App\Controller\Mahassen\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\RegisterController::index" type="service_closure" id=".service_locator.jmvbEvf"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.g.xob4v"/>
+        <argument key="App\Controller\ServiceliliaController::index" type="service_closure" id=".service_locator.zs.f5lW"/>
         <argument key="App\Controller\Violette\ServicesCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Violette\ServicesCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Violette\ServicesCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -6713,6 +6890,7 @@
         <argument key="App\Controller\Mahassen\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\RegisterController:index" type="service_closure" id=".service_locator.jmvbEvf"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.g.xob4v"/>
+        <argument key="App\Controller\ServiceliliaController:index" type="service_closure" id=".service_locator.zs.f5lW"/>
         <argument key="App\Controller\Violette\ServicesCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Violette\ServicesCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Violette\ServicesCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -6827,11 +7005,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.T5bgU.F" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.HMdQpp2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CommentaireType" type="service_closure" id="App\Form\CommentaireType"/>
         <argument key="App\Form\RegisterType" type="service_closure" id="App\Form\RegisterType"/>
+        <argument key="App\Form\SearchForm" type="service_closure" id="App\Form\SearchForm"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\CrudFormType" type="service_closure" id="EasyCorp\Bundle\EasyAdminBundle\Form\Type\CrudFormType"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType" type="service_closure" id="EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\FiltersFormType" type="service_closure" id="EasyCorp\Bundle\EasyAdminBundle\Form\Type\FiltersFormType"/>
@@ -7200,6 +7379,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\ContactController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ContactController"/>
+      <argument>App\Controller\ContactController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.JEaLqsX.App\Controller\Fleurdelys\FleurdelysController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Fleurdelys\FleurdelysController"/>
       <argument>App\Controller\Fleurdelys\FleurdelysController</argument>
@@ -7272,15 +7457,15 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\ServicesController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\ServicesController"/>
-      <argument>App\Controller\ServicesController</argument>
+    <service id=".service_locator.vdmMuyE.App\Controller\ServiceliliaController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ServiceliliaController"/>
+      <argument>App\Controller\ServiceliliaController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\SousserviceController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\SousserviceController"/>
-      <argument>App\Controller\SousserviceController</argument>
+    <service id=".service_locator.vdmMuyE.App\Controller\ServicesController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ServicesController"/>
+      <argument>App\Controller\ServicesController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -7458,12 +7643,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.E89Z3b7"/>
+      <argument type="service" id=".service_locator.RVjtf3L"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.E89Z3b7"/>
+      <argument type="service" id=".service_locator.RVjtf3L"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7886,9 +8071,10 @@
     <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
     <service id="security.user_checker.main" alias="security.user_checker" public="false"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.E89Z3b7"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.RVjtf3L"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

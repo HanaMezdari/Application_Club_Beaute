@@ -85,13 +85,13 @@ class __TwigTemplate_a6a7d6ed7a1eebd36d27e7763bb450972e92fc272a5d4dff7c209801261
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<main>
+        echo "<main style=\"margin-top:80px;\">
  
 <img  src=\"";
         // line 8
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/slide/Rare-Beauty-by-Selena-Gomes.jpg"), "html", null, true);
         echo "\" alt=\"image\" style=\"height: 500px;width: 100%;\">
-           
+         
        
 <div class=\"slider-info-wrap clearfix pdlr0\">
   <div class=\"slider-info-content\">
@@ -100,18 +100,18 @@ class __TwigTemplate_a6a7d6ed7a1eebd36d27e7763bb450972e92fc272a5d4dff7c209801261
         <div class=\"info-item-media\"><img src=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/slide/Honest-Beauty-by-Jessica-Alba.jpg"), "html", null, true);
-        echo "\" data-at2x=\"pic/slider-info-3@2x.jpg\" alt=\"\">
+        echo "\" data-at2x=\"pic/slider-info-3@2x.jpg\"   alt=\"\">
           <div class=\"info-item-text\">
             <div class=\"info-price font-4\"><span></span></div>
-            <div class=\"info-temp font-4\"><span>local temperature</span> 41° / 105.8°</div>
-            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <div class=\"info-temp font-4\"><span>Honest-Beauty</span> by-Jessica-Alba</div>
+            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
         <div class=\"info-item-content\">
           <div class=\"main-title\">
-            <h3 class=\"title\"><span class=\"font-4\"></span>Location</h3>
-            <div class=\"price\"><span>2 Night 7 Days</span></div>
-            <span class=\"button\">2 Night 7 Days</span>
+            <h3 class=\"title\"><span class=\"font-4\"></span>Honest-Beauty</h3>
+            <div class=\"price\"><span>Jessica-Alba</span></div>
+            <span class=\"button\">Jessica-Alba</span>
           </div>
         </div>
       </div>
@@ -123,15 +123,15 @@ class __TwigTemplate_a6a7d6ed7a1eebd36d27e7763bb450972e92fc272a5d4dff7c209801261
         echo "\" data-at2x=\"pic/slider-info-2@2x.jpg\" alt=\"\">
           <div class=\"info-item-text\">
             <div class=\"info-price font-4\"><span></span></div>
-            <div class=\"info-temp font-4\"><span>local temperature</span> 31° / 87.8°</div>
-            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <div class=\"info-temp font-4\"><span>Fenty-Beauty</span> Fenty</div>
+            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>
         </div>
         <div class=\"info-item-content\">
           <div class=\"main-title\">
-            <h3 class=\"title\"><span class=\"font-4\"></span> London</h3>
-            <div class=\"price\"><span>2 Night 7 Days</span></div>
-            <span class=\"button\">2 Night 7 Days</span>
+            <h3 class=\"title\"><span class=\"font-4\"></span>Fenty-Beauty</h3>
+            <div class=\"price\"><span>Fenty</span></div>
+            <span class=\"button\">Fenty</span>
           </div>
         </div>
       </div>
@@ -142,15 +142,15 @@ class __TwigTemplate_a6a7d6ed7a1eebd36d27e7763bb450972e92fc272a5d4dff7c209801261
         echo "\" data-at2x=\"pic/slider-info-2@2x.jpg\" alt=\"\">
           <div class=\"info-item-text\">
             <div class=\"info-price font-4\"><span></span></div>
-            <div class=\"info-temp font-4\"><span>local temperature</span> 31° / 87.8°</div>
-            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <div class=\"info-temp font-4\"><span>Florence</span> Millie</div>
+            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
         <div class=\"info-item-content\">
           <div class=\"main-title\">
-            <h3 class=\"title\"><span class=\"font-4\"></span> India</h3>
-            <div class=\"price\"><span>2 Night 7 Days</span></div>
-            <span class=\"button\">2 Night 7 Days</span>
+            <h3 class=\"title\"><span class=\"font-4\"></span> Florence</h3>
+            <div class=\"price\"><span>Millie</span></div>
+            <span class=\"button\">Millie</span>
           </div>
         </div>
       </div>
@@ -161,15 +161,15 @@ class __TwigTemplate_a6a7d6ed7a1eebd36d27e7763bb450972e92fc272a5d4dff7c209801261
         echo "\" data-at2x=\"pic/slider-info-2@2x.jpg\" alt=\"\">
           <div class=\"info-item-text\">
             <div class=\"info-price font-4\"><span></span></div>
-            <div class=\"info-temp font-4\"><span>local temperature</span> 31° / 87.8°</div>
-            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <div class=\"info-temp font-4\"><span>Conrad-Beauty</span> Lauren-Conrad</div>
+            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
         <div class=\"info-item-content\">
           <div class=\"main-title\">
-            <h3 class=\"title\"><span class=\"font-4\"></span> Singapore</h3>
-            <div class=\"price\"><span>2 Night 7 Days</span></div>
-            <span class=\"button\">2 Night 7 Days</span>
+            <h3 class=\"title\"><span class=\"font-4\"></span> Conrad-Beauty</h3>
+            <div class=\"price\"><span>Lauren-Conrad</span></div>
+            <span class=\"button\">Lauren-Conrad</span>
           </div>
         </div>
       </div>
@@ -178,7 +178,7 @@ class __TwigTemplate_a6a7d6ed7a1eebd36d27e7763bb450972e92fc272a5d4dff7c209801261
              .slider-info-wrap{position:relative;z-index:20;width:100%;}
 .slider-info-wrap .slider-info-content .slider-info-item{float:left;width:25%;height:60px;position:relative;z-index:1;}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media{position:absolute;z-index:1;bottom:0;height:60px;width:100%;overflow:hidden;-webkit-transition:all 0.75s;-moz-transition:all 0.75s;-o-transition:all 0.75s;transition:all 0.75s;}
-.slider-info-wrap .slider-info-content .slider-info-item .info-item-media:before{content:'';position:absolute;z-index:2;width:100%;height:100%;top:0;left:0;background:rgba(241, 206, 90, 0.5);}
+.slider-info-wrap .slider-info-content .slider-info-item .info-item-media:before{content:'';position:absolute;z-index:2;width:100%;height:100%;top:0;left:0;background:rgba(235, 174, 114, 0.5);}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media img{position:absolute;z-index:1;bottom:0;top:0;width:100%;}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media .info-item-text{position:absolute;z-index:2;top:0;width:100%;padding:10px 20px;line-height:1;color:#ffffff;opacity:0;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;-o-transition:all 0.5s;transition:all 0.5s;}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media .info-item-text .info-price, .slider-info-wrap .slider-info-content .slider-info-item .info-item-media .info-item-text .info-temp{font-size:22px;display:inline-block;width:49%;-webkit-transform:translateY(40%);-moz-transform:translateY(40%);-ms-transform:translateY(40%);-o-transform:translateY(40%);transform:translateY(40%);-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s;transition:all 0.35s;}
@@ -648,27 +648,27 @@ const toggleItem = (item) =>{
 {% block title %}Accuiel{% endblock %}
 
 {% block body %}
-<main>
+<main style=\"margin-top:80px;\">
  
 <img  src=\"{{ asset('css/slide/Rare-Beauty-by-Selena-Gomes.jpg') }}\" alt=\"image\" style=\"height: 500px;width: 100%;\">
-           
+         
        
 <div class=\"slider-info-wrap clearfix pdlr0\">
   <div class=\"slider-info-content\">
      
       <div class=\"slider-info-item\">
-        <div class=\"info-item-media\"><img src=\"{{ asset('css/slide/Honest-Beauty-by-Jessica-Alba.jpg') }}\" data-at2x=\"pic/slider-info-3@2x.jpg\" alt=\"\">
+        <div class=\"info-item-media\"><img src=\"{{ asset('css/slide/Honest-Beauty-by-Jessica-Alba.jpg') }}\" data-at2x=\"pic/slider-info-3@2x.jpg\"   alt=\"\">
           <div class=\"info-item-text\">
             <div class=\"info-price font-4\"><span></span></div>
-            <div class=\"info-temp font-4\"><span>local temperature</span> 41° / 105.8°</div>
-            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <div class=\"info-temp font-4\"><span>Honest-Beauty</span> by-Jessica-Alba</div>
+            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
         <div class=\"info-item-content\">
           <div class=\"main-title\">
-            <h3 class=\"title\"><span class=\"font-4\"></span>Location</h3>
-            <div class=\"price\"><span>2 Night 7 Days</span></div>
-            <span class=\"button\">2 Night 7 Days</span>
+            <h3 class=\"title\"><span class=\"font-4\"></span>Honest-Beauty</h3>
+            <div class=\"price\"><span>Jessica-Alba</span></div>
+            <span class=\"button\">Jessica-Alba</span>
           </div>
         </div>
       </div>
@@ -677,15 +677,15 @@ const toggleItem = (item) =>{
         <div class=\"info-item-media\"><img src=\"{{ asset('css/slide/Fenty-Beauty-by-Fenty-1536x846.png') }}\" data-at2x=\"pic/slider-info-2@2x.jpg\" alt=\"\">
           <div class=\"info-item-text\">
             <div class=\"info-price font-4\"><span></span></div>
-            <div class=\"info-temp font-4\"><span>local temperature</span> 31° / 87.8°</div>
-            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <div class=\"info-temp font-4\"><span>Fenty-Beauty</span> Fenty</div>
+            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>
         </div>
         <div class=\"info-item-content\">
           <div class=\"main-title\">
-            <h3 class=\"title\"><span class=\"font-4\"></span> London</h3>
-            <div class=\"price\"><span>2 Night 7 Days</span></div>
-            <span class=\"button\">2 Night 7 Days</span>
+            <h3 class=\"title\"><span class=\"font-4\"></span>Fenty-Beauty</h3>
+            <div class=\"price\"><span>Fenty</span></div>
+            <span class=\"button\">Fenty</span>
           </div>
         </div>
       </div>
@@ -693,15 +693,15 @@ const toggleItem = (item) =>{
         <div class=\"info-item-media\"><img src=\"{{ asset('css/slide/Florence-By-Mills-by-Millie-Bobby-Brown-1536x1025.jpg') }}\" data-at2x=\"pic/slider-info-2@2x.jpg\" alt=\"\">
           <div class=\"info-item-text\">
             <div class=\"info-price font-4\"><span></span></div>
-            <div class=\"info-temp font-4\"><span>local temperature</span> 31° / 87.8°</div>
-            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <div class=\"info-temp font-4\"><span>Florence</span> Millie</div>
+            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
         <div class=\"info-item-content\">
           <div class=\"main-title\">
-            <h3 class=\"title\"><span class=\"font-4\"></span> India</h3>
-            <div class=\"price\"><span>2 Night 7 Days</span></div>
-            <span class=\"button\">2 Night 7 Days</span>
+            <h3 class=\"title\"><span class=\"font-4\"></span> Florence</h3>
+            <div class=\"price\"><span>Millie</span></div>
+            <span class=\"button\">Millie</span>
           </div>
         </div>
       </div>
@@ -709,15 +709,15 @@ const toggleItem = (item) =>{
         <div class=\"info-item-media\"><img src=\"{{ asset('css/slide/Lauren-Conrad-Beauty-by-Lauren-Conrad-1536x1024.jpg') }}\" data-at2x=\"pic/slider-info-2@2x.jpg\" alt=\"\">
           <div class=\"info-item-text\">
             <div class=\"info-price font-4\"><span></span></div>
-            <div class=\"info-temp font-4\"><span>local temperature</span> 31° / 87.8°</div>
-            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <div class=\"info-temp font-4\"><span>Conrad-Beauty</span> Lauren-Conrad</div>
+            <p class=\"info-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
         <div class=\"info-item-content\">
           <div class=\"main-title\">
-            <h3 class=\"title\"><span class=\"font-4\"></span> Singapore</h3>
-            <div class=\"price\"><span>2 Night 7 Days</span></div>
-            <span class=\"button\">2 Night 7 Days</span>
+            <h3 class=\"title\"><span class=\"font-4\"></span> Conrad-Beauty</h3>
+            <div class=\"price\"><span>Lauren-Conrad</span></div>
+            <span class=\"button\">Lauren-Conrad</span>
           </div>
         </div>
       </div>
@@ -726,7 +726,7 @@ const toggleItem = (item) =>{
              .slider-info-wrap{position:relative;z-index:20;width:100%;}
 .slider-info-wrap .slider-info-content .slider-info-item{float:left;width:25%;height:60px;position:relative;z-index:1;}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media{position:absolute;z-index:1;bottom:0;height:60px;width:100%;overflow:hidden;-webkit-transition:all 0.75s;-moz-transition:all 0.75s;-o-transition:all 0.75s;transition:all 0.75s;}
-.slider-info-wrap .slider-info-content .slider-info-item .info-item-media:before{content:'';position:absolute;z-index:2;width:100%;height:100%;top:0;left:0;background:rgba(241, 206, 90, 0.5);}
+.slider-info-wrap .slider-info-content .slider-info-item .info-item-media:before{content:'';position:absolute;z-index:2;width:100%;height:100%;top:0;left:0;background:rgba(235, 174, 114, 0.5);}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media img{position:absolute;z-index:1;bottom:0;top:0;width:100%;}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media .info-item-text{position:absolute;z-index:2;top:0;width:100%;padding:10px 20px;line-height:1;color:#ffffff;opacity:0;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;-o-transition:all 0.5s;transition:all 0.5s;}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media .info-item-text .info-price, .slider-info-wrap .slider-info-content .slider-info-item .info-item-media .info-item-text .info-temp{font-size:22px;display:inline-block;width:49%;-webkit-transform:translateY(40%);-moz-transform:translateY(40%);-ms-transform:translateY(40%);-o-transform:translateY(40%);transform:translateY(40%);-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s;transition:all 0.35s;}

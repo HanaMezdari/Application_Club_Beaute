@@ -18,6 +18,7 @@ return [
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], []],
     'centresdebeaute' => [[], ['_controller' => 'App\\Controller\\CentresdebeauteController::index'], [], [['text', '/centresdebeaute']], [], []],
     'centresdebeaute_show' => [['id'], ['_controller' => 'App\\Controller\\CentresdebeauteController::show'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/centresdebeaute']], [], []],
+    'contact' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], []],
     'Fleur' => [[], ['_controller' => 'App\\Controller\\Fleurdelys\\FleurdelysController::index'], [], [['text', '/Fleur']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'Lilia' => [[], ['_controller' => 'App\\Controller\\Liliabenaziza\\LiliabenazizaController::index'], [], [['text', '/Lilia']], [], []],
@@ -25,7 +26,7 @@ return [
     'register' => [[], ['_controller' => 'App\\Controller\\RegisterController::index'], [], [['text', '/inscription']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/connexion']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/deconnexion']], [], []],
+    'servicelilia' => [[], ['_controller' => 'App\\Controller\\ServiceliliaController::index'], [], [['text', '/servicelilia']], [], []],
     'services' => [[], ['_controller' => 'App\\Controller\\ServicesController::index'], [], [['text', '/services']], [], []],
-    'sousservice' => [[], ['_controller' => 'App\\Controller\\SousserviceController::index'], [], [['text', '/sousservice']], [], []],
     'Violette' => [[], ['_controller' => 'App\\Controller\\Violette\\VioletteController::index'], [], [['text', '/Violette']], [], []],
 ];

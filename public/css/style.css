@@ -1,26 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700;800;900&display=swap');
-*{
-    font-family: 'Inter', sans-serif;
-    
-}
+
+  .bg_move {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: repeating-radial-gradient(circle at 100% 100%, rgba(255, 190, 11, 0.5) 4%, rgba(255, 190, 11, 0.5) 8%, rgba(251, 86, 7, 0.5) 8%, rgba(251, 86, 7, 0.5) 12%, rgba(255, 0, 110, 0.5) 12%, rgba(255, 0, 110, 0.5) 16%, rgba(131, 56, 236, 0.5) 16%, rgba(131, 56, 236, 0.8) 20%, rgba(58, 134, 255, 0.5) 20%, rgba(58, 134, 255, 0.5) 24%), repeating-radial-gradient(circle at 0% 100%, rgba(255, 190, 11, 0.7) 4%, rgba(255, 190, 11, 0.9) 8%, rgba(251, 86, 7, 0.7) 8%, rgba(251, 86, 7, 0.9) 12%, rgba(255, 0, 110, 0.7) 12%, rgba(255, 0, 110, 0.9) 16%, rgba(131, 56, 236, 0.8) 16%, rgba(131, 56, 236, 0.8) 20%, rgba(58, 134, 255, 0.8) 20%, rgba(58, 134, 255, 0.8) 24%);
+    background-size: 250px 250px;
+    background-position: 0 0;
+    -webkit-animation: stripes 3s linear infinite;
+            animation: stripes 3s linear infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .bg_move h1 {
+    font-size: 5rem;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  
+  
+  @media only screen and (max-width: 900px) {
+    html {
+      font-size: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    html {
+      font-size: 6px;
+    }
+  }
+  
+  @-webkit-keyframes stripes {
+    100% {
+      background-position: 250px 0, 250px 0, 100px 0;
+    }
+  }
+  
+  @keyframes stripes {
+    100% {
+      background-position: 250px 0, 250px 0, 100px 0;
+    }
+  }
+
 .navbar{
-    padding: 20px;
-    
+padding: 20px;
+background-color: #fdfbfb;
+width: 100vw;
+height:80px;
+box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+padding: 0px 70px;
+
+
 }
 .nav-link{
-   color: rgb(14, 13, 13) !important;
-   font-size: 15px;
+color: rgb(14, 13, 13) !important;
+font-size: 15px;
+
 }
 .nav-link:hover{
-    color: #e9972c !important;
-    background-color: #e5e5e5;
- }
- #maCarte{
-     height: 800px;
-     
- }
- 
+color: #e9972c !important;
 
+}
+
+.navbar-links {
+list-style-type: none;
+display: flex;
+}
+
+.navbar-links li a {
+display: block;
+text-decoration: none;
+color: rgb(8, 6, 6);
+padding: 7px 20px;
+transition: 0.4s all;
+
+}
+
+.navbar-links li.navbar-dropdown {
+position: relative;
+}
+
+.navbar-links li.navbar-dropdown:hover .dropdown {
+visibility: visible;
+opacity: 1;
+transform: translateY(0px);
+}
+
+.navbar-links li.navbar-dropdown .dropdown {
+visibility: hidden;
+opacity: 0;
+position: absolute;
+top: 100%;
+transform: translateY(50px);
+left: 0;
+width: 200px;
+background-color: #fff;
+box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+border-bottom-left-radius: 3px;
+border-bottom-right-radius: 3px;
+z-index: 111;
+transition: 0.4s all;
+
+}
+
+.navbar-links li.navbar-dropdown .dropdown a {
+
+padding-bottom: 10px;
+font-weight: 400;
+font-size: large;
+font-size: 15px;
+}
+
+.navbar-dropdown .dropdown a:hover {
+padding-left: 30px;
+}
+
+.navbar-links li a:hover {
+color:  #e9972c;
+}
+
+
+ #maCarte{
+     height: 987px;
+     border-radius: 10px;
+     border: 2px solid rgb(14, 13, 13);
+     margin:41px 0 0 10px;
+     box-shadow: 0px 10px 15px 3px rgba(0, 0, 0, 0.3);
+ }
+
+   
  a,
  a:hover,
  a:focus,

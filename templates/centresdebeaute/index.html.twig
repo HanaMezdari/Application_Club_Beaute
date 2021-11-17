@@ -5,7 +5,7 @@
 {% block body %}
  <header>
        
-       <div class="content-width" style="margin-top:100px;">
+       <div class="content-width" style="margin-top:80px;">
   <div class="slideshow">
     <!-- Slideshow Items -->
     <div class="slideshow-items">
@@ -22,6 +22,21 @@
           <span class="vertical-part">
             <a href="{{ path('services') }}"style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
           </span>  
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-image-container">
+          <img class="item-image" src="{{ asset('css/slide/s4.jpg') }}" alt="image" style="height: 500px;width: 100%;" />
+        </div>
+        <!-- Staggered Header Elements -->
+        <div class="item-header">
+          <span class="vertical-part"><b>Bienvenu : <em style="color:#8c0c3c;">Mahassen</em></b></span>
+        </div>
+        <!-- Staggered Description Elements -->
+        <div class="item-description">
+          <span class="vertical-part">
+             <a href="{{ path('services') }}" style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
+          </span>
         </div>
       </div>
       <div class="item">
@@ -60,6 +75,7 @@
         <li class="control" data-index="0"></li>
         <li class="control" data-index="1"></li>
         <li class="control" data-index="2"></li>
+        <li class="control" data-index="3"></li>
       </ul>
     </div>
   </div>
@@ -256,7 +272,7 @@ height:50vh;
 .controls ul {
   list-style: none;
   position:absolute;
-  top:-50vh;
+  
 }
 }
 
@@ -340,7 +356,7 @@ slider.init();
   <div class="container-fluid" >
      <div class="row">
         <div class="column col-lg-4 col-md-8 col-sm-12" style="float:right;" >
- <div id="maCarte" style="border-radius: 5px;border: 20px solid #fff;margin-top:25px;"></div>
+ <div id="maCarte" ></div>
    </div>
 
  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -385,8 +401,8 @@ crossorigin=""></script>
         {% for item in centresdebeaute %}
        <div class="content" style="margin-top:35px;" >
            <br>
-           <h3>{{ item.nom }}</h3><br>
-           <h6>{{ item.description }}</h6>
+           <h3 style="color:rgb(14, 13, 13);">{{ item.nom }}</h3><br>
+           <h6 style="color:rgb(14, 13, 13);">{{ item.description }}</h6>
        </div>
        {% endfor %}
     </div>
@@ -395,10 +411,10 @@ crossorigin=""></script>
         {% for item in centresdebeaute %}  
        <div class="detail"  >
             <br><br><br><br>
-            <h6>Adresse : {{ item.adresse }}</h6><br>
-            <h6>Email : {{ item.email }}</h6><br>
-             <a href="{{ path('services') }}" class="btn btn-secondary ">Prendre RDV </a> 
-              <a href="{{ path('centresdebeaute_show', {'id':item.id } ) }}" class="btn btn-secondary "style="float:right;">Commenter ! </a> 
+            <h6 style="color:rgb(14, 13, 13);">Adresse : {{ item.adresse }}</h6><br>
+            <h6 style="color:rgb(14, 13, 13);">Email : {{ item.email }}</h6><br>
+             <a href="{{ path('services') }}" class="btn btn-secondary " style="box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.3);">Prendre RDV </a> 
+              <a href="{{ path('centresdebeaute_show', {'id':item.id } ) }}" class="btn btn-secondary "style="float:right;box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.3);">Commenter ! </a> 
        </div>
         {% endfor %}
     </div>
@@ -406,7 +422,9 @@ crossorigin=""></script>
   </div> 
  </div>
 </section>
+
 <style>
+
 .cardcontainer
 {
   max-width: 1300px;
@@ -429,6 +447,7 @@ crossorigin=""></script>
     cursor: pointer;
     transition: all 0.5s ease;
     backface-visibility: hidden;
+    box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
 }
 .card:hover {
     transform: scale(0.9);

@@ -42,6 +42,11 @@ class Servicelilia
      */
     private $services;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $promo;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class Servicelilia
     public function setServices(?Services $services): self
     {
         $this->services = $services;
+
+        return $this;
+    }
+
+    public function getPromo(): ?bool
+    {
+        return $this->promo;
+    }
+
+    public function setPromo(bool $promo): self
+    {
+        $this->promo = $promo;
 
         return $this;
     }
