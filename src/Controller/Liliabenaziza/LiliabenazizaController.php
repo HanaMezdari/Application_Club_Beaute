@@ -17,7 +17,7 @@ class LiliabenazizaController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        return $this->render('servicelilia/interface.html.twig');
     }
 
     public function configureDashboard(): Dashboard
@@ -29,7 +29,7 @@ class LiliabenazizaController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('servicelilia', 'fas fa-list', Servicelilia::class);
-        yield MenuItem::linkToCrud('services', 'fas fa-list', Services::class);
+        yield MenuItem::linkToCrud('servicelilia', 'fas fa-user-tag', Servicelilia::class);
+        yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
     }
 }

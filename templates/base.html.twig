@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Music8a{% endblock %}</title>
+        <title>{% block title %}CLUB BEAUTE{% endblock %}</title>
          <meta http-equiv="X-UA-Compatible" content="IE=edge">
          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, ">
          <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -11,7 +11,9 @@
          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
          crossorigin=""/>
-
+        
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.0/main.min.css" 
+         integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
     </head>
     <body>
      
@@ -19,68 +21,47 @@
     
         <div class="bg_move" style="margin-top: 30px;" >
             
-        <h1 >CLUB BEAUTE</h1>
+        <h7 >CLUB BEAUTE</h7>
     </div>
     <header >
    <nav class="navbar navbar-expand-lg navbar-white  " >
         
   <a class="navbar-brand text-dark"  href="{{ path('home') }}"> <img  src="{{ asset('css/logo/logo.png') }}" alt="image" style="height: 50px;width:80px;margin-left:10px;border-radius: 50%;"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#micon" >
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="micon">
     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
       <li class="nav-item " >
         <a class="nav-link" href="{{ path('home') }}">Accuiel</a>
       </li>
+      <li class="nav-item">
+         <a class="nav-link" href="{{path('centresdebeaute')}}">Centres de beaute </a> 
+     </li>                                                         
     
       <ul class="navbar-links">
                     <li class="navbar-dropdown">
-                        <a href="{{path('centresdebeaute')}}">
-                            Centres de beaute                          
+                        <a href="#">
+                            Nos services                          
                         </a>
                         <div class="dropdown">
                             <a href="{{path('servicelilia')}}">
                                 Lilia Ben Aziza                        
                                                           
                             </a>
-                            <a href="#">
+                            <a href="{{path('serviceviolette')}}">
                                Violette
                                                              
                             </a>
-                            <a href="#">
+                            <a href="{{path('servicefleurdelys')}}">
                                 Fleur De Lys
                                                              
                             </a>
-                            <a href="#">
+                            <a href="{{path('servicemahassen')}}">
                                 Mahassen
-                                                             
-                            </a>
-
-                        </div>
-                    </li>
-       </ul>
-      <ul class="navbar-links">
-                    <li class="navbar-dropdown">
-                        <a href="{{path('services')}}">
-                            Nos services                          
-                        </a>
-                        <div class="dropdown">
-                            <a href="#">
-                                Coiffeur                        
-                                                          
-                            </a>
-                            <a href="#">
-                                Maquillage
-                                                             
-                            </a>
-                            <a href="#">
-                                 Esthétique & Soins
-                                                             
-                            </a>
-                            <a href="#">
-                                Hammam & SPA
                                                              
                             </a>
 
@@ -210,33 +191,15 @@
             </div>
         </div>
     
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row clearfix">
-                    
-                    <div class="column col-lg-6 col-md-12 col-sm-12">
-                        <div class="copyright"><span class="theme_color">Ak Web Designer</span> &copy; 2022 All Right Reserved</div>
-                    </div>
-                    <div class="column col-lg-6 col-md-12 col-sm-12">
-                        <ul class="footer-nav">
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    
     </footer>
 
+       <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.0/main.min.js"
+ integrity="sha256-DBxkGZLxKsLKhz054qUpBqtotG00r9AELGpSigJujLg=" crossorigin="anonymous"></script>
        
-
-
       <script src="{{ asset('js/index.js')}}"></script>
       <script src="{{ asset('js/bootstrap.bundle.min.js')}}"></script>
       <script src="{{ asset('js/jquery-3.5.1.slim.min.js')}}"></script>
       <script src="{{ asset('js/popper.min.js')}}"></script>  
+      
     </body>
 </html>

@@ -23,7 +23,7 @@
     color: transparent;
   }
   
-  .bg_move h1 {
+  .bg_move h7 {
     font-size: 5rem;
     font-family: 'Playfair Display', serif;
   }
@@ -112,7 +112,10 @@ border-bottom-left-radius: 3px;
 border-bottom-right-radius: 3px;
 z-index: 111;
 transition: 0.4s all;
-
+text-transform: uppercase
+}
+.icon-bar{
+  background: darkorange;
 }
 
 .navbar-links li.navbar-dropdown .dropdown a {
@@ -185,7 +188,7 @@ color:  #e9972c;
  .main-footer{
  position:relative;
  padding:110px 0px 0px;
- background-color: #26282b;
+ background-color: #111110;
  background-repeat:repeat-x;
  background-position:right bottom;
  }
@@ -204,7 +207,7 @@ color:  #e9972c;
  position:relative;
  font-size:22px;
  font-weight:600;
- color:#fafafa;
+ color:#ffffff;
  line-height:1.2em;
  margin-bottom:30px;
  margin-top:25px;
@@ -307,7 +310,7 @@ color:  #e9972c;
  
  .main-footer .info-widget .social-links li a{
  position:relative;
- color: #ffffff;
+ color: #8a8d91;
  width:50px;
  height:50px;
  line-height:50px;

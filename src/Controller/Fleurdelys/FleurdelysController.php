@@ -17,7 +17,7 @@ class FleurdelysController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        return $this->render('servicefleurdelys/interface.html.twig');
     }
 
     public function configureDashboard(): Dashboard
@@ -29,7 +29,7 @@ class FleurdelysController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('servicefleurdelys', 'fas fa-list', Servicefleurdelys::class);
-        yield MenuItem::linkToCrud('services', 'fas fa-list', Services::class);
+        yield MenuItem::linkToCrud('servicefleurdelys', 'fas fa-user-tag ', Servicefleurdelys::class);
+        yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
     }
 }

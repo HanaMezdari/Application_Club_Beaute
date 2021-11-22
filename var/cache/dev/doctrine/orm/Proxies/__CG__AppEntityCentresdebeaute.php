@@ -66,10 +66,10 @@ class Centresdebeaute extends \App\Entity\Centresdebeaute implements \Doctrine\O
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'Adresse', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'num_tel', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'mot_de_passe', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'lat', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'lon', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'commentaires'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'Adresse', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'num_tel', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'mot_de_passe', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'lat', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'lon', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'url', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'image2'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'Adresse', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'num_tel', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'mot_de_passe', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'lat', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'lon', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'commentaires'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'Adresse', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'num_tel', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'mot_de_passe', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'lat', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'lon', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'url', '' . "\0" . 'App\\Entity\\Centresdebeaute' . "\0" . 'image2'];
     }
 
     /**
@@ -431,6 +431,50 @@ class Centresdebeaute extends \App\Entity\Centresdebeaute implements \Doctrine\O
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCommentaire', [$commentaire]);
 
         return parent::removeCommentaire($commentaire);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUrl(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUrl', []);
+
+        return parent::getUrl();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUrl(string $url): \App\Entity\Centresdebeaute
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUrl', [$url]);
+
+        return parent::setUrl($url);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImage2(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImage2', []);
+
+        return parent::getImage2();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImage2(string $image2): \App\Entity\Centresdebeaute
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImage2', [$image2]);
+
+        return parent::setImage2($image2);
     }
 
 }

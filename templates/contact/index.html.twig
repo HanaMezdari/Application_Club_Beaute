@@ -3,6 +3,105 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
+<main>
+    <div class="holder">
+  <form>
+    <h1> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Entrer en contact! </h1> 
+    <div class="input-group">
+      <div class="input-group-addon"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> </div>
+      <input type="text" class="form-control input-lg" placeholder="Votre nom">
+    </div>
 
+    <div class="input-group">
+      <div class="input-group-addon"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> </div>
+      <input type="text" class="form-control input-lg" placeholder="Votre email">
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-addon"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> </div>
+      <input type="text" class="form-control input-lg" placeholder="Sujet">
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-addon"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </div>
+      <textarea  class="form-control input-lg" rows="6">Votre commentaire</textarea>
+    </div>
+
+    <a href="#">Envoyer</a>
+  </form>
+  
+</div>
+<main>
+<style>
+   body{
+    background: url('https://hitchedinkc.files.wordpress.com/2013/12/1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1{
+    color: #fff;
+    font-size: 2em;
+}
+
+form>a{
+    text-align: center;
+    display: block;
+    margin: 1em auto;
+    padding: 1em 0em;
+    width: 90%;
+    color: #fff;
+    text-decoration: none;
+    background: #cebba3;
+    box-shadow: 0px 8px #eb982b;
+    text-transform: uppercase;
+    transition: 0.5s all;
+    font-size: 1.2em;
+}
+
+form>:hover{
+    text-decoration: none;
+    background: #eb982b;
+    box-shadow: 0px 8px #cebba3;
+    color: #fff;
+}
+
+
+.input-group {
+    margin-bottom: 0.5em;
+}
+
+.holder {
+    width: 80%;
+    margin: 10em auto;  
+    background: rgba(52, 73, 94, 0.8);
+    padding: 4em 0em;
+    border-radius: 1em;
+}
+
+
+/*blog article*/
+
+.aboutlink{
+  color: #fff;
+  font-size: 0.8em;
+  display: block;
+  text-align: center;
+  transition: 0.8s all;
+}
+
+.aboutlink:hover{
+  color: #eb982b;
+  text-decoration: none;
+}
+
+</style>
 
 {% endblock %}

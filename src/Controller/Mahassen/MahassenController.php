@@ -17,7 +17,7 @@ class MahassenController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        return $this->render('servicemahassen/dashboard.html.twig');
     }
 
     public function configureDashboard(): Dashboard
@@ -30,6 +30,6 @@ class MahassenController extends AbstractDashboardController
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('servicemahassen', 'fas fa-list', Servicemahassen::class);
-        yield MenuItem::linkToCrud('services', 'fas fa-list', Services::class);
+        yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
     }
 }

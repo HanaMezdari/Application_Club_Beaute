@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous nos services Fleur De Lys{% endblock %}
+
+{% block body %}
+<main>
+      <!-- Full-width images with number and caption text -->
+<div class="carousel-container">
+  <div class="mySlides animate">
+    <img src="https://wallpapershome.com/images/pages/pic_h/16239.jpg" alt="slide" />
+    
+    <div class="text">Lorem ipsum dolor sit amet consectetur</div>
+  </div>
+
+  <div class="mySlides animate">
+    <img src="https://wallpapershome.com/images/pages/pic_h/23525.jpg" alt="slide" />
+    <div class="number">2 / 5</div>
+    <div class="text">amet consectetur</div>
+  </div>
+
+  <div class="mySlides animate">
+    <img src="https://wallpapershome.com/images/pages/pic_h/23277.jpg" alt="slide" />
+   
+    <div class="text">Lorem ipsum dolor sit</div>
+  </div>
+
+  <div class="mySlides animate">
+    <img src="https://wallpapershome.com/images/pages/pic_h/12596.jpg" alt="slide" />
+   
+    <div class="text">Doloribus quo alias reprehenderit</div>
+  </div>
+
+  <div class="mySlides animate">
+    <img src="https://wallpapershome.com/images/pages/pic_h/23419.jpg" alt="slide" />
+   
+    <div class="text">Reprehenderit</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="prevSlide()">&#10094;</a>
+  <a class="next" onclick="nextSlide()">&#10095;</a>
+
+  <!-- The dots/circles -->
+  <div class="dots-container">
+    <span class="dots" onclick="currentSlide(1)"></span>
+    <span class="dots" onclick="currentSlide(2)"></span>
+    <span class="dots" onclick="currentSlide(3)"></span>
+    <span class="dots" onclick="currentSlide(4)"></span>
+    <span class="dots" onclick="currentSlide(5)"></span>
+  </div>
+</div>
+<style>
+
+
+</style>
+</main>     
+    <div class="container-fluid"style="margin-top:100px;">
+         <div class="row">
+             <div class="col-md-3">
+              <div class="filter" style="display:block;position:sticky;top:20px;">
+               {{ form_start(form, {attr: {class: 'filter'}}) }}
+                  {{ form_row(form.q) }}
+
+                  <h4>Services</h4>
+                  {{ form_row(form.services) }}
+
+                  <h4>Prix</h4>
+                  <div class="row">
+                     <div class="col-md-6">
+                        {{ form_row(form.min) }}
+                     </div>
+                     <div class="col-md-6">
+                        {{ form_row(form.max) }}
+                     </div>
+                  </div>
+                  <h4>Promotion</h4>
+                  {{ form_row(form.promo) }}
+
+                  <button type="submit" class="btn btn-primary w-100">Filtrer </button>
+
+
+               {{ form_end(form) }}
+            </div>
+             </div>
+             <div class="col-md-9">
+             
+                <div class="grid">
+                {% for item in servicefleurdelys %}
+                    <div class="card">
+                        <h5 class="card-title">{{ item.nom }}</h5>
+                        <div class="card-title text-primary" style="font-weight: bold;font-size:1.5rem;">
+                         {{ item.prix | number_format(0,',',' ') }} D
+                          {% if item.promo %}
+
+                         <div class="text text-warning">Promo !</div>
+                          {% endif %}
+                        </div>
+                        <div>
+                  
+                        <em class="text-muted text-primary text-italic">#{{ item.services }}</em>
+              
+                       </div>
+                    </div>
+                {% endfor %}
+                
+                </div>
+                <div class>
+                    {{ knp_pagination_render(servicefleurdelys) }}
+                </div>
+             </div>
+         
+         </div>
+          
+    
+    </div>
+{% endblock %}

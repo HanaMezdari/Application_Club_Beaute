@@ -69,6 +69,16 @@ class Centresdebeaute
      */
     private $commentaires;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $url;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image2;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
@@ -216,6 +226,30 @@ class Centresdebeaute
                 $commentaire->setCentresdebeaute(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): self
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    public function getImage2(): ?string
+    {
+        return $this->image2;
+    }
+
+    public function setImage2(string $image2): self
+    {
+        $this->image2 = $image2;
 
         return $this;
     }

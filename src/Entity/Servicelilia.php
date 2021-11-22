@@ -47,6 +47,11 @@ class Servicelilia
      */
     private $promo;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Centresdebeaute::class)
+     */
+    private $centresdebeaute;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Servicelilia
     public function setPromo(bool $promo): self
     {
         $this->promo = $promo;
+
+        return $this;
+    }
+
+    public function getCentresdebeaute(): ?Centresdebeaute
+    {
+        return $this->centresdebeaute;
+    }
+
+    public function setCentresdebeaute(?Centresdebeaute $centresdebeaute): self
+    {
+        $this->centresdebeaute = $centresdebeaute;
 
         return $this;
     }

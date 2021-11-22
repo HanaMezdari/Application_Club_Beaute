@@ -34,8 +34,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('user', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('publicite', 'fas fa-ad', Publicite::class);
         yield MenuItem::linkToCrud('commentaire', 'fas fa-comment', Commentaire::class);
-        yield MenuItem::linkToCrud('centresdebeaute', 'fas fa-comment', Centresdebeaute::class);
-        yield MenuItem::linkToCrud('services', 'fas fa-comment', Services::class);
+        yield MenuItem::linkToCrud('centresdebeaute', 'fas fa-heartbeat', Centresdebeaute::class);
+        yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
         
     }
 }

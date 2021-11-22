@@ -47,7 +47,7 @@ class ServiceliliaRepository extends ServiceEntityRepository
 
           if (!empty($search->q)){
               $query = $query
-                ->andwhere('l.nom LIKE :q')
+                ->andwhere('servicelilia.nom LIKE :q')
                 ->setParameter('q', $search->q);
           }
 
