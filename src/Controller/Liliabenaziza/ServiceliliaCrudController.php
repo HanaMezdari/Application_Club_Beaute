@@ -5,7 +5,7 @@ namespace App\Controller\Liliabenaziza;
 use App\Entity\Servicelilia;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -24,9 +24,12 @@ class ServiceliliaCrudController extends AbstractCrudController
             
             AssociationField::new('services'),
             TextField::new('nom'),
-            MoneyField::new('prix')->setCurrency('EUR'),
+            NumberField::new('prix'),
             BooleanField::new('promo'),
-           
+            ImageField::new('image')
+            ->setBasePath('servicelilia/')
+            ->setUploadDir('public/servicelilia')
+            ->setUploadedFileNamePattern('[randomhash].[extension]'),
         ];
     }
    

@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerE4VlfOE/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerYOjSpl2/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -40,6 +40,7 @@ $classes[] = 'App\Controller\Admin\CentresdebeauteCrudController';
 $classes[] = 'App\Controller\Admin\CommentaireCrudController';
 $classes[] = 'App\Controller\Admin\DashboardController';
 $classes[] = 'App\Controller\Admin\PubliciteCrudController';
+$classes[] = 'App\Controller\Admin\ReservationCrudController';
 $classes[] = 'App\Controller\Admin\ServicesCrudController';
 $classes[] = 'App\Controller\Admin\UserCrudController';
 $classes[] = 'App\Controller\ApiController';
@@ -51,6 +52,7 @@ $classes[] = 'App\Controller\Fleurdelys\ServicefleurdelysCrudController';
 $classes[] = 'App\Controller\Fleurdelys\ServicesCrudController';
 $classes[] = 'App\Controller\HomeController';
 $classes[] = 'App\Controller\Liliabenaziza\LiliabenazizaController';
+$classes[] = 'App\Controller\Liliabenaziza\ReservationCrudController';
 $classes[] = 'App\Controller\Liliabenaziza\ServiceliliaCrudController';
 $classes[] = 'App\Controller\Liliabenaziza\ServicesCrudController';
 $classes[] = 'App\Controller\Mahassen\MahassenController';

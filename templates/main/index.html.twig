@@ -16,14 +16,16 @@
         }
         section h1{
             position:absolute;
+            margin-left:20px;
         }
     </style>
 <section>
 <div class="row">
 			<div class="col-sm-12">
 				<div class="header">
-					<img src="http://test.ionelcostel.eu/imgs/girl.jpg" alt="some image" >
+					
 					<h1>Calendrier Lilia Ben Aziza</h1>
+                    <a href="{{ path('reservation') }}" style="position:absolute;margin-left:1280px;" class="btn btn-secondary float-right">Reservation </a>
 					<h2 id="date"></h2>
 				</div>
 			</div>
@@ -31,6 +33,7 @@
 </section>
 <section>
     <div id="calendrier">
+    
     </div>
 </section>
 <script>

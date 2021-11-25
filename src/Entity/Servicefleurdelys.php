@@ -22,10 +22,6 @@ class Servicefleurdelys
      */
     private $nom;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $prix;
 
     /**
      * @ORM\ManyToOne(targetEntity=Fleurdelys::class)
@@ -42,6 +38,11 @@ class Servicefleurdelys
      */
     private $promo;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prix;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -55,18 +56,6 @@ class Servicefleurdelys
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getPrix(): ?float
-    {
-        return $this->prix;
-    }
-
-    public function setPrix(float $prix): self
-    {
-        $this->prix = $prix;
 
         return $this;
     }
@@ -103,6 +92,18 @@ class Servicefleurdelys
     public function setPromo(bool $promo): self
     {
         $this->promo = $promo;
+
+        return $this;
+    }
+
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(int $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

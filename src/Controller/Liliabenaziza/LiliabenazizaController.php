@@ -3,6 +3,7 @@
 namespace App\Controller\Liliabenaziza;
 
 use App\Entity\Services;
+use App\Entity\Reservation;
 use App\Entity\Servicelilia;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,5 +32,6 @@ class LiliabenazizaController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('servicelilia', 'fas fa-user-tag', Servicelilia::class);
         yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
+        yield MenuItem::linkToCrud('reservation', 'fas fa-tags', Reservation::class);
     }
 }

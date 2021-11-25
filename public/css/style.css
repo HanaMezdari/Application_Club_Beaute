@@ -131,7 +131,7 @@ padding-left: 30px;
 }
 
 .navbar-links li a:hover {
-color:  #e9972c;
+color:  #bb8757;
 }
 
 
@@ -188,7 +188,7 @@ color:  #e9972c;
  .main-footer{
  position:relative;
  padding:110px 0px 0px;
- background-color: #111110;
+ background-color: #111011;
  background-repeat:repeat-x;
  background-position:right bottom;
  }
@@ -229,7 +229,7 @@ color:  #e9972c;
  
  .main-footer .about-widget .text p{
  position:relative;
- color:#8a8d91;
+ color:#fdf9fa;
  font-size:15px;
  line-height:1.7em;
  margin-bottom:20px;

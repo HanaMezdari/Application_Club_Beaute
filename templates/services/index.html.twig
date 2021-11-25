@@ -3,7 +3,148 @@
 {% block title %}Services{% endblock %}
 
 {% block body %}
-     <section>
-          
-     </section>
+     
+<header>
+  <h1 style="font-family: 'Times New Roman', Times, serif;">Découvrez Nos Professionnels</h1>
+</header>
+
+<main>
+  <div class="album-art-main-container">
+    {% for item in services %}
+    <a href="https://en.wikipedia.org/wiki/Orchid_(album)" target="_blank">
+      <div class="album-container"><img src="/services/{{ item.image}}" alt="" style="height: 100px;width:100px;" class="album-image"><div class="album-tag"><p>{{ item.nom}}</p></div></div>
+    </a>
+
+    
+    {% endfor %}
+  </div>
+</main>
+<style>
+      
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+.album-art-main-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.album-container {
+  height: auto;
+  width: 100%;
+}
+
+.album-image {
+  height: auto;
+  width: 100%;
+}
+
+.album-tag p {
+  color: white;
+}
+
+@media screen and (min-width: 1000px) {
+  .album-art-main-container {
+    background: transparent;
+    border-radius: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: fit-content;
+    overflow: visible;
+  }
+  .album-container {
+    height: 100px;
+    margin-left: -25px;
+    overflow: visible;
+    position: relative;
+    width: 100px;
+    z-index: 1;
+  }
+  .album-container .album-tag {
+    /*
+    background: linear-gradient(45deg, #3337, #7777, rgba(197,144,68, .5), #7777, #3337);*/
+    background: linear-gradient(45deg, #3338, rgba(197,144,68,0.5), #f1f1f188, rgba(197,144,68, .5), #3338);
+    border-radius: 5px;
+    box-shadow: 0 0 3px 3px #3338;
+    color: #f1f1f1;
+    height: auto;
+    filter: brightness(75%) saturate(110%) contrast(110%);
+    margin-left: -17px;
+    margin-top: 35px;
+    position: relative;
+    text-align: center;
+    text-shadow: 0px 0px 5px rgb(197, 144, 68);
+    text-decoration: none;
+    transform: rotateZ(-3deg);
+    visibility: hidden;
+    width: calc(100% + 50px);
+    z-index: 1;
+  }
+  .album-tag > p {
+    background: black;
+    background-clip: text;
+    display: inline-block;
+    color: #3337;
+    font-size: 24px;
+    padding: 0;
+    padding-top: 5px;
+    margin: 0;
+    width: 100%;
+    -webkit-background-clip: text;
+  }
+  .album-container:hover,
+  .album-container:active {
+    animation: .5s ease-out rotate-out;
+    margin: 25px;
+    overflow: visible;
+    position: relative;
+    transform: rotateZ(-3deg);
+    z-index: 2;
+    width: fit-content;
+  }
+  .album-container:hover .album-tag {
+    visibility: visible;
+  }
+  .album-image {
+    border: 1px solid #f1f1f199;
+    border-radius: 10px;
+    box-shadow: -2px 0px 3px 1px rgb(197, 144, 68);
+    height: auto;
+    position: relative;
+    transform: rotateZ(-3deg);
+    width: 100%;
+    z-index: 1;
+  }
+  .album-image:hover,
+  .album-image:hover {
+    box-shadow: 0 0 16px 8px rgba(197, 144, 68);
+    height: auto;
+    margin: -25px;
+    position: relative;
+    transform: rotateZ(-3deg);
+    width: 250px; /* working state is 250px */
+    z-index: 2;
+  }
+  @keyframes rotate-out {
+    from {transform: rotateZ(0deg) translateY(-100px);}
+    to {transform: rotateZ(-3deg) translateY(0px);} 
+  }
+}
+
+ 
+</style>
 {% endblock %}

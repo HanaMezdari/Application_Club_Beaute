@@ -22,10 +22,7 @@ class Servicelilia
      */
     private $nom;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $prix;
+    
 
     /**
      * @ORM\ManyToOne(targetEntity=Liliabenaziza::class)
@@ -52,6 +49,16 @@ class Servicelilia
      */
     private $centresdebeaute;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prix;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -65,18 +72,6 @@ class Servicelilia
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getPrix(): ?float
-    {
-        return $this->prix;
-    }
-
-    public function setPrix(float $prix): self
-    {
-        $this->prix = $prix;
 
         return $this;
     }
@@ -139,5 +134,32 @@ class Servicelilia
         $this->centresdebeaute = $centresdebeaute;
 
         return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(int $prix): self
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+    public function __toString() {
+        return $this->nom;
     }
 }

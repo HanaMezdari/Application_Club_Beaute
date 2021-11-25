@@ -3,7 +3,8 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-<main>
+<section>
+    
     <div class="holder">
   <form>
     <h1> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Entrer en contact! </h1> 
@@ -31,14 +32,15 @@
   </form>
   
 </div>
-<main>
+</section>
 <style>
-   body{
+   section{
     background: url('https://hitchedinkc.files.wordpress.com/2013/12/1.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+   
 }
 
 form {
@@ -60,7 +62,7 @@ form>a{
     color: #fff;
     text-decoration: none;
     background: #cebba3;
-    box-shadow: 0px 8px #eb982b;
+    box-shadow: 0px 8px #fa87ce;
     text-transform: uppercase;
     transition: 0.5s all;
     font-size: 1.2em;
@@ -68,8 +70,8 @@ form>a{
 
 form>:hover{
     text-decoration: none;
-    background: #eb982b;
-    box-shadow: 0px 8px #cebba3;
+    background: #fa87ce;
+    box-shadow: 0px 8px #fa87ce;
     color: #fff;
 }
 
@@ -81,7 +83,7 @@ form>:hover{
 .holder {
     width: 80%;
     margin: 10em auto;  
-    background: rgba(52, 73, 94, 0.8);
+    background: rgba(0,0,0,0.5);
     padding: 4em 0em;
     border-radius: 1em;
 }
@@ -98,7 +100,7 @@ form>:hover{
 }
 
 .aboutlink:hover{
-  color: #eb982b;
+  color: #fa87ce;
   text-decoration: none;
 }
 

@@ -30,10 +30,7 @@ class ReservationType extends AbstractType
                 'date_widget' => 'single_text'
             ])
             ->add('description')
-            ->add('liliabenaziza', EntityType::class,['class'=>Liliabenaziza::class,
-            'choice_label'=>'nom',
-           'label'=>'Centre De Beauté'
-       ])
+            
             ->add('servicelilia', EntityType::class,['class'=>Servicelilia::class,
             'choice_label'=>'nom',
            'label'=>'service Lilia Ben Aziza'

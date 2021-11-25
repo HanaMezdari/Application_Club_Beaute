@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\Services;
 use App\Entity\Publicite;
 use App\Entity\Commentaire;
+use App\Entity\Reservation;
 use App\Entity\Centresdebeaute;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,6 +37,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('commentaire', 'fas fa-comment', Commentaire::class);
         yield MenuItem::linkToCrud('centresdebeaute', 'fas fa-heartbeat', Centresdebeaute::class);
         yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
+        yield MenuItem::linkToCrud('reservation', 'fas fa-tags', Reservation::class);
         
     }
 }

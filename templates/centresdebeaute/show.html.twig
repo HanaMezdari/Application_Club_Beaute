@@ -3,7 +3,7 @@
 {% block title %}Show{% endblock %}
 {% block body %}
 <section>
- <h1>Réserver en ligne un RDV avec LILIA BEN AZIZA</h1>
+ <h1 style="font-family: 'Times New Roman', Times, serif;">Réserver en ligne un RDV avec LILIA BEN AZIZA</h1>
   <div class="card">
     
     <img src="/centre/{{ centresdebeaute.image2 }}" alt="image">
@@ -11,9 +11,9 @@
       <h2 class="card-title">{{ centresdebeaute.nom}}</h2>
     <p class="card-desc">{{ centresdebeaute.description}}</p>
     <a class="btn btn-light " href="{{ centresdebeaute.url }}" role="button">Band Annonce</a>
-    <a href="{{ path('reservation', {'id':centresdebeaute.id } ) }}" class="btn btn-secondary float-right">Reservation </a>
+    
     </div>
-  </div>
+  </div><a href="{{ path('servicelilia', {'id':centresdebeaute.id } ) }}" class="btn btn-secondary float-right">Choisir ! </a>
 </section>
 </div>
  <section id="commentaires">

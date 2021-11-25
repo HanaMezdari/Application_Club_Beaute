@@ -80,7 +80,7 @@ class ServiceliliaRepository extends ServiceEntityRepository
          return $this->paginator->paginate(
              $query,
              $search->page,
-             10
+             9
             );
     }
 }
