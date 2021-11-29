@@ -35,5 +35,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/home, roles: ROLE_USER }
-        
+        - { path: ^/centresdebeaute_show, roles: ROLE_USER }
+        - { path: ^/Fleur, roles: ROLE_FLEUR }
+        - { path: ^/Lilia, roles: ROLE_LILIA }
+        - { path: ^/Violette, roles: ROLE_VIOLETTE }
+        - { path: ^/Mahassen, roles: ROLE_MAHASSEN }

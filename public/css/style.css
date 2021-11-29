@@ -32,13 +32,13 @@
   
   @media only screen and (max-width: 900px) {
     html {
-      font-size: 10px;
+      font-size: 15;
     }
   }
   
   @media only screen and (max-width: 500px) {
     html {
-      font-size: 6px;
+      font-size: 10px;
     }
   }
   
@@ -66,7 +66,7 @@ padding: 0px 70px;
 }
 .nav-link{
 color: rgb(14, 13, 13) !important;
-font-size: 15px;
+font-size: 20px;
 
 }
 .nav-link:hover{
@@ -85,6 +85,7 @@ text-decoration: none;
 color: rgb(8, 6, 6);
 padding: 7px 20px;
 transition: 0.4s all;
+font-size:20px;
 
 }
 
@@ -112,7 +113,8 @@ border-bottom-left-radius: 3px;
 border-bottom-right-radius: 3px;
 z-index: 111;
 transition: 0.4s all;
-text-transform: uppercase
+text-transform: uppercase;
+
 }
 .icon-bar{
   background: darkorange;
@@ -132,6 +134,7 @@ padding-left: 30px;
 
 .navbar-links li a:hover {
 color:  #bb8757;
+
 }
 
 
@@ -264,7 +267,7 @@ color:  #bb8757;
  
  .main-footer .footer-list li a:hover{
  text-decoration:underline;
- color:#ff6666;
+ color:#e49124;
  }
  
  .main-footer .footer-list li a:before{
@@ -310,7 +313,7 @@ color:  #bb8757;
  
  .main-footer .info-widget .social-links li a{
  position:relative;
- color: #8a8d91;
+ color: #070708;
  width:50px;
  height:50px;
  line-height:50px;
@@ -382,7 +385,7 @@ color:  #bb8757;
  }
  
  .main-footer .footer-bottom .footer-nav li a:hover{
- color:#ff6666;
+ color:#ee7e16;
  text-decoration:underline;
  }
  .drop{

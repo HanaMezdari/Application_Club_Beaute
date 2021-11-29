@@ -5055,9 +5055,37 @@
         <argument>null</argument>
       </call>
       <call method="add">
-        <argument type="service" id=".security.request_matcher.wjxqTvB"/>
+        <argument type="service" id=".security.request_matcher.al0uxY8"/>
         <argument type="collection">
           <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.V8PVmyP"/>
+        <argument type="collection">
+          <argument>ROLE_FLEUR</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.rvrbnta"/>
+        <argument type="collection">
+          <argument>ROLE_LILIA</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.CmRqDPj"/>
+        <argument type="collection">
+          <argument>ROLE_VIOLETTE</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.8vVRfTZ"/>
+        <argument type="collection">
+          <argument>ROLE_MAHASSEN</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -5512,8 +5540,20 @@
     <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/admin</argument>
     </service>
-    <service id=".security.request_matcher.wjxqTvB" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/home</argument>
+    <service id=".security.request_matcher.al0uxY8" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/centresdebeaute_show</argument>
+    </service>
+    <service id=".security.request_matcher.V8PVmyP" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/Fleur</argument>
+    </service>
+    <service id=".security.request_matcher.rvrbnta" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/Lilia</argument>
+    </service>
+    <service id=".security.request_matcher.CmRqDPj" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/Violette</argument>
+    </service>
+    <service id=".security.request_matcher.8vVRfTZ" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/Mahassen</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
