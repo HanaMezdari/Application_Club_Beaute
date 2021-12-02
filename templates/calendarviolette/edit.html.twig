@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Calendarviolette{% endblock %}
+
+{% block body %}
+    <h1>Edit Calendarviolette</h1>
+
+    {{ include('calendarviolette/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('calendarviolette_index') }}">back to list</a>
+
+    {{ include('calendarviolette/_delete_form.html.twig') }}
+{% endblock %}

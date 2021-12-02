@@ -54,7 +54,7 @@
                   <h4>Promotion</h4>
                   {{ form_row(form.promo) }}
 
-                  <button type="submit" class="btn btn-secondary w-100" style="box-shadow: 0 0.25em 0.6em #0005, 0 0.65em 1em #0004;">Filtrer </button>
+                  <button type="submit" class="btn btn-secondary w-100" style="box-shadow: 0 0.25em 0.6em #0005, 0 0.65em 1em #0004;">Choisir! </button>
                   
 
 
@@ -65,20 +65,20 @@
                
                 <div class="grid">
                 {% for item in servicelilia %}
-                    <div class="card">
-                     <a href="{{ path('main') }}" style="position:absolute;margin-top:170px;margin-left:270px;" class="btn btn-secondary float-right">+</a>
+                <a href="{{ path('main') }}" style="text-decoration: none;color:rgb(219, 48, 18)" ><div class="card">
+                     
                         <img src="/servicelilia/{{ item.image }}"  class="card-img-top" alt="image">
-                        <h4 class="card-title">{{ item.nom }}</h4>
-                        <div class="card-title text-primary" style="font-weight: bold;font-size:1.5rem;">
-                           <em class="text-muted text-primary  text-italic">#{{ item.services }}</em>
+                        <h5 class="card-title">{{ item.nom }}</h5>
+                        <div  style="font-weight: bold;font-size:1.5rem;">
+                           <em class="text-muted text-italic">#{{ item.services }}</em>
                          {{ item.prix  }} D
-                          {% if item.promo %}
+                        {% if item.promo %}
 
-                         <div class="text text-danger" style="float:right;margin-left:20px;">Promo !</div>
+                         <div style="float:right;margin-left:20px;">Promo !</div>
                           {% endif %}
                         </div>
                         
-                    </div>
+                    </div></a>
                 {% endfor %}
                 
               </div>
@@ -117,7 +117,7 @@
    flex-direction: column;
    min-width: 15rem;
    max-width: calc(12.5rem + 13vw);
-   background: #fff;
+   background: #fff transparent;
    border-radius: 0.75em;
    overflow: hidden;
    box-shadow: 0 0.25em 0.6em #0005, 0 0.65em 1em #0004;
@@ -126,7 +126,8 @@
  }
  em{
    margin-right: 20px;
-   font-size: 15px;
+   font-size: 10px;
+  
  }
  
  .card::before {

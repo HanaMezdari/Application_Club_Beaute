@@ -91,6 +91,8 @@
     <parameter key="kernel.container_class">srcApp_KernelDevDebugContainer</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="container.dumper.inline_factories">true</parameter>
+    <parameter key="images_directory">/opt/lampp/htdocs/App_Beaute/public/uploads/images</parameter>
+    <parameter key="files_directory">/opt/lampp/htdocs/App_Beaute/public/uploads/files</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -421,18 +423,18 @@
         <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Admin\UserCrudController"/>
       </call>
     </service>
-    <service id="App\Controller\ApiController" class="App\Controller\ApiController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ApiController"/>
-      </call>
-    </service>
     <service id="App\Controller\CalendarController" class="App\Controller\CalendarController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CalendarController"/>
+      </call>
+    </service>
+    <service id="App\Controller\CalendarvioletteController" class="App\Controller\CalendarvioletteController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CalendarvioletteController"/>
       </call>
     </service>
     <service id="App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" public="true" autowire="true" autoconfigure="true">
@@ -545,6 +547,20 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MainController"/>
       </call>
     </service>
+    <service id="App\Controller\MainvioletteController" class="App\Controller\MainvioletteController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MainvioletteController"/>
+      </call>
+    </service>
+    <service id="App\Controller\OffremariageController" class="App\Controller\OffremariageController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\OffremariageController"/>
+      </call>
+    </service>
     <service id="App\Controller\RegisterController" class="App\Controller\RegisterController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -630,6 +646,9 @@
     <service id="App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\CalendarvioletteType" class="App\Form\CalendarvioletteType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -649,7 +668,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\Calendaar2Repository" class="App\Repository\Calendaar2Repository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CalendarvioletteRepository" class="App\Repository\CalendarvioletteRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1148,6 +1175,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\CalendarType</argument>
+        <argument>App\Form\CalendarvioletteType</argument>
         <argument>App\Form\CommentaireType</argument>
         <argument>App\Form\RegisterType</argument>
         <argument>App\Form\ReservationType</argument>
@@ -1493,7 +1521,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.UA9ML_C"/>
+      <argument type="service" id=".service_locator.WPYBS2D"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4496,7 +4524,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.83YHRA5"/>
+      <argument type="service" id=".service_locator._OsjLuu"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6052,12 +6080,12 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CalendarvioletteController" class="App\Controller\CalendarvioletteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CalendarvioletteController" class="App\Controller\CalendarvioletteController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CalendarvioletteController" class="App\Controller\CalendarvioletteController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CentresdebeauteController" class="App\Controller\CentresdebeauteController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6110,6 +6138,12 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainvioletteController" class="App\Controller\MainvioletteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainvioletteController" class="App\Controller\MainvioletteController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MainvioletteController" class="App\Controller\MainvioletteController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\OffremariageController" class="App\Controller\OffremariageController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\OffremariageController" class="App\Controller\OffremariageController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\OffremariageController" class="App\Controller\OffremariageController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6148,6 +6182,8 @@
     <service id=".abstract.instanceof.App\Controller\Violette\VioletteController" class="App\Controller\Violette\VioletteController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CalendarvioletteType" class="App\Form\CalendarvioletteType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CalendarvioletteType" class="App\Form\CalendarvioletteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" abstract="true"/>
@@ -6160,8 +6196,12 @@
     <service id=".abstract.instanceof.App\Form\ServiceliliaType" class="App\Form\ServiceliliaType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Calendaar2Repository" class="App\Repository\Calendaar2Repository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\Calendaar2Repository" class="App\Repository\Calendaar2Repository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CalendarvioletteRepository" class="App\Repository\CalendarvioletteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CalendarvioletteRepository" class="App\Repository\CalendarvioletteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CentresdebeauteRepository" class="App\Repository\CentresdebeauteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CentresdebeauteRepository" class="App\Repository\CentresdebeauteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CommentaireRepository" class="App\Repository\CommentaireRepository" autowire="true" abstract="true"/>
@@ -6613,10 +6653,6 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.RLVVpop.Symfony\Component\Security\Core\User\UserInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.qHE8FJh" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection"/>
-    </service>
     <service id=".service_locator.1lMDBp1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6627,6 +6663,18 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="calendar" type="service_closure" id=".errored..service_locator.NF7cwmN.App\Entity\Calendar"/>
+      </argument>
+    </service>
+    <service id=".service_locator.bqSs3Yx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarvioletteRepository" type="service_closure" id="App\Repository\CalendarvioletteRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.BXyDLJr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarviolette" type="service_closure" id=".errored..service_locator.BXyDLJr.App\Entity\Calendarviolette"/>
       </argument>
     </service>
     <service id=".service_locator.8rpL3Ir" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -6640,6 +6688,12 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="calendar" type="service_closure" id="App\Repository\CalendarRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.GxcIE92" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarviolette" type="service_closure" id="App\Repository\CalendarvioletteRepository"/>
       </argument>
     </service>
     <service id=".service_locator.jmvbEvf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -6678,7 +6732,7 @@
         <argument key="repository" type="service_closure" id="App\Repository\ServicevioletteRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.gIWBa6K" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.VEh61RN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CentresdebeauteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
@@ -6812,6 +6866,10 @@
         <argument key="App\Controller\CalendarController::edit" type="service_closure" id=".service_locator.NF7cwmN"/>
         <argument key="App\Controller\CalendarController::index" type="service_closure" id=".service_locator.1lMDBp1"/>
         <argument key="App\Controller\CalendarController::show" type="service_closure" id=".service_locator.NF7cwmN"/>
+        <argument key="App\Controller\CalendarvioletteController::delete" type="service_closure" id=".service_locator.BXyDLJr"/>
+        <argument key="App\Controller\CalendarvioletteController::edit" type="service_closure" id=".service_locator.BXyDLJr"/>
+        <argument key="App\Controller\CalendarvioletteController::index" type="service_closure" id=".service_locator.bqSs3Yx"/>
+        <argument key="App\Controller\CalendarvioletteController::show" type="service_closure" id=".service_locator.BXyDLJr"/>
         <argument key="App\Controller\CentresdebeauteController::show" type="service_closure" id=".service_locator.8rpL3Ir"/>
         <argument key="App\Controller\Fleurdelys\FleurdelysController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
         <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
@@ -6964,6 +7022,7 @@
         <argument key="App\Controller\Mahassen\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Mahassen\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\MainController::index" type="service_closure" id=".service_locator.5cOmFQz"/>
+        <argument key="App\Controller\MainvioletteController::index" type="service_closure" id=".service_locator.GxcIE92"/>
         <argument key="App\Controller\RegisterController::index" type="service_closure" id=".service_locator.jmvbEvf"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\ServicefleurdelysController::index" type="service_closure" id=".service_locator.gTz_hNG"/>
@@ -7144,6 +7203,10 @@
         <argument key="App\Controller\CalendarController:edit" type="service_closure" id=".service_locator.NF7cwmN"/>
         <argument key="App\Controller\CalendarController:index" type="service_closure" id=".service_locator.1lMDBp1"/>
         <argument key="App\Controller\CalendarController:show" type="service_closure" id=".service_locator.NF7cwmN"/>
+        <argument key="App\Controller\CalendarvioletteController:delete" type="service_closure" id=".service_locator.BXyDLJr"/>
+        <argument key="App\Controller\CalendarvioletteController:edit" type="service_closure" id=".service_locator.BXyDLJr"/>
+        <argument key="App\Controller\CalendarvioletteController:index" type="service_closure" id=".service_locator.bqSs3Yx"/>
+        <argument key="App\Controller\CalendarvioletteController:show" type="service_closure" id=".service_locator.BXyDLJr"/>
         <argument key="App\Controller\CentresdebeauteController:show" type="service_closure" id=".service_locator.8rpL3Ir"/>
         <argument key="App\Controller\Fleurdelys\FleurdelysController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
         <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
@@ -7296,6 +7359,7 @@
         <argument key="App\Controller\Mahassen\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Mahassen\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\MainController:index" type="service_closure" id=".service_locator.5cOmFQz"/>
+        <argument key="App\Controller\MainvioletteController:index" type="service_closure" id=".service_locator.GxcIE92"/>
         <argument key="App\Controller\RegisterController:index" type="service_closure" id=".service_locator.jmvbEvf"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\ServicefleurdelysController:index" type="service_closure" id=".service_locator.gTz_hNG"/>
@@ -7416,10 +7480,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.UA9ML_C" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.WPYBS2D" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CalendarType" type="service_closure" id="App\Form\CalendarType"/>
+        <argument key="App\Form\CalendarvioletteType" type="service_closure" id="App\Form\CalendarvioletteType"/>
         <argument key="App\Form\CommentaireType" type="service_closure" id="App\Form\CommentaireType"/>
         <argument key="App\Form\RegisterType" type="service_closure" id="App\Form\RegisterType"/>
         <argument key="App\Form\ReservationType" type="service_closure" id="App\Form\ReservationType"/>
@@ -7601,11 +7666,13 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.83YHRA5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator._OsjLuu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
+        <argument key="App\Repository\Calendaar2Repository" type="service_closure" id="App\Repository\Calendaar2Repository"/>
         <argument key="App\Repository\CalendarRepository" type="service_closure" id="App\Repository\CalendarRepository"/>
+        <argument key="App\Repository\CalendarvioletteRepository" type="service_closure" id="App\Repository\CalendarvioletteRepository"/>
         <argument key="App\Repository\CentresdebeauteRepository" type="service_closure" id="App\Repository\CentresdebeauteRepository"/>
         <argument key="App\Repository\CommentaireRepository" type="service_closure" id="App\Repository\CommentaireRepository"/>
         <argument key="App\Repository\FleurdelysRepository" type="service_closure" id="App\Repository\FleurdelysRepository"/>
@@ -7796,15 +7863,15 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\ApiController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\ApiController"/>
-      <argument>App\Controller\ApiController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.vdmMuyE" method="withContext"/>
-    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\CalendarController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\CalendarController"/>
       <argument>App\Controller\CalendarController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\CalendarvioletteController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\CalendarvioletteController"/>
+      <argument>App\Controller\CalendarvioletteController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -7889,6 +7956,18 @@
     <service id=".service_locator.vdmMuyE.App\Controller\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MainController"/>
       <argument>App\Controller\MainController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\MainvioletteController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\MainvioletteController"/>
+      <argument>App\Controller\MainvioletteController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\OffremariageController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\OffremariageController"/>
+      <argument>App\Controller\OffremariageController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -8114,12 +8193,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.gIWBa6K"/>
+      <argument type="service" id=".service_locator.VEh61RN"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.gIWBa6K"/>
+      <argument type="service" id=".service_locator.VEh61RN"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -8146,6 +8225,7 @@
     <service id=".errored..service_locator._L8Y8bZ.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
     <service id=".errored..service_locator.RLVVpop.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
     <service id=".errored..service_locator.NF7cwmN.App\Entity\Calendar" class="App\Entity\Calendar"/>
+    <service id=".errored..service_locator.BXyDLJr.App\Entity\Calendarviolette" class="App\Entity\Calendarviolette"/>
     <service id=".errored..service_locator.8rpL3Ir.App\Entity\Centresdebeaute" class="App\Entity\Centresdebeaute"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.GWq2yvR"/>
@@ -8556,7 +8636,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.gIWBa6K"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.VEh61RN"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

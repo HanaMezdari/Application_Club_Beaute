@@ -3,9 +3,41 @@
 {% block title %}Tous nos services Mahassen{% endblock %}
 
 {% block body %}
-    <div class="container-fluid"style="margin-top:100px;">
+
+<section class="polaroid-gallery">
+  <h1 class="polaroid-gallery-title" style="font-family: Georgia, 'Times New Roman', Times, serif;">Centre Mahassen</h1><br><br><br>
+  <figure class="polaroid-card">
+    <img src="{{ asset('servicemahassen/s1.jpeg') }}" width="200" height="200" alt="Swan">
+    <figcaption class="polaroid-card-caption">Coiffeur</figcaption>
+  </figure>
+  <figure class="polaroid-card">
+    <img src="{{ asset('servicemahassen/s2.jpeg') }}" width="200" height="200" alt="Swan">
+    <figcaption class="polaroid-card-caption">Maquillage</figcaption>
+  </figure>
+  <figure class="polaroid-card">
+    <img src="{{ asset('servicemahassen/s3.png') }}" width="200" height="200" alt="Swan">
+    <figcaption class="polaroid-card-caption">Soins</figcaption>
+  </figure>
+  <figure class="polaroid-card">
+    <img src="{{ asset('servicemahassen/s4.png') }}" width="200" height="200" alt="Swan">
+    <figcaption class="polaroid-card-caption">Hammam & SPA</figcaption>
+  </figure><br><br><br>
+  <center><h3  style="font-family: Georgia, 'Times New Roman', Times, serif;">Le centre Mahassen est un centre très professionnel,<br> il vous permet de trouver le choix que vous cherchez pour votre look de mariage,<br> entre la Make up, les cheveux et les soins la jeune mariée va profiter d’un jour exceptionnel <br> et d’un look très chic</h3></center>
+</section >
+      
+     <div class="titre" style="background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+        background-repeat: no-repeat;
+        background-position: center;padding-top:200px;" >
+    
+              <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:30px;">Réserver en ligne pour un RDV chez Centre de Mahassen</h2>
+              <h5 style="font-family: Georgia, 'Times New Roman', Times, serif;">Gratuitement-Paiement sur place-Confirmation immédiate </h5> 
+            </div>
+            
+    <div class="container-fluid">
+         
          <div class="row">
              <div class="col-md-3">
+              
               <div class="filter" style="display:block;position:sticky;top:20px;">
                {{ form_start(form, {attr: {class: 'filter'}}) }}
                   {{ form_row(form.q) }}
@@ -25,35 +57,35 @@
                   <h4>Promotion</h4>
                   {{ form_row(form.promo) }}
 
-                  <button type="submit" class="btn btn-primary w-100">Filtrer </button>
+                  <button type="submit" class="btn btn-secondary w-100" style="box-shadow: 0 0.25em 0.6em #0005, 0 0.65em 1em #0004;">Choisir! </button>
+                  
 
 
                {{ form_end(form) }}
             </div>
              </div>
-             <div class="col-md-9">
-             
+             <div class="col-md-9 col-sm-12">
+               
                 <div class="grid">
                 {% for item in servicemahassen %}
-                    <div class="card">
+                <a href="{{ path('main') }}" style="text-decoration: none;color:rgb(219, 48, 18)" ><div class="card">
+                     
+                        <img src="/servicemahassen/{{ item.image }}"  class="card-img-top" alt="image">
                         <h5 class="card-title">{{ item.nom }}</h5>
-                        <div class="card-title text-primary" style="font-weight: bold;font-size:1.5rem;">
-                         {{ item.prix | number_format(0,',',' ') }} D
-                          {% if item.promo %}
+                        <div  style="font-weight: bold;font-size:1.5rem;">
+                           <em class="text-muted text-italic">#{{ item.services }}</em>
+                         {{ item.prix  }} D
+                        {% if item.promo %}
 
-                         <div class="text text-warning">Promo !</div>
+                         <div style="float:right;margin-left:20px;">Promo !</div>
                           {% endif %}
                         </div>
-                        <div>
-                  
-                        <em class="text-muted text-primary text-italic">#{{ item.services }}</em>
-              
-                       </div>
-                    </div>
+                        
+                    </div></a>
                 {% endfor %}
                 
-                </div>
-                <div class>
+              </div>
+                <div style="margin-top: 50px;margin-left:300px;">
                     {{ knp_pagination_render(servicemahassen) }}
                 </div>
              </div>
@@ -62,4 +94,183 @@
           
     
     </div>
+    <style>
+  
+    .grid{
+         display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 20px;
+     
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+ 
+}
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+}
+
+.card {
+   display: flex;
+   flex-direction: column;
+   min-width: 15rem;
+   max-width: calc(12.5rem + 13vw);
+   background: #fff transparent;
+   border-radius: 0.75em;
+   overflow: hidden;
+   box-shadow: 0 0.25em 0.6em #0005, 0 0.65em 1em #0004;
+   transition: transform 270ms ease;
+   position: relative;
+ }
+ em{
+   margin-right: 20px;
+   font-size: 10px;
+  
+ }
+ 
+ .card::before {
+   content: "";
+   position: absolute;
+   display: flex;
+   inset: 0;
+   isolation: isolate;
+   mix-blend-mode: color;
+   background: linear-gradient(180deg, rgba(253, 150, 54, 0.836) 75%, 75%, rgb(218, 123, 34), 83%, rgb(255, 230, 0));
+   opacity: 0;
+ }
+ 
+ .card:hover::before {
+   opacity: 1;
+ }
+ .card:hover {
+   transform: scale(1.05);
+ }
+ 
+ .card img {
+   display: block;
+   width: 100%;
+  
+   object-fit: cover;
+   height:220px;
+  
+ }
+ 
+ 
+ .card-body {
+   height: 250px;
+   
+ }
+ 
+ h3 {
+   text-align: center;
+   color: #151516;
+   font-size: 1.3rem;
+  
+ }
+ 
+ .card-title {
+   color: #0009;
+   font-style: italic;
+   text-align: center;
+   max-width: 35ch;
+ } .polaroid-gallery {
+  text-align: center;
+
+ 
+}
+
+.polaroid-gallery-title {
+  font-size: 32px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+}
+
+.polaroid-card {
+  display: inline-block;
+  background-color: #eee6d8;
+  padding: 10px;
+  box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.7);
+  width: 250px;
+  height: 250px;
+}
+.polaroid-card img{
+  width: 250px;
+  height: 180px;
+}
+
+.polaroid-card-caption {
+  text-align: center;
+  font-family: "Marker Felt",sans-serif;
+  font-size: 12px;
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+.polaroid-card:nth-of-type(even) {
+  transform: rotate(12deg);
+}
+
+.polaroid-card:nth-of-type(odd) {
+  transform: rotate(-12deg);
+}
+
+.polaroid-card:nth-of-type(even)::before {
+  content: '';
+  display: block;
+  background-color: rgba(222, 220, 200, 0.66);
+  width: 100px;
+  height: 25px;
+  transform: rotate(-24deg) translate(-30px, -25px);
+}
+
+.polaroid-card:nth-of-type(odd)::before {
+  content: '';
+  display: block;
+  background-color: rgba(222, 220, 200, 0.66);
+  width: 100px;
+  height: 25px;
+  transform: translate(140px, -5px) rotate(25deg);
+}
+
+.polaroid-card:nth-of-type(1) {
+  transition: transform 0.75s;
+}
+
+.polaroid-card:nth-of-type(1):hover {
+  transform: rotate(360deg) scale(1.25);
+}
+
+.polaroid-card:nth-of-type(2) {
+  transition: transform 0.75s;
+}
+
+.polaroid-card:nth-of-type(2):hover {
+  transform: rotate(360deg) scale(1.25);
+}
+
+.polaroid-card:nth-of-type(3) {
+  transition: transform 0.75s;
+}
+
+.polaroid-card:nth-of-type(3):hover {
+  transform: rotate(360deg) scale(1.25);
+}
+
+.polaroid-card:nth-of-type(4) {
+  transition: transform 0.75s;
+}
+
+.polaroid-card:nth-of-type(4):hover {
+  transform: rotate(360deg) scale(1.25);
+}
+
+    </style>
+   
+   
 {% endblock %}

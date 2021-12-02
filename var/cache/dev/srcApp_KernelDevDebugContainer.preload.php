@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/Container9WK6lr3/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerRouaDcA/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -43,8 +43,8 @@ $classes[] = 'App\Controller\Admin\PubliciteCrudController';
 $classes[] = 'App\Controller\Admin\ReservationCrudController';
 $classes[] = 'App\Controller\Admin\ServicesCrudController';
 $classes[] = 'App\Controller\Admin\UserCrudController';
-$classes[] = 'App\Controller\ApiController';
 $classes[] = 'App\Controller\CalendarController';
+$classes[] = 'App\Controller\CalendarvioletteController';
 $classes[] = 'App\Controller\CentresdebeauteController';
 $classes[] = 'App\Controller\ContactController';
 $classes[] = 'App\Controller\Fleurdelys\FleurdelysController';
@@ -59,6 +59,8 @@ $classes[] = 'App\Controller\Mahassen\MahassenController';
 $classes[] = 'App\Controller\Mahassen\ServicemahassenCrudController';
 $classes[] = 'App\Controller\Mahassen\ServicesCrudController';
 $classes[] = 'App\Controller\MainController';
+$classes[] = 'App\Controller\MainvioletteController';
+$classes[] = 'App\Controller\OffremariageController';
 $classes[] = 'App\Controller\RegisterController';
 $classes[] = 'App\Controller\ReservationController';
 $classes[] = 'App\Controller\SecurityController';
@@ -71,13 +73,16 @@ $classes[] = 'App\Controller\Violette\ServicesCrudController';
 $classes[] = 'App\Controller\Violette\ServicevioletteCrudController';
 $classes[] = 'App\Controller\Violette\VioletteController';
 $classes[] = 'App\Form\CalendarType';
+$classes[] = 'App\Form\CalendarvioletteType';
 $classes[] = 'App\Form\CommentaireType';
 $classes[] = 'App\Form\RegisterType';
 $classes[] = 'App\Form\ReservationType';
 $classes[] = 'App\Form\SearchForm';
 $classes[] = 'App\Form\ServiceliliaType';
 $classes[] = 'App\Repository\AdminRepository';
+$classes[] = 'App\Repository\Calendaar2Repository';
 $classes[] = 'App\Repository\CalendarRepository';
+$classes[] = 'App\Repository\CalendarvioletteRepository';
 $classes[] = 'App\Repository\CentresdebeauteRepository';
 $classes[] = 'App\Repository\CommentaireRepository';
 $classes[] = 'App\Repository\FleurdelysRepository';

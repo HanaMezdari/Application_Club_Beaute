@@ -14,29 +14,38 @@
         </div>
     {% endif %}
     <section>
-    <div id="card">
-    <div id="card-content">
-      <div id="card-title">
-        <h2>CONNEXION</h2>
-        <div class="underline-title"></div>
-      </div>
-      <form method="post" class="form">
-        <label for="user-email" style="padding-top:13px">
-            &nbsp;Email
-          </label>
-        <input id="user-email" value="{{ last_username }}" class="form-content" type="email" name="email" autocomplete="on" required />
-        <div class="form-border"></div>
-        <label for="user-password" style="padding-top:22px">&nbsp;Password
-          </label>
-        <input id="user-password" class="form-content" type="password" name="password" required />
-        <div class="form-border"></div>
-        <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}" >
-        <input id="submit-btn" type="submit" name="submit" value="CONNEXION" />
-        
-      </form>
+        <div class="content">
+        <form action="validar.php" method="post">
+            
+                <div class="column">
+                    <div class="row">
+                        <H1>CONNEXION</H1>
+                        <img id="profile" src="{{ asset('css/logo/logo.png') }}" alt="">
+                
+                    </div>
+                    <br>
+                    <div class="row">
+                          <label for="user-email">
+                           &nbsp;Email
+                           </label>
+                          <input id="user-email" value="{{ last_username }}" class="form-content" type="email" name="email" autocomplete="on" required />    
+                        </div>
+                        <br>
+                    <div class="row">
+                        <label for="user-password" >&nbsp;Password
+                        </label>
+                        <input id="user-password" class="form-content" type="password" name="password" required />
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <input type="hidden" name="_csrf_token"
+                         value="{{ csrf_token('authenticate') }}" >
+                        <input id="submit-btn" type="submit" name="submit" value="CONNEXION" />
+                    </div>
+                </div>
+        </form>
     </div>
-  </div>
 
    </section> 
 
@@ -54,89 +63,75 @@
     
 </form>
 <style>
-   a {
-  text-decoration: none;
-}
+ 
 section {
-    
-  background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
-  background-repeat: no-repeat;
-}
-label {
-  font-family: "Raleway", sans-serif;
-  font-size: 11pt;
-}
-#forgot-pass {
-  color: #2dbd6e;
-  font-family: "Raleway", sans-serif;
-  font-size: 10pt;
-  margin-top: 3px;
-  text-align: right;
-}
-#card {
-  background: #fbfbfb;
-  border-radius: 8px;
-  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-  height: 410px;
-  margin: 6rem auto 8.1rem auto;
-  width: 329px;
-}
-#card-content {
-  padding: 12px 44px;
-}
-#card-title {
-  font-family: "Raleway Thin", sans-serif;
-  letter-spacing: 4px;
-  padding-bottom: 23px;
-  padding-top: 13px;
-  text-align: center;
-}
-#signup {
-  color: #2dbd6e;
-  font-family: "Raleway", sans-serif;
-  font-size: 10pt;
-  margin-top: 16px;
-  text-align: center;
-}
-#submit-btn {
-  background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
-  border: none;
-  border-radius: 21px;
-  box-shadow: 0px 1px 8px #24c64f;
-  cursor: pointer;
-  color: white;
-  font-family: "Raleway SemiBold", sans-serif;
-  height: 42.3px;
-  margin: 0 auto;
-  margin-top: 50px;
-  transition: 0.25s;
-  width: 153px;
-}
-#submit-btn:hover {
-  box-shadow: 0px 1px 18px #24c64f;
-}
-.form {
-  align-items: left;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
-.form-border {
-  background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
-  height: 1px;
-  width: 100%;
+
+section .content{
+    border-radius: 10%;
+    background-color: rgba(241, 236, 228, 0.513);
+    width: 30%;
+    padding: 0.9%;
+    margin-top: 10%; 
 }
-.form-content {
-  background: #fbfbfb;
-  border: none;
-  outline: none;
-  padding-top: 14px;
+
+label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 120%;
+    margin-left: 50px;
 }
-.underline-title {
-  background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
-  height: 2px;
-  margin: -1.1rem auto 0 auto;
-  width: 89px;
+
+input{
+    border-radius: 0%;
+    border-color: transparent;
+    width: 50%;
+    padding: 0.9%;
+    font-family: sans-serif;
+    margin-left: 50px;
 }
+
+h1{
+    font-family: sans-serif;
+    margin-left: 100px;
+}
+
+#profile{
+    width: 40%;
+    border-radius: 600%;
+    margin-left: 100px;
+}
+
+button {
+    border: 30%;
+    width: 20%;
+    height: 200%;
+    background-color: rgba(162, 175, 162, 0.609);
+    text-decoration: none;
+    margin-left: 250px;
+    padding: 2%;
+    border-radius: 20%;
+}
+
+button:hover{
+    background-color: rgb(162, 175, 162);
+    cursor: pointer;
+}
+#user-password{
+  margin-left: 15px;
+}
+
+/*Media Devices*/
+
+@media only screen and (max-width: 600px) {
+    .content{
+        width: 90%;
+    }
+  }
+
 
 </style>
 {% endblock %}

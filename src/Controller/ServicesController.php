@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Services;
+use App\Entity\Centresdebeaute;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,8 +23,10 @@ class ServicesController extends AbstractController
     public function index(): Response
     {
         $services = $this->entityManager->getRepository(Services::class)->findAll();
+        $centresdebeaute = $this->entityManager->getRepository(Centresdebeaute::class)->findAll();
         return $this->render('services/index.html.twig', [
-            'services' => $services
+            'services' => $services,
+            'centresdebeaute' => $centresdebeaute
         ]);
     }
 }

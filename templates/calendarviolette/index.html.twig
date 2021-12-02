@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendarviolette index{% endblock %}
+
+{% block body %}
+    <h1>Calendarviolette index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Description</th>
+                <th>All_day</th>
+                <th>Background_color</th>
+                <th>Border_color</th>
+                <th>Text_color</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calendarviolette in calendarviolettes %}
+            <tr>
+                <td>{{ calendarviolette.id }}</td>
+                <td>{{ calendarviolette.titre }}</td>
+                <td>{{ calendarviolette.start ? calendarviolette.start|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendarviolette.end ? calendarviolette.end|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendarviolette.description }}</td>
+                <td>{{ calendarviolette.allDay ? 'Yes' : 'No' }}</td>
+                <td>{{ calendarviolette.backgroundColor }}</td>
+                <td>{{ calendarviolette.borderColor }}</td>
+                <td>{{ calendarviolette.textColor }}</td>
+                <td>
+                    <a href="{{ path('calendarviolette_show', {'id': calendarviolette.id}) }}">show</a>
+                    <a href="{{ path('calendarviolette_edit', {'id': calendarviolette.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('calendarviolette_new') }}">Create new</a>
+{% endblock %}

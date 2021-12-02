@@ -4,34 +4,39 @@
 
 {% block body %}
     <style>
+        
         #calendrier{
-            width: 50%;
+            width: 60%;
             height:50%;
-            margin: auto;
-            
+            margin:auto;
         }
+        
         section img{
             position: absolute;  
-            width:1460px;
+            width: 820px;
+            height:610px;
+            margin:65px 0 0 280px;
+            
         }
-        section h1{
-            position:absolute;
-            margin-left:20px;
-        }
+
+        
     </style>
 <section>
+<div class="container-fluid">
 <div class="row">
 			<div class="col-sm-12">
 				<div class="header">
 					
-					<h1>Calendrier Lilia Ben Aziza</h1>
-                    <a href="{{ path('reservation') }}" style="position:absolute;margin-left:1280px;" class="btn btn-secondary float-right">Reservation </a>
+					<h1>Calendrier Violette</h1>
+                    <a href="{{ path('reservation') }}" style="position:absolute;margin:1100px 600px 0 0;" class="btn btn-secondary float-right">Reservation </a>
+                    <img src="{{ asset('css/slide/calendar.jpg') }}" atl="image">
 					<h2 id="date"></h2>
 				</div>
 			</div>
 		</div>
-</section>
-<section>
+        <div>
+
+
     <div id="calendrier">
     
     </div>
@@ -50,6 +55,7 @@
                 day:'Jour',
                 list:'Liste'
             },
+            
 
             headerToolbar: {
                 start: 'prev,next today',
@@ -66,7 +72,7 @@
         calendar.on('eventChange', (e) => {
             let url = `/api/${e.event.id}/edit`
             let donnees = {
-                "title": e.event.title,
+                "titre": e.event.titre,
                 "description": e.event.description,
                 "start": e.event.start,
                 "end": e.event.end,

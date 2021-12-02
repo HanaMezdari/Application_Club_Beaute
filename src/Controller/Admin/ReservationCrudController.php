@@ -28,6 +28,10 @@ class ReservationCrudController extends AbstractCrudController
             DateTimeField::new('end_date'),
             NumberField::new('nbr_personne'),
             AssociationField::new('servicelilia'),
+            AssociationField::new('serviceviolette'),
+            AssociationField::new('servicemahassen'),
+            AssociationField::new('servicefleurdelys'),
+            AssociationField::new('centresdebeaute'),
         ];
     }
     

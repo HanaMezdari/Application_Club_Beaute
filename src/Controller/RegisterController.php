@@ -5,11 +5,12 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\RegisterType;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegisterController extends AbstractController
 {
@@ -21,9 +22,9 @@ class RegisterController extends AbstractController
     }
 
     /**
-     * @Route("/inscription", name="register")
+     * @Route("/inscription", name="register",methods={"GET","POST"})
      */
-    public function index(Request $request , UserPasswordEncoderInterface $encoder ): Response
+    public function index(Request $request , UserPasswordEncoderInterface $encoder  ): Response
     {
 
         $notification = null;
@@ -42,7 +43,27 @@ class RegisterController extends AbstractController
                 $password = $encoder->encodePassword($user ,$user ->getPassword());
                 $user ->setPassword($password);
             }
+        }
+            if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
 
+            //************** file upload ***>>>>>>>>>>>>
+            /** @var File $file */
+            $file = $form['image']->getData();
+            if ($file) {
+                $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
+                // Move the file to the directory where brochures are stored
+                try {
+                    $file->move(
+                        $this->getParameter('images_directory'), // in Servis.yaml defined folder for upload images
+                        $fileName
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                $user->setImage($fileName); // Related upload file name with Hotel table image field
+            }
             $this->entityManager->persist($user);
             $this->entityManager->flush();
 

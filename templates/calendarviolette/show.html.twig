@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendarviolette{% endblock %}
+
+{% block body %}
+    <h1>Calendarviolette</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ calendarviolette.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ calendarviolette.titre }}</td>
+            </tr>
+            <tr>
+                <th>Start</th>
+                <td>{{ calendarviolette.start ? calendarviolette.start|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>End</th>
+                <td>{{ calendarviolette.end ? calendarviolette.end|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ calendarviolette.description }}</td>
+            </tr>
+            <tr>
+                <th>All_day</th>
+                <td>{{ calendarviolette.allDay ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Background_color</th>
+                <td>{{ calendarviolette.backgroundColor }}</td>
+            </tr>
+            <tr>
+                <th>Border_color</th>
+                <td>{{ calendarviolette.borderColor }}</td>
+            </tr>
+            <tr>
+                <th>Text_color</th>
+                <td>{{ calendarviolette.textColor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('calendarviolette_index') }}">back to list</a>
+
+    <a href="{{ path('calendarviolette_edit', {'id': calendarviolette.id}) }}">edit</a>
+
+    {{ include('calendarviolette/_delete_form.html.twig') }}
+{% endblock %}

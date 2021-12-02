@@ -26,6 +26,10 @@ class ServicevioletteCrudController extends AbstractCrudController
             TextField::new('nom'),
             MoneyField::new('prix')->setCurrency('EUR'),
             BooleanField::new('promo'),
+            ImageField::new('image')
+            ->setBasePath('serviceviolette/')
+            ->setUploadDir('public/serviceviolette')
+            ->setUploadedFileNamePattern('[randomhash].[extension]'),
         ];
     }
    

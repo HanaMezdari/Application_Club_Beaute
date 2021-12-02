@@ -57,6 +57,21 @@ class Reservation
      */
     private $liliabenaziza;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Serviceviolette::class)
+     */
+    private $serviceviolette;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Servicemahassen::class)
+     */
+    private $servicemahassen;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Servicefleurdelys::class)
+     */
+    private $servicefleurdelys;
+
     
 
     public function getId(): ?int
@@ -156,6 +171,42 @@ class Reservation
     public function setLiliabenaziza(?Liliabenaziza $liliabenaziza): self
     {
         $this->liliabenaziza = $liliabenaziza;
+
+        return $this;
+    }
+
+    public function getServiceviolette(): ?Serviceviolette
+    {
+        return $this->serviceviolette;
+    }
+
+    public function setServiceviolette(?Serviceviolette $serviceviolette): self
+    {
+        $this->serviceviolette = $serviceviolette;
+
+        return $this;
+    }
+
+    public function getServicemahassen(): ?Servicemahassen
+    {
+        return $this->servicemahassen;
+    }
+
+    public function setServicemahassen(?Servicemahassen $servicemahassen): self
+    {
+        $this->servicemahassen = $servicemahassen;
+
+        return $this;
+    }
+
+    public function getServicefleurdelys(): ?Servicefleurdelys
+    {
+        return $this->servicefleurdelys;
+    }
+
+    public function setServicefleurdelys(?Servicefleurdelys $servicefleurdelys): self
+    {
+        $this->servicefleurdelys = $servicefleurdelys;
 
         return $this;
     }

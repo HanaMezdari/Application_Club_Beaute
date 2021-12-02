@@ -26,6 +26,10 @@ class ServicemahassenCrudController extends AbstractCrudController
             TextField::new('nom'),
             MoneyField::new('prix')->setCurrency('EUR'),
             BooleanField::new('promo'),
+            ImageField::new('image')
+            ->setBasePath('servicemahassen/')
+            ->setUploadDir('public/servicemahassen')
+            ->setUploadedFileNamePattern('[randomhash].[extension]'),
         ];
     }
    

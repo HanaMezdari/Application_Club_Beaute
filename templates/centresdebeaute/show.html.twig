@@ -7,21 +7,22 @@
 
     <div class="gizmo-card">
       <img src="/centre/{{ centresdebeaute.image2 }}" alt="image">
+      
+      <h1>Bienvenu:</h1>
+      <br>
+      <h6 class="mobile-hide">Réserver en ligne un RDV avec {{ centresdebeaute.nom}}</h6>
   
-      <h1>The Power Within</h1>
+      <h6 class="mobile-show tiny-viewport-hide">Réserver en ligne un RDV avec {{ centresdebeaute.nom}}.</h6>
   
-      <h6 class="mobile-hide">Learn how to harness your secret power that slumbers inside you by hovering over this card.</h6>
-  
-      <h6 class="mobile-show tiny-viewport-hide">Learn how to harness your secret power that slumbers inside you by visiting my socials.</h6>
-  
-      <h6 class="tiny-viewport-show">Learn how to harness your secret power that slumbers inside you by going to www.mywebsite.com.</h6>
+      <h6 class="tiny-viewport-show">Réserver en ligne un RDV avec {{ centresdebeaute.nom}}.</h6>
   
       <div id="gizmo-content" class="mobile-hide">
   
-        <h2>Hello<br> Gamers</h2>
+        <h2>Bienvenu:<br>Chez-{{ centresdebeaute.nom}}</h2>
   
         <p>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+         {{centresdebeaute.description}}.
+         
         </p>
   
         <div class="gizmo-socials">
@@ -83,7 +84,7 @@
       </div>
   
     </div>
-  
+    <a href="{{ path('services') }}" style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
   </div>
 
 </section>
@@ -154,14 +155,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 40px;
+    margin: 20px;
     width: 400px;
-    height: 700px;
+    height: 400px;
    
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     border: 1px solid #666;
-    transition: all 0.6s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   
   .gizmo-card:hover {
@@ -228,6 +229,7 @@
     color: gray;
     font-weight: 400;
     transition: all 0.4s ease-in-out;
+    margin-top: 50px;
   }
   
   .gizmo-card:hover h1 {
@@ -254,7 +256,7 @@
     opacity: 0;
   }
   
-  @media screen and (max-width: 499px) and (max-height: 410px) {
+  @media screen and (max-width: 499px) and (max-height: 700px) {
     .tiny-viewport-show {
       opacity: 1;
     }
@@ -264,7 +266,8 @@
   }
   .gizmo-card img{
     position: absolute;
-    height: 622px;
+    height: 400px;
+    width: 400px;
     border-radius: 20px;
   }
   
@@ -284,6 +287,7 @@
     color: gray;
     font-weight: 400;
     transition: all 0.4s ease-in-out;
+    margin-top: 30px;
   }
   
   .gizmo-card:hover h6 {
@@ -427,7 +431,7 @@
     }
   }
   
-  @media screen and (max-height: 410px) {
+  @media screen and (max-height: 700px) {
     .gizmo-socials-mobile {
       opacity: 0;
     }

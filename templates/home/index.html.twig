@@ -5,7 +5,7 @@
 {% block body %}
 <main >
  
-<img  src="{{ asset('css/slide/Rare-Beauty-by-Selena-Gomes.png') }}" alt="image" style="height: 600px;width: 100%;">
+<img  src="{{ asset('css/slide/yi-394.jpg') }}" alt="image" style="height: 600px;width: 110%;object-fit: cover;">
 
 <div class="slider-info-wrap clearfix pdlr0">
   <div class="slider-info-content">
@@ -14,7 +14,7 @@
         <div class="info-item-media"><img src="{{ asset('css/slide/Honest-Beauty-by-Jessica-Alba.jpg') }}" data-at2x="pic/slider-info-3@2x.jpg"   alt="">
           <div class="info-item-text">
             <div class="info-price font-4"><span></span></div>
-            <div class="info-temp font-4"><span>Honest-Beauty</span> by-Jessica-Alba</div>
+           
             <p class="info-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
@@ -31,7 +31,7 @@
         <div class="info-item-media"><img src="{{ asset('css/slide/Fenty-Beauty-by-Fenty-1536x846.png') }}" data-at2x="pic/slider-info-2@2x.jpg" alt="">
           <div class="info-item-text">
             <div class="info-price font-4"><span></span></div>
-            <div class="info-temp font-4"><span>Fenty-Beauty</span> Fenty</div>
+            
             <p class="info-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>
         </div>
@@ -47,7 +47,7 @@
         <div class="info-item-media"><img src="{{ asset('css/slide/Florence-By-Mills-by-Millie-Bobby-Brown-1536x1025.jpg') }}" data-at2x="pic/slider-info-2@2x.jpg" alt="">
           <div class="info-item-text">
             <div class="info-price font-4"><span></span></div>
-            <div class="info-temp font-4"><span>Florence</span> Millie</div>
+            
             <p class="info-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
@@ -63,7 +63,7 @@
         <div class="info-item-media"><img src="{{ asset('css/slide/Lauren-Conrad-Beauty-by-Lauren-Conrad-1536x1024.jpg') }}" data-at2x="pic/slider-info-2@2x.jpg" alt="">
           <div class="info-item-text">
             <div class="info-price font-4"><span></span></div>
-            <div class="info-temp font-4"><span>Conrad-Beauty</span> Lauren-Conrad</div>
+            
             <p class="info-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
         </div>
@@ -77,6 +77,15 @@
       </div>
     </div>
       <style> 
+      .title{
+        color:  #000;
+  position: absolute;
+  top: 7%;
+  left: 6%;
+  text-transform: uppercase;
+  font-size: 56px;
+  text-shadow: 0 0 10px #fff;
+      }
              .slider-info-wrap{position:relative;z-index:20;width:100%;}
 .slider-info-wrap .slider-info-content .slider-info-item{float:left;width:25%;height:60px;position:relative;z-index:1;}
 .slider-info-wrap .slider-info-content .slider-info-item .info-item-media{position:absolute;z-index:1;bottom:0;height:60px;width:100%;overflow:hidden;-webkit-transition:all 0.75s;-moz-transition:all 0.75s;-o-transition:all 0.75s;transition:all 0.75s;}
@@ -137,7 +146,6 @@
     {% endfor %}
   </div>  
 </section>
-
 <div class="container-fluid" >
      <div class="row">
         <div class="column col-lg-4 col-md-8 col-sm-12" style="float:right;" >
@@ -155,7 +163,7 @@
                 <p class="information__description">
                    -Club Beauté est l'application de prise de rendez-vous beauté qui va changer votre facon de vous organiser.L'idée,vous éviter de perdre un temps précieux en vous permettant de prendre rendez-vous dans l'un de nos centres de beauté partenaire,en quelques clics et 24h/24h!<br>
                    -Terminé l'attente au téléphone ou les déplacements,
-                   CLUB BEAUTE vous offre la possibilité de réserver un rendez-vous chezun centre de beauté sans avoir à sortir de chez vous. 
+                   CLUB BEAUTE vous offre la possibilité de réserver un rendez-vous chez un centre de beauté sans avoir à sortir de chez vous. 
                 </p>
             </div>
         </div>
@@ -560,6 +568,8 @@ const toggleItem = (item) =>{
         item.classList.add('information-open')
     }
 }
+
+
 </script>
 
 
