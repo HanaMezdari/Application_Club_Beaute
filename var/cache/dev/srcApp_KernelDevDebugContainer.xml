@@ -492,12 +492,12 @@
         <argument type="service" id=".service_locator.JEaLqsX.App\Controller\Liliabenaziza\LiliabenazizaController"/>
       </call>
     </service>
-    <service id="App\Controller\Liliabenaziza\ReservationCrudController" class="App\Controller\Liliabenaziza\ReservationCrudController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Liliabenaziza\ReservationliliaCrudController" class="App\Controller\Liliabenaziza\ReservationliliaCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="ea.crud_controller"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ReservationCrudController"/>
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ReservationliliaCrudController"/>
       </call>
     </service>
     <service id="App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" public="true" autowire="true" autoconfigure="true">
@@ -569,11 +569,11 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\RegisterController"/>
       </call>
     </service>
-    <service id="App\Controller\ReservationController" class="App\Controller\ReservationController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ReservationliliaController" class="App\Controller\ReservationliliaController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ReservationController"/>
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ReservationliliaController"/>
       </call>
     </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
@@ -655,7 +655,7 @@
     <service id="App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Form\ReservationType" class="App\Form\ReservationType" autowire="true" autoconfigure="true">
+    <service id="App\Form\ReservationliliaType" class="App\Form\ReservationliliaType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" autoconfigure="true">
@@ -704,7 +704,7 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\ReservationliliaRepository" class="App\Repository\ReservationliliaRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1178,7 +1178,7 @@
         <argument>App\Form\CalendarvioletteType</argument>
         <argument>App\Form\CommentaireType</argument>
         <argument>App\Form\RegisterType</argument>
-        <argument>App\Form\ReservationType</argument>
+        <argument>App\Form\ReservationliliaType</argument>
         <argument>App\Form\SearchForm</argument>
         <argument>App\Form\ServiceliliaType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -1521,7 +1521,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.WPYBS2D"/>
+      <argument type="service" id=".service_locator.K3QJCa6"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4524,7 +4524,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator._OsjLuu"/>
+      <argument type="service" id=".service_locator.lSwAN5X"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6111,10 +6111,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Liliabenaziza\ReservationCrudController" class="App\Controller\Liliabenaziza\ReservationCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\ReservationCrudController" class="App\Controller\Liliabenaziza\ReservationCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Liliabenaziza\ReservationCrudController" class="App\Controller\Liliabenaziza\ReservationCrudController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Liliabenaziza\ReservationCrudController" class="App\Controller\Liliabenaziza\ReservationCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Liliabenaziza\ReservationliliaCrudController" class="App\Controller\Liliabenaziza\ReservationliliaCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\ReservationliliaCrudController" class="App\Controller\Liliabenaziza\ReservationliliaCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Liliabenaziza\ReservationliliaCrudController" class="App\Controller\Liliabenaziza\ReservationliliaCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Liliabenaziza\ReservationliliaCrudController" class="App\Controller\Liliabenaziza\ReservationliliaCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Liliabenaziza\ServiceliliaCrudController" class="App\Controller\Liliabenaziza\ServiceliliaCrudController" autowire="true" abstract="true"/>
@@ -6147,9 +6147,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReservationController" class="App\Controller\ReservationController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReservationController" class="App\Controller\ReservationController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ReservationController" class="App\Controller\ReservationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReservationliliaController" class="App\Controller\ReservationliliaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReservationliliaController" class="App\Controller\ReservationliliaController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ReservationliliaController" class="App\Controller\ReservationliliaController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6188,8 +6188,8 @@
     <service id=".abstract.instanceof.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationType" class="App\Form\ReservationType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\ReservationType" class="App\Form\ReservationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationliliaType" class="App\Form\ReservationliliaType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ReservationliliaType" class="App\Form\ReservationliliaType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ServiceliliaType" class="App\Form\ServiceliliaType" autowire="true" abstract="true"/>
@@ -6214,8 +6214,8 @@
     <service id=".abstract.instanceof.App\Repository\MahassenRepository" class="App\Repository\MahassenRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PubliciteRepository" class="App\Repository\PubliciteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PubliciteRepository" class="App\Repository\PubliciteRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReservationliliaRepository" class="App\Repository\ReservationliliaRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ReservationliliaRepository" class="App\Repository\ReservationliliaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServicefleurdelysRepository" class="App\Repository\ServicefleurdelysRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ServicefleurdelysRepository" class="App\Repository\ServicefleurdelysRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServiceliliaRepository" class="App\Repository\ServiceliliaRepository" autowire="true" abstract="true"/>
@@ -6702,6 +6702,18 @@
         <argument key="encoder" type="service_closure" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
+    <service id=".service_locator.woFU5bm" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationliliaRepository" type="service_closure" id="App\Repository\ReservationliliaRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Pi9JUD." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationlilia" type="service_closure" id=".errored..service_locator.Pi9JUD..App\Entity\Reservationlilia"/>
+      </argument>
+    </service>
     <service id=".service_locator.g.xob4v" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6732,7 +6744,7 @@
         <argument key="repository" type="service_closure" id="App\Repository\ServicevioletteRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.VEh61RN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.WpKgB1F" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CentresdebeauteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
@@ -6915,27 +6927,27 @@
         <argument key="App\Controller\Fleurdelys\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Fleurdelys\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Liliabenaziza\LiliabenazizaController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -7024,6 +7036,10 @@
         <argument key="App\Controller\MainController::index" type="service_closure" id=".service_locator.5cOmFQz"/>
         <argument key="App\Controller\MainvioletteController::index" type="service_closure" id=".service_locator.GxcIE92"/>
         <argument key="App\Controller\RegisterController::index" type="service_closure" id=".service_locator.jmvbEvf"/>
+        <argument key="App\Controller\ReservationliliaController::delete" type="service_closure" id=".service_locator.Pi9JUD."/>
+        <argument key="App\Controller\ReservationliliaController::edit" type="service_closure" id=".service_locator.Pi9JUD."/>
+        <argument key="App\Controller\ReservationliliaController::index" type="service_closure" id=".service_locator.woFU5bm"/>
+        <argument key="App\Controller\ReservationliliaController::show" type="service_closure" id=".service_locator.Pi9JUD."/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\ServicefleurdelysController::index" type="service_closure" id=".service_locator.gTz_hNG"/>
         <argument key="App\Controller\ServiceliliaController::index" type="service_closure" id=".service_locator.zs.f5lW"/>
@@ -7252,27 +7268,27 @@
         <argument key="App\Controller\Fleurdelys\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Fleurdelys\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Liliabenaziza\LiliabenazizaController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
-        <argument key="App\Controller\Liliabenaziza\ReservationCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Liliabenaziza\ServiceliliaCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -7361,6 +7377,10 @@
         <argument key="App\Controller\MainController:index" type="service_closure" id=".service_locator.5cOmFQz"/>
         <argument key="App\Controller\MainvioletteController:index" type="service_closure" id=".service_locator.GxcIE92"/>
         <argument key="App\Controller\RegisterController:index" type="service_closure" id=".service_locator.jmvbEvf"/>
+        <argument key="App\Controller\ReservationliliaController:delete" type="service_closure" id=".service_locator.Pi9JUD."/>
+        <argument key="App\Controller\ReservationliliaController:edit" type="service_closure" id=".service_locator.Pi9JUD."/>
+        <argument key="App\Controller\ReservationliliaController:index" type="service_closure" id=".service_locator.woFU5bm"/>
+        <argument key="App\Controller\ReservationliliaController:show" type="service_closure" id=".service_locator.Pi9JUD."/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\ServicefleurdelysController:index" type="service_closure" id=".service_locator.gTz_hNG"/>
         <argument key="App\Controller\ServiceliliaController:index" type="service_closure" id=".service_locator.zs.f5lW"/>
@@ -7480,14 +7500,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.WPYBS2D" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.K3QJCa6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CalendarType" type="service_closure" id="App\Form\CalendarType"/>
         <argument key="App\Form\CalendarvioletteType" type="service_closure" id="App\Form\CalendarvioletteType"/>
         <argument key="App\Form\CommentaireType" type="service_closure" id="App\Form\CommentaireType"/>
         <argument key="App\Form\RegisterType" type="service_closure" id="App\Form\RegisterType"/>
-        <argument key="App\Form\ReservationType" type="service_closure" id="App\Form\ReservationType"/>
+        <argument key="App\Form\ReservationliliaType" type="service_closure" id="App\Form\ReservationliliaType"/>
         <argument key="App\Form\SearchForm" type="service_closure" id="App\Form\SearchForm"/>
         <argument key="App\Form\ServiceliliaType" type="service_closure" id="App\Form\ServiceliliaType"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\CrudFormType" type="service_closure" id="EasyCorp\Bundle\EasyAdminBundle\Form\Type\CrudFormType"/>
@@ -7666,7 +7686,7 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator._OsjLuu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.lSwAN5X" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
@@ -7679,7 +7699,7 @@
         <argument key="App\Repository\LiliabenazizaRepository" type="service_closure" id="App\Repository\LiliabenazizaRepository"/>
         <argument key="App\Repository\MahassenRepository" type="service_closure" id="App\Repository\MahassenRepository"/>
         <argument key="App\Repository\PubliciteRepository" type="service_closure" id="App\Repository\PubliciteRepository"/>
-        <argument key="App\Repository\ReservationRepository" type="service_closure" id="App\Repository\ReservationRepository"/>
+        <argument key="App\Repository\ReservationliliaRepository" type="service_closure" id="App\Repository\ReservationliliaRepository"/>
         <argument key="App\Repository\ServicefleurdelysRepository" type="service_closure" id="App\Repository\ServicefleurdelysRepository"/>
         <argument key="App\Repository\ServiceliliaRepository" type="service_closure" id="App\Repository\ServiceliliaRepository"/>
         <argument key="App\Repository\ServicemahassenRepository" type="service_closure" id="App\Repository\ServicemahassenRepository"/>
@@ -7730,7 +7750,7 @@
         <argument>App\Controller\Admin\UserCrudController</argument>
         <argument>App\Controller\Fleurdelys\ServicefleurdelysCrudController</argument>
         <argument>App\Controller\Fleurdelys\ServicesCrudController</argument>
-        <argument>App\Controller\Liliabenaziza\ReservationCrudController</argument>
+        <argument>App\Controller\Liliabenaziza\ReservationliliaCrudController</argument>
         <argument>App\Controller\Liliabenaziza\ServiceliliaCrudController</argument>
         <argument>App\Controller\Liliabenaziza\ServicesCrudController</argument>
         <argument>App\Controller\Mahassen\ServicemahassenCrudController</argument>
@@ -7917,9 +7937,9 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.JEaLqsX" method="withContext"/>
     </service>
-    <service id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ReservationCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\Liliabenaziza\ReservationCrudController"/>
-      <argument>App\Controller\Liliabenaziza\ReservationCrudController</argument>
+    <service id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ReservationliliaCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Liliabenaziza\ReservationliliaCrudController"/>
+      <argument>App\Controller\Liliabenaziza\ReservationliliaCrudController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ky4eP1x" method="withContext"/>
     </service>
@@ -7977,9 +7997,9 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\ReservationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\ReservationController"/>
-      <argument>App\Controller\ReservationController</argument>
+    <service id=".service_locator.vdmMuyE.App\Controller\ReservationliliaController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ReservationliliaController"/>
+      <argument>App\Controller\ReservationliliaController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -8193,12 +8213,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.VEh61RN"/>
+      <argument type="service" id=".service_locator.WpKgB1F"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.VEh61RN"/>
+      <argument type="service" id=".service_locator.WpKgB1F"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -8227,6 +8247,7 @@
     <service id=".errored..service_locator.NF7cwmN.App\Entity\Calendar" class="App\Entity\Calendar"/>
     <service id=".errored..service_locator.BXyDLJr.App\Entity\Calendarviolette" class="App\Entity\Calendarviolette"/>
     <service id=".errored..service_locator.8rpL3Ir.App\Entity\Centresdebeaute" class="App\Entity\Centresdebeaute"/>
+    <service id=".errored..service_locator.Pi9JUD..App\Entity\Reservationlilia" class="App\Entity\Reservationlilia"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.GWq2yvR"/>
       <argument type="collection">
@@ -8636,7 +8657,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.VEh61RN"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.WpKgB1F"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

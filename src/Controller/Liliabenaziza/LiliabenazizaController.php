@@ -3,8 +3,8 @@
 namespace App\Controller\Liliabenaziza;
 
 use App\Entity\Services;
-use App\Entity\Reservation;
 use App\Entity\Servicelilia;
+use App\Entity\Reservationlilia;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -30,8 +30,8 @@ class LiliabenazizaController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('servicelilia', 'fas fa-user-tag', Servicelilia::class);
-        yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
-        yield MenuItem::linkToCrud('reservation', 'fas fa-tags', Reservation::class);
+        yield MenuItem::linkToCrud('Service Lilia', 'fas fa-user-tag', Servicelilia::class);
+        yield MenuItem::linkToCrud('Services', 'fas fa-tags', Services::class);
+        yield MenuItem::linkToCrud('Reservation Lilia', 'fas fa-tags', Reservationlilia::class);
     }
 }

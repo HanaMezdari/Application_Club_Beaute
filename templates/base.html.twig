@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="UTF-8">
         <title>{% block title %}CLUB BEAUTE{% endblock %}</title>
          <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,98 +18,24 @@
          
     </head>
     <body>
-       
-        <div class="bg_move" style="margin-top: 30px;" >
-            
-        <h7 >CLUB BEAUTE</h7>
-    </div> 
-    <header >
-    <nav class="navbar navbar-expand-lg navbar-white">
-    <div class="container-fluid">
-        <a class="navbar-brand text-dark"  href="{{ path('home') }}"> <img  src="{{ asset('css/logo/logo.png') }}" alt="image" style="height: 50px;width:80px;margin-left:10px;border-radius: 50%;"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-      <li class="nav-item " >
-        <a class="nav-link" href="{{ path('home') }}">Accuiel</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link" href="{{path('centresdebeaute')}}">Centres de beaute </a> 
-     </li>                                                         
-    
-      <ul class="navbar-links">
-                    <li class="navbar-dropdown">
-                        <a href="{{path('services')}}">
-                            Nos services                          
-                        </a>
-                        <div class="dropdown">
-                            <a href="{{path('servicelilia')}}">
-                                Lilia Ben Aziza                        
-                                                          
-                            </a>
-                            <a href="{{path('serviceviolette')}}">
-                               Violette
-                                                             
-                            </a>
-                            <a href="{{path('servicefleurdelys')}}">
-                                Fleur De Lys
-                                                             
-                            </a>
-                            <a href="{{path('servicemahassen')}}">
-                                Mahassen
-                                                             
-                            </a>
-
-                        </div>
-                    </li>
-       </ul>
-    
-      <li class="nav-item">
-        <a class="nav-link" href="{{path('reservation')}}">Reservation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{path('contact')}}">Contact</a>
-      </li>
-    </ul>
-      <ul class="navbar-nav d-flex justify-content-end">
-
-       {% if app.user %}
-                      
-       <li class="nav-item ">
-        <a class="nav-link" >{{ app.user.nom }} {{ app.user.prenom }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
-      </li>
-      
-
-       {% else %}
-       <li class="nav-item ">
-        <a class="nav-link" href="{{ path('register') }}">Inscription</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
-      </li>
-      
-       {% endif %}
      
-    </ul>
-   </div> 
-  </div>
+        
+            
+        <h1 >CLUB BEAUTE</h1>
+    
+   
+     <header>
+           {{ include('include/header.html.twig') }}  
+     </header> 
  
-</nav>
-       </header>  
-       <div class="container-fluid" style=" 
+    <div class="container-fluid" style=" 
         background: url(http://zurb.com/playground/uploads/upload/upload/87/wood-bg.jpg) repeat;" 
         > 
         {% block body %}{% endblock %}</div>
       
 
        <footer class="main-footer">
-        <div class="container">
+        <div class="container-fluid">
             <!--Widgets Section-->
             <div class="widgets-section">
                 <div class="row clearfix">
@@ -159,7 +86,7 @@
                                         <li><a href="{{ path('home') }}">Accueil</a></li>
                                         <li><a href="{{ path('centresdebeaute') }}">Centres De Beaute</a></li>
                                         <li><a href="{{ path('services') }}">Services</a></li>
-                                        <li><a href="{{ path('reservation') }}">Reservation</a></li>
+                                       
                                         <li><a href="{{ path('contact') }}">Contact</a></li>
                                       
                                     </ul>

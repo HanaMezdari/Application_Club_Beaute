@@ -162,4 +162,5 @@ class Servicelilia
     public function __toString() {
         return $this->nom;
     }
+    
 }

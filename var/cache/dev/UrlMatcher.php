@@ -27,8 +27,9 @@ return [
         '/main' => [[['_route' => 'main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/mainviolette' => [[['_route' => 'mainviolette', '_controller' => 'App\\Controller\\MainvioletteController::index'], null, null, null, false, false, null]],
         '/offremariage' => [[['_route' => 'offremariage', '_controller' => 'App\\Controller\\OffremariageController::index'], null, null, null, false, false, null]],
-        '/inscription' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegisterController::index'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/reservation' => [[['_route' => 'reservation', '_controller' => 'App\\Controller\\ReservationController::index'], null, null, null, false, false, null]],
+        '/inscription' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegisterController::index'], null, null, null, false, false, null]],
+        '/reservationlilia' => [[['_route' => 'reservationlilia_index', '_controller' => 'App\\Controller\\ReservationliliaController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/reservationlilia/new' => [[['_route' => 'reservationlilia_new', '_controller' => 'App\\Controller\\ReservationliliaController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/connexion' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/deconnexion' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/servicefleurdelys' => [[['_route' => 'servicefleurdelys', '_controller' => 'App\\Controller\\ServicefleurdelysController::index'], null, null, null, false, false, null]],
@@ -70,6 +71,11 @@ return [
                     .')'
                     .'|entresdebeaute/([^/]++)(*:300)'
                 .')'
+                .'|/reservationlilia/([^/]++)(?'
+                    .'|(*:338)'
+                    .'|/edit(*:351)'
+                    .'|(*:359)'
+                .')'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -86,8 +92,11 @@ return [
         246 => [[['_route' => 'calendarviolette_show', '_controller' => 'App\\Controller\\CalendarvioletteController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         259 => [[['_route' => 'calendarviolette_edit', '_controller' => 'App\\Controller\\CalendarvioletteController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         267 => [[['_route' => 'calendarviolette_delete', '_controller' => 'App\\Controller\\CalendarvioletteController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        300 => [
-            [['_route' => 'centresdebeaute_show', '_controller' => 'App\\Controller\\CentresdebeauteController::show'], ['id'], null, null, false, true, null],
+        300 => [[['_route' => 'centresdebeaute_show', '_controller' => 'App\\Controller\\CentresdebeauteController::show'], ['id'], null, null, false, true, null]],
+        338 => [[['_route' => 'reservationlilia_show', '_controller' => 'App\\Controller\\ReservationliliaController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        351 => [[['_route' => 'reservationlilia_edit', '_controller' => 'App\\Controller\\ReservationliliaController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        359 => [
+            [['_route' => 'reservationlilia_delete', '_controller' => 'App\\Controller\\ReservationliliaController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
