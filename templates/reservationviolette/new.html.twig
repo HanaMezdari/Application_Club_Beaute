@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Reservation Violette{% endblock %}
+
+{% block body %}
+    <h1>Nouveau Réservation Violette</h1><br><br>
+    <center><h2 style="font-family:'Times New Roman', Times, serif;">Bonjour ! Comment vous appelez-vous ?</h2></center>
+    <div class="form">{{ include('reservationviolette/_form.html.twig') }}</div>
+
+    <a href="{{ path('reservationviolette_index') }}"> <button  class="btn btn-secondary" style=" margin:5px 0 100px 200px;">Voir La Liste</button></a>
+<style>
+h1{
+    padding: 5%;
+
+    font-family: 'Playfair Display', serif;
+    color: rgb(252, 252, 250);
+  font-size:35px;
+  text-shadow: 3px 4px 0 rgba(14, 12, 12, 0.2); 
+}
+.form{
+    margin:0 200px 0 200px;
+}
+
+button {
+   
+    width:200px;
+    font-size:10px;
+    margin-bottom:5px;
+}
+
+</style>
+{% endblock %}

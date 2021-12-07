@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerGoPqbOP/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerHNkfyDx/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -60,15 +60,16 @@ $classes[] = 'App\Controller\Mahassen\ServicemahassenCrudController';
 $classes[] = 'App\Controller\Mahassen\ServicesCrudController';
 $classes[] = 'App\Controller\MainController';
 $classes[] = 'App\Controller\MainvioletteController';
-$classes[] = 'App\Controller\OffremariageController';
 $classes[] = 'App\Controller\RegisterController';
 $classes[] = 'App\Controller\ReservationliliaController';
+$classes[] = 'App\Controller\ReservationvioletteController';
 $classes[] = 'App\Controller\SecurityController';
 $classes[] = 'App\Controller\ServicefleurdelysController';
 $classes[] = 'App\Controller\ServiceliliaController';
 $classes[] = 'App\Controller\ServicemahassenController';
 $classes[] = 'App\Controller\ServicesController';
 $classes[] = 'App\Controller\ServicevioletteController';
+$classes[] = 'App\Controller\Violette\ReservationvioletteCrudController';
 $classes[] = 'App\Controller\Violette\ServicesCrudController';
 $classes[] = 'App\Controller\Violette\ServicevioletteCrudController';
 $classes[] = 'App\Controller\Violette\VioletteController';
@@ -77,6 +78,7 @@ $classes[] = 'App\Form\CalendarvioletteType';
 $classes[] = 'App\Form\CommentaireType';
 $classes[] = 'App\Form\RegisterType';
 $classes[] = 'App\Form\ReservationliliaType';
+$classes[] = 'App\Form\ReservationvioletteType';
 $classes[] = 'App\Form\SearchForm';
 $classes[] = 'App\Form\ServiceliliaType';
 $classes[] = 'App\Repository\AdminRepository';
@@ -89,7 +91,9 @@ $classes[] = 'App\Repository\FleurdelysRepository';
 $classes[] = 'App\Repository\LiliabenazizaRepository';
 $classes[] = 'App\Repository\MahassenRepository';
 $classes[] = 'App\Repository\PubliciteRepository';
+$classes[] = 'App\Repository\ReservationfleurRepository';
 $classes[] = 'App\Repository\ReservationliliaRepository';
+$classes[] = 'App\Repository\ReservationvioletteRepository';
 $classes[] = 'App\Repository\ServicefleurdelysRepository';
 $classes[] = 'App\Repository\ServiceliliaRepository';
 $classes[] = 'App\Repository\ServicemahassenRepository';

@@ -19,7 +19,7 @@
             
                 <div class="column">
                     <div class="row">
-                        <H1>CONNEXION</H1>
+                        <h2>CONNEXION</h2>
                         <img id="profile" src="{{ asset('css/logo/logo.png') }}" alt="">
                 
                     </div>
@@ -41,7 +41,7 @@
                     <div class="row">
                         <input type="hidden" name="_csrf_token"
                          value="{{ csrf_token('authenticate') }}" >
-                        <input id="submit-btn" type="submit" name="submit" value="CONNEXION" />
+                        <input id="submit-btn" type="submit" name="submit" class="con-btn" value="CONNEXION" />
                     </div>
                 </div>
         </form>
@@ -80,7 +80,7 @@ section .content{
 }
 
 label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
     font-size: 120%;
     margin-left: 50px;
 }
@@ -94,24 +94,24 @@ input{
     margin-left: 50px;
 }
 
-h1{
+h2{
     font-family: sans-serif;
-    margin-left: 100px;
+    margin-left: 130px;
 }
 
 #profile{
     width: 40%;
-    border-radius: 600%;
-    margin-left: 100px;
+    border-radius: 60%;
+    margin-left: 130px;
 }
 
-button {
-    border: 30%;
-    width: 20%;
-    height: 200%;
-    background-color: rgba(162, 175, 162, 0.609);
+.con-btn {
+    
+    width: 120px;
+    height: 40px;
+    background-color: #ee9da1;
     text-decoration: none;
-    margin-left: 250px;
+    margin-left:250px;
     padding: 2%;
     border-radius: 20%;
 }

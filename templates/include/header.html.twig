@@ -8,76 +8,42 @@
             <ul class="menu">
                 <li><a href="{{ path('home') }}">Accuiel</a></li>
                 <li><a href="{{ path('centresdebeaute') }}">Centres De Beauté</a></li>
-                <li>
+               
+                    <li class="navbar-dropdown">
+                        <a href="{{ path('services') }}">
+                            Services
+                                                   
+                        </a>
+                        <div class="dropdown">
+                            <a href="{{ path('servicelilia') }}">
+                                Service Lilia Ben Aziza                        
+                                                        
+                            </a>
+                            <a href="{{ path('serviceviolette') }}">
+                                Service Violette
+                                                         
+                            </a>
+                            <a href="{{ path('servicefleurdelys') }}">
+                                Service Fleur De Lys
+                                                         
+                            </a>
+                            <a href="{{ path('servicemahassen') }}">
+                                Service Mahassen
+                                                         
+                            </a>
 
-                <!-- First Tier Drop Down -->
-                <label for="drop-3" class="toggle">Services +</label>
-                <a href="{{ path('services') }}">Services</a>
-                <input type="checkbox" id="drop-3"/>
-                <ul>
-                    <li>
-                       
-                    <!-- Second Tier Drop Down -->        
-                    <label for="drop-3" class="toggle">Service Lilia Ben Aziza +</label>
-                    <a href="{{ path('servicelilia') }}">Service Lilia Ben Aziza</a>         
-                    <input type="checkbox" id="drop-3"/>
-
-                    <ul>
-                        <li><a href="{{ path('main') }}">Calendrier</a></li>
-                        <li><a href="{{ path('reservationlilia_new') }}">Reservation</a></li>
-                        
-                    </ul>
+                        </div>
                     </li>
-                    <li>
-                       
-                    <!-- Second Tier Drop Down -->        
-                    <label for="drop-3" class="toggle">Service Violette +</label>
-                    <a href="{{ path('serviceviolette') }}">Service Violette</a>         
-                    <input type="checkbox" id="drop-3"/>
-
-                    <ul>
-                        <li><a href="{{ path('mainviolette') }}">Calendrier</a></li>
-                        <li><a href="#">Reservation</a></li>
-                        
-                    </ul>
-                    </li>
-                    <li>
-                       
-                    <!-- Second Tier Drop Down -->        
-                    <label for="drop-3" class="toggle">Service Fleur De Lys +</label>
-                    <a href="{{ path('serviceviolette') }}">Service Fleur De Lys</a>         
-                    <input type="checkbox" id="drop-3"/>
-
-                    <ul>
-                        <li><a href="#">Calendrier</a></li>
-                        <li><a href="#">Reservation</a></li>
-                        
-                    </ul>
-                    </li>
-                    <li>
-                       
-                    <!-- Second Tier Drop Down -->        
-                    <label for="drop-3" class="toggle">Service Mahassen +</label>
-                    <a href="{{ path('servicemahassen') }}">Service Mahassen</a>         
-                    <input type="checkbox" id="drop-3"/>
-
-                    <ul>
-                        <li><a href="#">Calendrier</a></li>
-                        <li><a href="#">Reservation</a></li>
-                        
-                    </ul>
-                    </li>
-                </ul>
-                </li>
-                
-                <li><a href="#">Contact</a></li>
+				
+                <li><a href="{{ path('contact') }}">Contact</a></li>
                   {% if app.user %}
              
             <li><a class="nav-link" >{{ app.user.nom }} {{ app.user.prenom }}</a> </li>
-            <li><button class="login-button" href="{{ path('register') }}">Déconnexion</button></li>
+            <li><button class="login-button" href="{{ path('app_logout') }}">Déconnexion</button></li>
              {% else %}
-            <li><button class="inscrit-button" href="{{ path('register') }}">Inscription</button></li>
-            <li><button class="join-button" href="{{ path('app_login') }}">Connexion</button></li>
+			<li> <a href="{{ path('register') }}"  class="inscrit-button" >Inscription</a></li> 
+           
+            <li> <a href="{{ path('app_login') }}"  class="join-button" >Connexion</a></li> 
             {% endif %}
             </ul>
         </nav>
@@ -94,6 +60,7 @@
     padding: 0.6rem 0.8rem;
     font-size: 1rem;
     cursor: pointer;
+	margin:7px 4px;
 }
 .join-button:hover {
     color: #f2f5f7;
@@ -103,12 +70,14 @@
 }
 .inscrit-button{
     color: #131418;
-    background-color: #ee9da1;
+    background-color: transparent;
     border: 1.5px solid #ee9da1;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     font-size: 1rem;
     cursor: pointer;
+	margin:7px 4px;
+	
 }
 .inscrit-button:hover {
     color: #f2f5f7;
@@ -139,16 +108,17 @@ a {
 }
 
 h1 {
-	margin-top: 100px;
+	
 	text-align:center;
 	font-size:60px;
 	line-height: 70px;
 	font-family: 'Bree Serif', 'serif';
 	}
 
-#container {
+#container{
 	margin: 0 auto;
 	max-width: 890px;
+	
 }
 
 p {
@@ -165,6 +135,7 @@ nav {
 	margin:0;
 	padding: 0;
 	background-color:  rgb(236, 190, 163);
+	box-shadow: 0px 10px 15px 8px rgba(0, 0, 0, 0.8);
 }
 
 #logo {
@@ -282,21 +253,7 @@ li > a:only-child:after { content: ''; }
 		display: none;
 	}
 
-	/* Stylinf the toggle lable */
-	.toggle {
-		display: block;
-		background-color: #254441;
-		padding:14px 20px;	
-		color:#FFF;
-		font-size:17px;
-		text-decoration:none;
-		border:none;
-	}
-
-	.toggle:hover {
-		background-color: #000000;
-	}
-
+	
 	/* Display Dropdown when clicked on Parent Lable */
 	[id^=drop]:checked + ul {
 		display: block;
@@ -308,7 +265,7 @@ li > a:only-child:after { content: ''; }
 		width: 100%;
 		}
 
-	nav ul ul .toggle,
+	nav ul ul ,
 	nav ul ul a {
 		padding: 0 40px;
 	}
@@ -322,7 +279,7 @@ li > a:only-child:after { content: ''; }
 		background-color: #000000;
 	}
   
-	nav ul li ul li .toggle,
+	nav ul li ul li ,
 	nav ul ul a,
   nav ul ul ul a{
 		padding:14px 20px;	
@@ -331,7 +288,7 @@ li > a:only-child:after { content: ''; }
 	}
   
   
-	nav ul li ul li .toggle,
+	nav ul li ul li ,
 	nav ul ul a {
 		background-color: #212121; 
 	}
@@ -372,4 +329,43 @@ li > a:only-child:after { content: ''; }
 	}
 
 }
+
+ .menu li.navbar-dropdown {
+    position: relative;
+}
+
+.menu li.navbar-dropdown:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.menu li.navbar-dropdown .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding: 20px 0;
+    top: 100%;
+    transform: translateY(50px);
+    left: 0;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    z-index: 111;
+    transition: 0.4s all;
+}
+
+.menu li.navbar-dropdown .dropdown a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+
+.navbar-dropdown .dropdown a:hover {
+    padding-left: 30px;
+}
+
+
         </style>

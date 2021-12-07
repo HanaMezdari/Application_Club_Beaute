@@ -2,6 +2,9 @@
 
 {% block title %}Show{% endblock %}
 {% block body %}
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-lg-6 col-md-10 col-sm-12">
  <section>
   <div class="card-holder">
 
@@ -86,11 +89,25 @@
     </div>
     <a href="{{ path('services') }}" style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
   </div>
-
+  <center><ul><center><li><h3>AGENDA VIOLETTE</h3></li></center>
+                        <hr>
+                        <li>Dimanche&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;09:00 - 17:00</li>
+                        <hr>
+                        <li>Mardi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;09:00 - 17:00</li>
+                        <hr>
+                        <li>Mercredi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;09:00 - 17:00</li>
+                        <hr>
+                        <li>Jeudi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;09:00 - 17:00</li>
+                        <hr>
+                        <li>Vendredi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;09:00 - 17:00</li>
+                        <hr>
+                        <li>Samedi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;09:00 - 17:00</li>
+                        <hr></ul></center>
 </section>
-
+</div>
+<div class="col-lg-6 col-md-10 col-sm-12">
  <section id="commentaires">
-    <h1>{{ centresdebeaute.commentaires | length }} commentaires : </h1>
+    <h3>{{ centresdebeaute.commentaires | length }} Avis Clients : </h3>
    {% for commentaire in centresdebeaute.commentaires %}
    <div class="comment">
        <div class="row">
@@ -111,13 +128,21 @@
    {{ form_row(commentaireForm.nomdeutilisateur, {'attr': {'placeholder': "Votre nom"}}) }}
    {{ form_row(commentaireForm.description, {'attr': {'placeholder': "Votre commentaire"}}) }}
 
-   <button type="submit" class="btn btn-success">Commenter !</button>
+   <button type="submit" class="btn btn-secondary">Commenter !</button>
    {{ form_end(commentaireForm) }}
 
  </section>
+</div>
+</div>
+</div>
 
  <style>
-  
+ ul{
+   margin:0 50px 0 50px;
+ }
+ li{
+   font-size:20px;
+ } 
   * {
     box-sizing: border-box;
     font-family: "Syne", sans-serif;
