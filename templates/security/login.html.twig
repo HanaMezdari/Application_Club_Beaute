@@ -1,8 +1,6 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Log in!{% endblock %}
 
 {% block body %}
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -63,20 +61,23 @@
     
 </form>
 <style>
- 
+body{
+   background: url(http://zurb.com/playground/uploads/upload/upload/87/wood-bg.jpg) repeat;
+} 
 section {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+   
 }
 
 section .content{
     border-radius: 10%;
     background-color: rgba(241, 236, 228, 0.513);
-    width: 30%;
+    width:40%;
     padding: 0.9%;
-    margin-top: 10%; 
+    margin-top: 8%;
+    
 }
 
 label {
@@ -96,24 +97,25 @@ input{
 
 h2{
     font-family: sans-serif;
-    margin-left: 130px;
+    margin-left: 180px;
+    margin-bottom:30px;
+    font-size:40px;
 }
 
 #profile{
-    width: 40%;
+    width: 30%;
     border-radius: 60%;
-    margin-left: 130px;
+    margin-left:200px;
 }
 
 .con-btn {
     
     width: 120px;
-    height: 40px;
-    background-color: #ee9da1;
+    height: 35px;
+    background-color: #fff;
     text-decoration: none;
-    margin-left:250px;
-    padding: 2%;
-    border-radius: 20%;
+    margin-left:400px;
+    
 }
 
 button:hover{

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Calendaar2;
+use App\Entity\Calendarmahassen;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Calendaar2|null find($id, $lockMode = null, $lockVersion = null)
- * @method Calendaar2|null findOneBy(array $criteria, array $orderBy = null)
- * @method Calendaar2[]    findAll()
- * @method Calendaar2[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Calendarmahassen|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Calendarmahassen|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Calendarmahassen[]    findAll()
+ * @method Calendarmahassen[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class Calendaar2Repository extends ServiceEntityRepository
+class CalendarmahassenRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Calendaar2::class);
+        parent::__construct($registry, Calendarmahassen::class);
     }
 
     // /**
-    //  * @return Calendaar2[] Returns an array of Calendaar2 objects
+    //  * @return Calendarmahassen[] Returns an array of Calendarmahassen objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class Calendaar2Repository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Calendaar2
+    public function findOneBySomeField($value): ?Calendarmahassen
     {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')

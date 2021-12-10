@@ -22,6 +22,31 @@ class Reservationfleur
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nbr_personne;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $start_date;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $end_date;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Servicefleurdelys::class)
+     */
+    private $servicefleurdelys;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +60,66 @@ class Reservationfleur
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getNbrPersonne(): ?int
+    {
+        return $this->nbr_personne;
+    }
+
+    public function setNbrPersonne(int $nbr_personne): self
+    {
+        $this->nbr_personne = $nbr_personne;
+
+        return $this;
+    }
+
+    public function getStartDate(): ?\DateTimeInterface
+    {
+        return $this->start_date;
+    }
+
+    public function setStartDate(\DateTimeInterface $start_date): self
+    {
+        $this->start_date = $start_date;
+
+        return $this;
+    }
+
+    public function getEndDate(): ?\DateTimeInterface
+    {
+        return $this->end_date;
+    }
+
+    public function setEndDate(\DateTimeInterface $end_date): self
+    {
+        $this->end_date = $end_date;
+
+        return $this;
+    }
+
+    public function getServicefleurdelys(): ?Servicefleurdelys
+    {
+        return $this->servicefleurdelys;
+    }
+
+    public function setServicefleurdelys(?Servicefleurdelys $servicefleurdelys): self
+    {
+        $this->servicefleurdelys = $servicefleurdelys;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

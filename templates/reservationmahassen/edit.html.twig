@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Reservation Mahassen{% endblock %} 
+
+{% block body %}
+    <h1>Modifier Réservation Mahassen</h1>
+
+    <div class="form">{{ include('reservationmahassen/_form.html.twig', {'button_label': 'Modifier'}) }}</div>
+
+   <a href="{{ path('reservationmahassen_index') }}"> <button  class="btn btn-secondary" style=" margin:5px 0 100px 200px;">Voir La Liste</button></a>
+    <style>
+      h1{
+         padding: 5%;
+         font-family: 'Playfair Display', serif;
+         color: rgb(252, 252, 250);
+         font-size:35px;
+         text-shadow: 3px 4px 0 rgba(14, 12, 12, 0.2); 
+         margin-left:128px;
+      }
+      .form{
+    margin:0 200px 0 200px;
+}
+
+button {
+   
+    width:200px;
+    font-size:10px;
+    margin-bottom:5px;
+}
+    </style>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendarmahassen{% endblock %}
+
+{% block body %}
+    <h1>Calendarmahassen</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ calendarmahassen.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ calendarmahassen.titre }}</td>
+            </tr>
+            <tr>
+                <th>Start</th>
+                <td>{{ calendarmahassen.start ? calendarmahassen.start|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>End</th>
+                <td>{{ calendarmahassen.end ? calendarmahassen.end|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ calendarmahassen.description }}</td>
+            </tr>
+            <tr>
+                <th>All_day</th>
+                <td>{{ calendarmahassen.allDay ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Background_color</th>
+                <td>{{ calendarmahassen.backgroundColor }}</td>
+            </tr>
+            <tr>
+                <th>Border_color</th>
+                <td>{{ calendarmahassen.borderColor }}</td>
+            </tr>
+            <tr>
+                <th>Text_color</th>
+                <td>{{ calendarmahassen.textColor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('calendarmahassen_index') }}">back to list</a>
+
+    <a href="{{ path('calendarmahassen_edit', {'id': calendarmahassen.id}) }}">edit</a>
+
+    {{ include('calendarmahassen/_delete_form.html.twig') }}
+{% endblock %}

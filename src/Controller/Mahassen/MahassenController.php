@@ -4,6 +4,7 @@ namespace App\Controller\Mahassen;
 
 use App\Entity\Services;
 use App\Entity\Servicemahassen;
+use App\Entity\Reservationmahassen;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -17,7 +18,7 @@ class MahassenController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return $this->render('servicemahassen/dashboard.html.twig');
+        return $this->render('servicemahassen/interface.html.twig');
     }
 
     public function configureDashboard(): Dashboard
@@ -31,5 +32,6 @@ class MahassenController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('servicemahassen', 'fas fa-list', Servicemahassen::class);
         yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
+        yield MenuItem::linkToCrud('Reservation Mahassen', 'fas fa-tags', Reservationmahassen::class);
     }
 }

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Calendarmahassen{% endblock %}
+
+{% block body %}
+    <h1>Edit Calendarmahassen</h1>
+
+    {{ include('calendarmahassen/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('calendarmahassen_index') }}">back to list</a>
+
+    {{ include('calendarmahassen/_delete_form.html.twig') }}
+{% endblock %}

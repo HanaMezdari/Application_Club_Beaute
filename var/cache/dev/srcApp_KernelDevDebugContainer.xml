@@ -430,6 +430,20 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CalendarController"/>
       </call>
     </service>
+    <service id="App\Controller\CalendarfleurController" class="App\Controller\CalendarfleurController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CalendarfleurController"/>
+      </call>
+    </service>
+    <service id="App\Controller\CalendarmahassenController" class="App\Controller\CalendarmahassenController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CalendarmahassenController"/>
+      </call>
+    </service>
     <service id="App\Controller\CalendarvioletteController" class="App\Controller\CalendarvioletteController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -524,6 +538,14 @@
         <argument type="service" id=".service_locator.JEaLqsX.App\Controller\Mahassen\MahassenController"/>
       </call>
     </service>
+    <service id="App\Controller\Mahassen\ReservationmahassenCrudController" class="App\Controller\Mahassen\ReservationmahassenCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Mahassen\ReservationmahassenCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="ea.crud_controller"/>
@@ -547,6 +569,20 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MainController"/>
       </call>
     </service>
+    <service id="App\Controller\MainfleurController" class="App\Controller\MainfleurController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MainfleurController"/>
+      </call>
+    </service>
+    <service id="App\Controller\MainmahassenController" class="App\Controller\MainmahassenController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MainmahassenController"/>
+      </call>
+    </service>
     <service id="App\Controller\MainvioletteController" class="App\Controller\MainvioletteController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -562,11 +598,25 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\RegisterController"/>
       </call>
     </service>
+    <service id="App\Controller\ReservationfleurController" class="App\Controller\ReservationfleurController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ReservationfleurController"/>
+      </call>
+    </service>
     <service id="App\Controller\ReservationliliaController" class="App\Controller\ReservationliliaController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ReservationliliaController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ReservationmahassenController" class="App\Controller\ReservationmahassenController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ReservationmahassenController"/>
       </call>
     </service>
     <service id="App\Controller\ReservationvioletteController" class="App\Controller\ReservationvioletteController" public="true" autowire="true" autoconfigure="true">
@@ -654,6 +704,12 @@
     <service id="App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\CalendarfleurType" class="App\Form\CalendarfleurType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CalendarmahassenType" class="App\Form\CalendarmahassenType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\CalendarvioletteType" class="App\Form\CalendarvioletteType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -663,7 +719,13 @@
     <service id="App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\ReservationfleurType" class="App\Form\ReservationfleurType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ReservationliliaType" class="App\Form\ReservationliliaType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ReservationmahassenType" class="App\Form\ReservationmahassenType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ReservationvioletteType" class="App\Form\ReservationvioletteType" autowire="true" autoconfigure="true">
@@ -679,11 +741,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\Calendaar2Repository" class="App\Repository\Calendaar2Repository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\CalendarfleurRepository" class="App\Repository\CalendarfleurRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CalendarmahassenRepository" class="App\Repository\CalendarmahassenRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -720,6 +786,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ReservationliliaRepository" class="App\Repository\ReservationliliaRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ReservationmahassenRepository" class="App\Repository\ReservationmahassenRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1194,10 +1264,14 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\CalendarType</argument>
+        <argument>App\Form\CalendarfleurType</argument>
+        <argument>App\Form\CalendarmahassenType</argument>
         <argument>App\Form\CalendarvioletteType</argument>
         <argument>App\Form\CommentaireType</argument>
         <argument>App\Form\RegisterType</argument>
+        <argument>App\Form\ReservationfleurType</argument>
         <argument>App\Form\ReservationliliaType</argument>
+        <argument>App\Form\ReservationmahassenType</argument>
         <argument>App\Form\ReservationvioletteType</argument>
         <argument>App\Form\SearchForm</argument>
         <argument>App\Form\ServiceliliaType</argument>
@@ -1541,7 +1615,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.U3qCeCH"/>
+      <argument type="service" id=".service_locator.SJzfnIM"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4544,7 +4618,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.MvWePnV"/>
+      <argument type="service" id=".service_locator.Hx4Sqf2"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6103,6 +6177,12 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CalendarfleurController" class="App\Controller\CalendarfleurController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CalendarfleurController" class="App\Controller\CalendarfleurController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CalendarfleurController" class="App\Controller\CalendarfleurController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CalendarmahassenController" class="App\Controller\CalendarmahassenController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CalendarmahassenController" class="App\Controller\CalendarmahassenController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CalendarmahassenController" class="App\Controller\CalendarmahassenController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CalendarvioletteController" class="App\Controller\CalendarvioletteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CalendarvioletteController" class="App\Controller\CalendarvioletteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CalendarvioletteController" class="App\Controller\CalendarvioletteController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6147,6 +6227,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Mahassen\ReservationmahassenCrudController" class="App\Controller\Mahassen\ReservationmahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Mahassen\ReservationmahassenCrudController" class="App\Controller\Mahassen\ReservationmahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Mahassen\ReservationmahassenCrudController" class="App\Controller\Mahassen\ReservationmahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Mahassen\ReservationmahassenCrudController" class="App\Controller\Mahassen\ReservationmahassenCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Mahassen\ServicemahassenCrudController" class="App\Controller\Mahassen\ServicemahassenCrudController" autowire="true" abstract="true"/>
@@ -6158,15 +6242,27 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainfleurController" class="App\Controller\MainfleurController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainfleurController" class="App\Controller\MainfleurController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MainfleurController" class="App\Controller\MainfleurController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainmahassenController" class="App\Controller\MainmahassenController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainmahassenController" class="App\Controller\MainmahassenController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MainmahassenController" class="App\Controller\MainmahassenController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainvioletteController" class="App\Controller\MainvioletteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainvioletteController" class="App\Controller\MainvioletteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainvioletteController" class="App\Controller\MainvioletteController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegisterController" class="App\Controller\RegisterController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReservationfleurController" class="App\Controller\ReservationfleurController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReservationfleurController" class="App\Controller\ReservationfleurController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ReservationfleurController" class="App\Controller\ReservationfleurController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReservationliliaController" class="App\Controller\ReservationliliaController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReservationliliaController" class="App\Controller\ReservationliliaController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ReservationliliaController" class="App\Controller\ReservationliliaController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReservationmahassenController" class="App\Controller\ReservationmahassenController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReservationmahassenController" class="App\Controller\ReservationmahassenController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ReservationmahassenController" class="App\Controller\ReservationmahassenController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReservationvioletteController" class="App\Controller\ReservationvioletteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReservationvioletteController" class="App\Controller\ReservationvioletteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ReservationvioletteController" class="App\Controller\ReservationvioletteController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6206,14 +6302,22 @@
     <service id=".abstract.instanceof.App\Controller\Violette\VioletteController" class="App\Controller\Violette\VioletteController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CalendarfleurType" class="App\Form\CalendarfleurType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CalendarfleurType" class="App\Form\CalendarfleurType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CalendarmahassenType" class="App\Form\CalendarmahassenType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CalendarmahassenType" class="App\Form\CalendarmahassenType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CalendarvioletteType" class="App\Form\CalendarvioletteType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CalendarvioletteType" class="App\Form\CalendarvioletteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationfleurType" class="App\Form\ReservationfleurType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ReservationfleurType" class="App\Form\ReservationfleurType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationliliaType" class="App\Form\ReservationliliaType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ReservationliliaType" class="App\Form\ReservationliliaType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationmahassenType" class="App\Form\ReservationmahassenType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ReservationmahassenType" class="App\Form\ReservationmahassenType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReservationvioletteType" class="App\Form\ReservationvioletteType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ReservationvioletteType" class="App\Form\ReservationvioletteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchForm" class="App\Form\SearchForm" autowire="true" abstract="true"/>
@@ -6222,10 +6326,12 @@
     <service id=".abstract.instanceof.App\Form\ServiceliliaType" class="App\Form\ServiceliliaType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Calendaar2Repository" class="App\Repository\Calendaar2Repository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\Calendaar2Repository" class="App\Repository\Calendaar2Repository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CalendarfleurRepository" class="App\Repository\CalendarfleurRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CalendarfleurRepository" class="App\Repository\CalendarfleurRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CalendarmahassenRepository" class="App\Repository\CalendarmahassenRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CalendarmahassenRepository" class="App\Repository\CalendarmahassenRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CalendarvioletteRepository" class="App\Repository\CalendarvioletteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CalendarvioletteRepository" class="App\Repository\CalendarvioletteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CentresdebeauteRepository" class="App\Repository\CentresdebeauteRepository" autowire="true" abstract="true"/>
@@ -6244,6 +6350,8 @@
     <service id=".abstract.instanceof.App\Repository\ReservationfleurRepository" class="App\Repository\ReservationfleurRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReservationliliaRepository" class="App\Repository\ReservationliliaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ReservationliliaRepository" class="App\Repository\ReservationliliaRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReservationmahassenRepository" class="App\Repository\ReservationmahassenRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ReservationmahassenRepository" class="App\Repository\ReservationmahassenRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReservationvioletteRepository" class="App\Repository\ReservationvioletteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ReservationvioletteRepository" class="App\Repository\ReservationvioletteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServicefleurdelysRepository" class="App\Repository\ServicefleurdelysRepository" autowire="true" abstract="true"/>
@@ -6695,6 +6803,30 @@
         <argument key="calendar" type="service_closure" id=".errored..service_locator.NF7cwmN.App\Entity\Calendar"/>
       </argument>
     </service>
+    <service id=".service_locator.Fomc3Xl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarfleurRepository" type="service_closure" id="App\Repository\CalendarfleurRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.7SNw2JE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarfleur" type="service_closure" id=".errored..service_locator.7SNw2JE.App\Entity\Calendarfleur"/>
+      </argument>
+    </service>
+    <service id=".service_locator.rZjuiRz" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarmahassenRepository" type="service_closure" id="App\Repository\CalendarmahassenRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.CwSorCs" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarmahassen" type="service_closure" id=".errored..service_locator.CwSorCs.App\Entity\Calendarmahassen"/>
+      </argument>
+    </service>
     <service id=".service_locator.bqSs3Yx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6714,10 +6846,28 @@
         <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.pi4EZ2T" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="services" type="service_closure" id=".errored..service_locator.pi4EZ2T.App\Entity\Services"/>
+      </argument>
+    </service>
     <service id=".service_locator.5cOmFQz" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="calendar" type="service_closure" id="App\Repository\CalendarRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.W4P.BEa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarfleur" type="service_closure" id="App\Repository\CalendarfleurRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.L.eSwQL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarmahassen" type="service_closure" id="App\Repository\CalendarmahassenRepository"/>
       </argument>
     </service>
     <service id=".service_locator.GxcIE92" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -6732,6 +6882,18 @@
         <argument key="encoder" type="service_closure" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
+    <service id=".service_locator.rTDisJK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationfleurRepository" type="service_closure" id="App\Repository\ReservationfleurRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.6WWBI0M" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationfleur" type="service_closure" id=".errored..service_locator.6WWBI0M.App\Entity\Reservationfleur"/>
+      </argument>
+    </service>
     <service id=".service_locator.woFU5bm" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6742,6 +6904,18 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="reservationlilia" type="service_closure" id=".errored..service_locator.Pi9JUD..App\Entity\Reservationlilia"/>
+      </argument>
+    </service>
+    <service id=".service_locator.rqIHfHD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationmahassenRepository" type="service_closure" id="App\Repository\ReservationmahassenRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.JrPgjLe" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationmahassen" type="service_closure" id=".errored..service_locator.JrPgjLe.App\Entity\Reservationmahassen"/>
       </argument>
     </service>
     <service id=".service_locator.1L1a3Ah" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -6786,7 +6960,7 @@
         <argument key="repository" type="service_closure" id="App\Repository\ServicevioletteRepository"/>
       </argument>
     </service>
-    <service id=".service_locator..EiTHUp" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.f3CpPE4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CentresdebeauteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
@@ -6920,6 +7094,14 @@
         <argument key="App\Controller\CalendarController::edit" type="service_closure" id=".service_locator.NF7cwmN"/>
         <argument key="App\Controller\CalendarController::index" type="service_closure" id=".service_locator.1lMDBp1"/>
         <argument key="App\Controller\CalendarController::show" type="service_closure" id=".service_locator.NF7cwmN"/>
+        <argument key="App\Controller\CalendarfleurController::delete" type="service_closure" id=".service_locator.7SNw2JE"/>
+        <argument key="App\Controller\CalendarfleurController::edit" type="service_closure" id=".service_locator.7SNw2JE"/>
+        <argument key="App\Controller\CalendarfleurController::index" type="service_closure" id=".service_locator.Fomc3Xl"/>
+        <argument key="App\Controller\CalendarfleurController::show" type="service_closure" id=".service_locator.7SNw2JE"/>
+        <argument key="App\Controller\CalendarmahassenController::delete" type="service_closure" id=".service_locator.CwSorCs"/>
+        <argument key="App\Controller\CalendarmahassenController::edit" type="service_closure" id=".service_locator.CwSorCs"/>
+        <argument key="App\Controller\CalendarmahassenController::index" type="service_closure" id=".service_locator.rZjuiRz"/>
+        <argument key="App\Controller\CalendarmahassenController::show" type="service_closure" id=".service_locator.CwSorCs"/>
         <argument key="App\Controller\CalendarvioletteController::delete" type="service_closure" id=".service_locator.BXyDLJr"/>
         <argument key="App\Controller\CalendarvioletteController::edit" type="service_closure" id=".service_locator.BXyDLJr"/>
         <argument key="App\Controller\CalendarvioletteController::index" type="service_closure" id=".service_locator.bqSs3Yx"/>
@@ -6968,6 +7150,7 @@
         <argument key="App\Controller\Fleurdelys\ServicesCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Fleurdelys\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Fleurdelys\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\HomeController::show" type="service_closure" id=".service_locator.pi4EZ2T"/>
         <argument key="App\Controller\Liliabenaziza\LiliabenazizaController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
         <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
@@ -7033,6 +7216,27 @@
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Mahassen\MahassenController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Mahassen\ServicemahassenCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Mahassen\ServicemahassenCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Mahassen\ServicemahassenCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -7076,12 +7280,22 @@
         <argument key="App\Controller\Mahassen\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Mahassen\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\MainController::index" type="service_closure" id=".service_locator.5cOmFQz"/>
+        <argument key="App\Controller\MainfleurController::index" type="service_closure" id=".service_locator.W4P.BEa"/>
+        <argument key="App\Controller\MainmahassenController::index" type="service_closure" id=".service_locator.L.eSwQL"/>
         <argument key="App\Controller\MainvioletteController::index" type="service_closure" id=".service_locator.GxcIE92"/>
         <argument key="App\Controller\RegisterController::index" type="service_closure" id=".service_locator.jmvbEvf"/>
+        <argument key="App\Controller\ReservationfleurController::delete" type="service_closure" id=".service_locator.6WWBI0M"/>
+        <argument key="App\Controller\ReservationfleurController::edit" type="service_closure" id=".service_locator.6WWBI0M"/>
+        <argument key="App\Controller\ReservationfleurController::index" type="service_closure" id=".service_locator.rTDisJK"/>
+        <argument key="App\Controller\ReservationfleurController::show" type="service_closure" id=".service_locator.6WWBI0M"/>
         <argument key="App\Controller\ReservationliliaController::delete" type="service_closure" id=".service_locator.Pi9JUD."/>
         <argument key="App\Controller\ReservationliliaController::edit" type="service_closure" id=".service_locator.Pi9JUD."/>
         <argument key="App\Controller\ReservationliliaController::index" type="service_closure" id=".service_locator.woFU5bm"/>
         <argument key="App\Controller\ReservationliliaController::show" type="service_closure" id=".service_locator.Pi9JUD."/>
+        <argument key="App\Controller\ReservationmahassenController::delete" type="service_closure" id=".service_locator.JrPgjLe"/>
+        <argument key="App\Controller\ReservationmahassenController::edit" type="service_closure" id=".service_locator.JrPgjLe"/>
+        <argument key="App\Controller\ReservationmahassenController::index" type="service_closure" id=".service_locator.rqIHfHD"/>
+        <argument key="App\Controller\ReservationmahassenController::show" type="service_closure" id=".service_locator.JrPgjLe"/>
         <argument key="App\Controller\ReservationvioletteController::delete" type="service_closure" id=".service_locator.dbbZA1c"/>
         <argument key="App\Controller\ReservationvioletteController::edit" type="service_closure" id=".service_locator.dbbZA1c"/>
         <argument key="App\Controller\ReservationvioletteController::index" type="service_closure" id=".service_locator.1L1a3Ah"/>
@@ -7286,6 +7500,14 @@
         <argument key="App\Controller\CalendarController:edit" type="service_closure" id=".service_locator.NF7cwmN"/>
         <argument key="App\Controller\CalendarController:index" type="service_closure" id=".service_locator.1lMDBp1"/>
         <argument key="App\Controller\CalendarController:show" type="service_closure" id=".service_locator.NF7cwmN"/>
+        <argument key="App\Controller\CalendarfleurController:delete" type="service_closure" id=".service_locator.7SNw2JE"/>
+        <argument key="App\Controller\CalendarfleurController:edit" type="service_closure" id=".service_locator.7SNw2JE"/>
+        <argument key="App\Controller\CalendarfleurController:index" type="service_closure" id=".service_locator.Fomc3Xl"/>
+        <argument key="App\Controller\CalendarfleurController:show" type="service_closure" id=".service_locator.7SNw2JE"/>
+        <argument key="App\Controller\CalendarmahassenController:delete" type="service_closure" id=".service_locator.CwSorCs"/>
+        <argument key="App\Controller\CalendarmahassenController:edit" type="service_closure" id=".service_locator.CwSorCs"/>
+        <argument key="App\Controller\CalendarmahassenController:index" type="service_closure" id=".service_locator.rZjuiRz"/>
+        <argument key="App\Controller\CalendarmahassenController:show" type="service_closure" id=".service_locator.CwSorCs"/>
         <argument key="App\Controller\CalendarvioletteController:delete" type="service_closure" id=".service_locator.BXyDLJr"/>
         <argument key="App\Controller\CalendarvioletteController:edit" type="service_closure" id=".service_locator.BXyDLJr"/>
         <argument key="App\Controller\CalendarvioletteController:index" type="service_closure" id=".service_locator.bqSs3Yx"/>
@@ -7334,6 +7556,7 @@
         <argument key="App\Controller\Fleurdelys\ServicesCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Fleurdelys\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Fleurdelys\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\HomeController:show" type="service_closure" id=".service_locator.pi4EZ2T"/>
         <argument key="App\Controller\Liliabenaziza\LiliabenazizaController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
         <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
@@ -7399,6 +7622,27 @@
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Mahassen\MahassenController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Mahassen\ServicemahassenCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Mahassen\ServicemahassenCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Mahassen\ServicemahassenCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -7442,12 +7686,22 @@
         <argument key="App\Controller\Mahassen\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Mahassen\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\MainController:index" type="service_closure" id=".service_locator.5cOmFQz"/>
+        <argument key="App\Controller\MainfleurController:index" type="service_closure" id=".service_locator.W4P.BEa"/>
+        <argument key="App\Controller\MainmahassenController:index" type="service_closure" id=".service_locator.L.eSwQL"/>
         <argument key="App\Controller\MainvioletteController:index" type="service_closure" id=".service_locator.GxcIE92"/>
         <argument key="App\Controller\RegisterController:index" type="service_closure" id=".service_locator.jmvbEvf"/>
+        <argument key="App\Controller\ReservationfleurController:delete" type="service_closure" id=".service_locator.6WWBI0M"/>
+        <argument key="App\Controller\ReservationfleurController:edit" type="service_closure" id=".service_locator.6WWBI0M"/>
+        <argument key="App\Controller\ReservationfleurController:index" type="service_closure" id=".service_locator.rTDisJK"/>
+        <argument key="App\Controller\ReservationfleurController:show" type="service_closure" id=".service_locator.6WWBI0M"/>
         <argument key="App\Controller\ReservationliliaController:delete" type="service_closure" id=".service_locator.Pi9JUD."/>
         <argument key="App\Controller\ReservationliliaController:edit" type="service_closure" id=".service_locator.Pi9JUD."/>
         <argument key="App\Controller\ReservationliliaController:index" type="service_closure" id=".service_locator.woFU5bm"/>
         <argument key="App\Controller\ReservationliliaController:show" type="service_closure" id=".service_locator.Pi9JUD."/>
+        <argument key="App\Controller\ReservationmahassenController:delete" type="service_closure" id=".service_locator.JrPgjLe"/>
+        <argument key="App\Controller\ReservationmahassenController:edit" type="service_closure" id=".service_locator.JrPgjLe"/>
+        <argument key="App\Controller\ReservationmahassenController:index" type="service_closure" id=".service_locator.rqIHfHD"/>
+        <argument key="App\Controller\ReservationmahassenController:show" type="service_closure" id=".service_locator.JrPgjLe"/>
         <argument key="App\Controller\ReservationvioletteController:delete" type="service_closure" id=".service_locator.dbbZA1c"/>
         <argument key="App\Controller\ReservationvioletteController:edit" type="service_closure" id=".service_locator.dbbZA1c"/>
         <argument key="App\Controller\ReservationvioletteController:index" type="service_closure" id=".service_locator.1L1a3Ah"/>
@@ -7592,14 +7846,18 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.U3qCeCH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.SJzfnIM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CalendarType" type="service_closure" id="App\Form\CalendarType"/>
+        <argument key="App\Form\CalendarfleurType" type="service_closure" id="App\Form\CalendarfleurType"/>
+        <argument key="App\Form\CalendarmahassenType" type="service_closure" id="App\Form\CalendarmahassenType"/>
         <argument key="App\Form\CalendarvioletteType" type="service_closure" id="App\Form\CalendarvioletteType"/>
         <argument key="App\Form\CommentaireType" type="service_closure" id="App\Form\CommentaireType"/>
         <argument key="App\Form\RegisterType" type="service_closure" id="App\Form\RegisterType"/>
+        <argument key="App\Form\ReservationfleurType" type="service_closure" id="App\Form\ReservationfleurType"/>
         <argument key="App\Form\ReservationliliaType" type="service_closure" id="App\Form\ReservationliliaType"/>
+        <argument key="App\Form\ReservationmahassenType" type="service_closure" id="App\Form\ReservationmahassenType"/>
         <argument key="App\Form\ReservationvioletteType" type="service_closure" id="App\Form\ReservationvioletteType"/>
         <argument key="App\Form\SearchForm" type="service_closure" id="App\Form\SearchForm"/>
         <argument key="App\Form\ServiceliliaType" type="service_closure" id="App\Form\ServiceliliaType"/>
@@ -7779,12 +8037,13 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.MvWePnV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Hx4Sqf2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
-        <argument key="App\Repository\Calendaar2Repository" type="service_closure" id="App\Repository\Calendaar2Repository"/>
         <argument key="App\Repository\CalendarRepository" type="service_closure" id="App\Repository\CalendarRepository"/>
+        <argument key="App\Repository\CalendarfleurRepository" type="service_closure" id="App\Repository\CalendarfleurRepository"/>
+        <argument key="App\Repository\CalendarmahassenRepository" type="service_closure" id="App\Repository\CalendarmahassenRepository"/>
         <argument key="App\Repository\CalendarvioletteRepository" type="service_closure" id="App\Repository\CalendarvioletteRepository"/>
         <argument key="App\Repository\CentresdebeauteRepository" type="service_closure" id="App\Repository\CentresdebeauteRepository"/>
         <argument key="App\Repository\CommentaireRepository" type="service_closure" id="App\Repository\CommentaireRepository"/>
@@ -7794,6 +8053,7 @@
         <argument key="App\Repository\PubliciteRepository" type="service_closure" id="App\Repository\PubliciteRepository"/>
         <argument key="App\Repository\ReservationfleurRepository" type="service_closure" id="App\Repository\ReservationfleurRepository"/>
         <argument key="App\Repository\ReservationliliaRepository" type="service_closure" id="App\Repository\ReservationliliaRepository"/>
+        <argument key="App\Repository\ReservationmahassenRepository" type="service_closure" id="App\Repository\ReservationmahassenRepository"/>
         <argument key="App\Repository\ReservationvioletteRepository" type="service_closure" id="App\Repository\ReservationvioletteRepository"/>
         <argument key="App\Repository\ServicefleurdelysRepository" type="service_closure" id="App\Repository\ServicefleurdelysRepository"/>
         <argument key="App\Repository\ServiceliliaRepository" type="service_closure" id="App\Repository\ServiceliliaRepository"/>
@@ -7848,6 +8108,7 @@
         <argument>App\Controller\Liliabenaziza\ReservationliliaCrudController</argument>
         <argument>App\Controller\Liliabenaziza\ServiceliliaCrudController</argument>
         <argument>App\Controller\Liliabenaziza\ServicesCrudController</argument>
+        <argument>App\Controller\Mahassen\ReservationmahassenCrudController</argument>
         <argument>App\Controller\Mahassen\ServicemahassenCrudController</argument>
         <argument>App\Controller\Mahassen\ServicesCrudController</argument>
         <argument>App\Controller\Violette\ReservationvioletteCrudController</argument>
@@ -7985,6 +8246,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\CalendarfleurController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\CalendarfleurController"/>
+      <argument>App\Controller\CalendarfleurController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\CalendarmahassenController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\CalendarmahassenController"/>
+      <argument>App\Controller\CalendarmahassenController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\CalendarvioletteController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\CalendarvioletteController"/>
       <argument>App\Controller\CalendarvioletteController</argument>
@@ -8057,6 +8330,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.JEaLqsX" method="withContext"/>
     </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Mahassen\ReservationmahassenCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Mahassen\ReservationmahassenCrudController"/>
+      <argument>App\Controller\Mahassen\ReservationmahassenCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
     <service id=".service_locator.ky4eP1x.App\Controller\Mahassen\ServicemahassenCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Mahassen\ServicemahassenCrudController"/>
       <argument>App\Controller\Mahassen\ServicemahassenCrudController</argument>
@@ -8075,6 +8354,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\MainfleurController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\MainfleurController"/>
+      <argument>App\Controller\MainfleurController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\MainmahassenController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\MainmahassenController"/>
+      <argument>App\Controller\MainmahassenController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\MainvioletteController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MainvioletteController"/>
       <argument>App\Controller\MainvioletteController</argument>
@@ -8087,9 +8378,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\ReservationfleurController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ReservationfleurController"/>
+      <argument>App\Controller\ReservationfleurController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\ReservationliliaController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\ReservationliliaController"/>
       <argument>App\Controller\ReservationliliaController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\ReservationmahassenController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ReservationmahassenController"/>
+      <argument>App\Controller\ReservationmahassenController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -8315,12 +8618,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator..EiTHUp"/>
+      <argument type="service" id=".service_locator.f3CpPE4"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator..EiTHUp"/>
+      <argument type="service" id=".service_locator.f3CpPE4"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -8347,9 +8650,14 @@
     <service id=".errored..service_locator._L8Y8bZ.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
     <service id=".errored..service_locator.RLVVpop.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
     <service id=".errored..service_locator.NF7cwmN.App\Entity\Calendar" class="App\Entity\Calendar"/>
+    <service id=".errored..service_locator.7SNw2JE.App\Entity\Calendarfleur" class="App\Entity\Calendarfleur"/>
+    <service id=".errored..service_locator.CwSorCs.App\Entity\Calendarmahassen" class="App\Entity\Calendarmahassen"/>
     <service id=".errored..service_locator.BXyDLJr.App\Entity\Calendarviolette" class="App\Entity\Calendarviolette"/>
     <service id=".errored..service_locator.8rpL3Ir.App\Entity\Centresdebeaute" class="App\Entity\Centresdebeaute"/>
+    <service id=".errored..service_locator.pi4EZ2T.App\Entity\Services" class="App\Entity\Services"/>
+    <service id=".errored..service_locator.6WWBI0M.App\Entity\Reservationfleur" class="App\Entity\Reservationfleur"/>
     <service id=".errored..service_locator.Pi9JUD..App\Entity\Reservationlilia" class="App\Entity\Reservationlilia"/>
+    <service id=".errored..service_locator.JrPgjLe.App\Entity\Reservationmahassen" class="App\Entity\Reservationmahassen"/>
     <service id=".errored..service_locator.dbbZA1c.App\Entity\Reservationviolette" class="App\Entity\Reservationviolette"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.GWq2yvR"/>
@@ -8760,7 +9068,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator..EiTHUp"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.f3CpPE4"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

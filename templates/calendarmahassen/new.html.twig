@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Calendarmahassen{% endblock %}
+
+{% block body %}
+    <h1>Create new Calendarmahassen</h1>
+
+    {{ include('calendarmahassen/_form.html.twig') }}
+
+    <a href="{{ path('calendarmahassen_index') }}">back to list</a>
+{% endblock %}

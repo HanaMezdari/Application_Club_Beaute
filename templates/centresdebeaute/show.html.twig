@@ -9,7 +9,8 @@
   <div class="card-holder">
 
     <div class="gizmo-card">
-      <img src="/centre/{{ centresdebeaute.image2 }}" alt="image">
+      <img src="/centre/{{ centresdebeaute.image2 }}" style=" width: 600px;
+    height: 640px;" alt="image">
       
       <h1>Bienvenu:</h1>
       <br>
@@ -24,8 +25,7 @@
         <h2>Bienvenu:<br>Chez-{{ centresdebeaute.nom}}</h2>
   
         <p>
-         {{centresdebeaute.description}}.
-         
+         {{centresdebeaute.description}}.<br><br>
         </p>
   
         <div class="gizmo-socials">
@@ -87,9 +87,12 @@
       </div>
   
     </div>
-    <a href="{{ path('services') }}" style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
+             <a href="{{ path('services') }}" style="color:#fff;font-size:20px;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
+
   </div>
-  <center><ul><center><li><h3>AGENDA VIOLETTE</h3></li></center>
+              <center><ul>
+                         <br><br>
+                         <li><h4>Horaires d'ouverture :&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4></li>
                         <hr>
                         <li>Dimanche&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;09:00 - 17:00</li>
                         <hr>
@@ -101,13 +104,14 @@
                         <hr>
                         <li>Vendredi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;09:00 - 17:00</li>
                         <hr>
-                        <li>Samedi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;09:00 - 17:00</li>
-                        <hr></ul></center>
+                        <li>Samedi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;09:00 - 17:00</li></ul></center>
+                         
 </section>
 </div>
 <div class="col-lg-6 col-md-10 col-sm-12">
- <section id="commentaires">
-    <h3>{{ centresdebeaute.commentaires | length }} Avis Clients : </h3>
+ <section id="commentaires" style="margin-top:25px;">
+    <h2>Avis Clients:</h2>
+    <h6>{{ centresdebeaute.commentaires | length }} Clients ont donné leur avis: </h6>
    {% for commentaire in centresdebeaute.commentaires %}
    <div class="comment">
        <div class="row">
@@ -138,10 +142,10 @@
 
  <style>
  ul{
-   margin:0 50px 0 50px;
+   margin:0 100px 0 60px;
  }
  li{
-   font-size:20px;
+   font-size:15px;
  } 
   * {
     box-sizing: border-box;
@@ -181,8 +185,8 @@
     align-items: center;
     justify-content: space-between;
     margin: 20px;
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 642px;
    
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -291,8 +295,6 @@
   }
   .gizmo-card img{
     position: absolute;
-    height: 400px;
-    width: 400px;
     border-radius: 20px;
   }
   

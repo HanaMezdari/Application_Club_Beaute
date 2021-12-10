@@ -22,7 +22,7 @@ class ReservationliliaCrudController extends AbstractCrudController
         return [
             AssociationField::new('user'),
             TextareaField::new('description'),
-            IntegerField::new('nbr_persoone'),
+            IntegerField::new('nbr_personne'),
             DateTimeField::new('start_date'),
             DateTimeField::new('end_date'),
             AssociationField::new('servicelilia'),

@@ -5,32 +5,6 @@ body{
   font-family: 'Poppins', sans-serif;
 
 }
-section.center{
-    height:250px;
-    transform: translate(-50%,-50%);
-    
-  }
-  .center h1{
-    color: rgba(255,0,0,0.1);
-    font-size: 100px;
-    text-transform: uppercase;
-    font-weight: 700;
-    background-size: cover;
-    background-image: url('https://hitchedinkc.files.wordpress.com/2013/12/1.jpg');
-    -webkit-background-clip: text;
-    animation: background-text-animation 15s linear infinite;
-  }
-  @keyframes background-text-animation {
-    0%{
-      background-position: left 0px top 50%;
-    }
-    50%{
-      background-position: left 1500px top 50%;
-    }
-    100%{
-      background-position: left 0px top 50%;
-    }
-  }
 
  #maCarte{
      height: 1045px;

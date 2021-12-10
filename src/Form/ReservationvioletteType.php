@@ -34,9 +34,9 @@ class ReservationvioletteType extends AbstractType
         ->add('description')
        
         
-        ->add('servicelilia', EntityType::class,['class'=>Serviceviolette::class,
+        ->add('serviceviolette', EntityType::class,['class'=>Serviceviolette::class,
         'choice_label'=>'nom',
-       'label'=>'service Lilia Ben Aziza'
+       'label'=>'service Violette'
    ])
     
 ;

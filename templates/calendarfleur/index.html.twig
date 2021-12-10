@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendarfleur index{% endblock %}
+
+{% block body %}
+    <h1>Calendarfleur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Description</th>
+                <th>All_day</th>
+                <th>Background_color</th>
+                <th>Border_color</th>
+                <th>Text_color</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calendarfleur in calendarfleurs %}
+            <tr>
+                <td>{{ calendarfleur.id }}</td>
+                <td>{{ calendarfleur.titre }}</td>
+                <td>{{ calendarfleur.start ? calendarfleur.start|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendarfleur.end ? calendarfleur.end|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ calendarfleur.description }}</td>
+                <td>{{ calendarfleur.allDay ? 'Yes' : 'No' }}</td>
+                <td>{{ calendarfleur.backgroundColor }}</td>
+                <td>{{ calendarfleur.borderColor }}</td>
+                <td>{{ calendarfleur.textColor }}</td>
+                <td>
+                    <a href="{{ path('calendarfleur_show', {'id': calendarfleur.id}) }}">show</a>
+                    <a href="{{ path('calendarfleur_edit', {'id': calendarfleur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('calendarfleur_new') }}">Create new</a>
+{% endblock %}

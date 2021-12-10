@@ -123,20 +123,22 @@
             <p>
               
                 {{ item.description }}
-                <a href="{{ path('centresdebeaute', {'id':item.id } ) }}" class="btn btn-secondary float-left">Lire la suite </a>
+              <a href="{{ path('services' ) }}" class="btn btn-secondary ">Lire la suite </a> 
             </p>
         </div>
     </div>
     {% endfor %}
   </div>  
 </section>
+
 <div class="container-fluid" >
      <div class="row">
         <div class="column col-lg-4 col-md-8 col-sm-12" style="float:right;" >
-<h6>Les questions fréquentes </h6></div>
+<h6>Les questions fréquentes </h6>
+<img id="profile" src="{{ asset('css/logo/logo.png') }}" alt=""></div>
 <div class="column col-lg-8 col-md-10 col-sm-12" style="float:left;" >  
-<section class="information container">
-    <div class="information__container" style="font-size:20px;">
+<section class="information container" >
+    <div class="information__container" style="font-size:20px;background: url("http://zurb.com/playground/uploads/upload/upload/87/wood-bg.jpg") repeat;">
         <div class="information__item">
             <header class="information__header">
                 <i class='bx bx-plus information__icon'></i>
@@ -178,8 +180,12 @@
                 <p class="information__description">
                     -Cliquez sur Mon compte en haute à droite.<br>
                     -Indiquez votre email et mot de passe CLUB BEAUTE si vous n'étes pas connecté.<br>
-                    -Pour déplacer un rendez-vous, vous devez d'abord l'annuler, pour cela, cliquer sur annuler mon rdv que vous souhaitez déplacer.
-                    -Cliquez ensuite sur prendre RDV et reprenez rendez-vous.
+                    *Pour déplacer un rendez-vous, vous devez d'abord le modifier, pour cela,<br> 
+                    -Cliquer sur 'Edit' mon rdv que vous souhaitez déplacer.<br>
+                    -Cliquez ensuite sur le button 'Modifier' et reprenez rendez-vous.<br>
+                    *Pour supprimer un rendez-vous, vous devez d'abord l'annuler', pour cela,<br> 
+                    -Cliquer sur 'Annuler' mon rdv que vous souhaitez déplacer.<br>
+                    -Cliquez ensuite sur le button 'Annuler' et reprenez rendez-vous.<br>
                 </p>
             </div>
         </div>
@@ -192,7 +198,8 @@
 
             <div class="information__content">
                 <p class="information__description">
-                  -Il vous suffit de nous contacter par téléphone de lund au vendredi de 9h à 18h et le samedi de 10h à 7h au 25 202 207 pour nous envoyer plus d'informations sur notre offre à distination des professionnels de la beauté.
+                  -Il vous suffit de nous contacter par Email sur hanamezdarip4@gmail.com.<br>
+                  -Sur téléphone de lundi au vendredi de 9h à 18h et le samedi de 10h à 7h au 25 202 207 pour nous envoyer plus d'informations sur notre offre à distination des professionnels de la beauté.
                 </p>
             </div>
         </div>
@@ -212,11 +219,16 @@
                 <img src="{{ asset('css/partenaire/transparence.png') }}" alt="image" >
                 <img src="{{ asset('css/partenaire/bourjois.png') }}" alt="image" >
                 <img src="{{ asset('css/partenaire/mac.jpeg') }}" alt="image" >
-                <img src="{{ asset('css/partenaire/par1.jpeg') }}" alt="image" >
+                <img src="{{ asset('css/partenaire/par1.jpeg') }}" alt="image" >                <img src="{{ asset('css/partenaire/transparence.png') }}" alt="image" >
                 <img src="{{ asset('css/partenaire/vect.png') }}" alt="image" >
-                <img src="{{ asset('css/partenaire/transparence.png') }}" alt="image" >
+                <img src="{{ asset('css/partenaire/bourjois.png') }}" alt="image" >
+                <img src="{{ asset('css/partenaire/mac.jpeg') }}" alt="image" >
+                <img src="{{ asset('css/partenaire/par1.jpeg') }}" alt="image" >                <img src="{{ asset('css/partenaire/transparence.png') }}" alt="image" >
                 <img src="{{ asset('css/partenaire/vect.png') }}" alt="image" >
-                <img src="{{ asset('css/partenaire/d&g.png') }}" alt="image" >
+                <img src="{{ asset('css/partenaire/bourjois.png') }}" alt="image" >
+                <img src="{{ asset('css/partenaire/mac.jpeg') }}" alt="image" >
+                <img src="{{ asset('css/partenaire/par1.jpeg') }}" alt="image" >                <img src="{{ asset('css/partenaire/transparence.png') }}" alt="image" >
+                <img src="{{ asset('css/partenaire/vect.png') }}" alt="image" >
                 
                
             </div>
@@ -224,7 +236,12 @@
 </section>
 <style> 
 
-  
+#profile{
+    width: 60%;
+    border-radius: 60%;
+    margin:30% 1% 1% 25%;
+
+} 
 h6 {
     padding: 1% 1% 1% 1%;
     font-family: 'Playfair Display', serif;
@@ -367,9 +384,9 @@ from,10%,to {margin-left:0px;}
 
 @media screen and (min-width: 968px) {
   :root {
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --normal-font-size: 1.1rem;
+    --small-font-size: 1.1rem;
+    --smaller-font-size: 1rem;
   }
 }
 

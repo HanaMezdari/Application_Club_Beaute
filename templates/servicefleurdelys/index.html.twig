@@ -3,7 +3,7 @@
 {% block title %}Tous nos services Fleur De Lys{% endblock %}
 
 {% block body %}
-<section class="polaroid-gallery">
+<section class="polaroid-gallery" >
   <h1 class="polaroid-gallery-title" style="font-family: Georgia, 'Times New Roman', Times, serif;">Centre Fleur De Lys</h1><br><br><br>
   <figure class="polaroid-card">
     <img src="{{ asset('servicefleur/s1.jpg') }}" width="200" height="200" alt="Swan">
@@ -20,13 +20,13 @@
   <figure class="polaroid-card">
     <img src="{{ asset('servicefleur/s4.png') }}" width="200" height="200" alt="Swan">
     <figcaption class="polaroid-card-caption">Hammam & SPA</figcaption>
-  </figure><br><br><br>
-  <center><h3  style="font-family: Georgia, 'Times New Roman', Times, serif;">Le centre Fleur De Lys est un centre très professionnel,<br> il vous permet de trouver le choix que vous cherchez pour votre look de mariage,<br> entre la Make up, les cheveux et les soins la jeune mariée va profiter d’un jour exceptionnel <br> et d’un look très chic</h3></center>
+  </figure>
 </section >
-     <div class="titre" style="background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
-        background-repeat: no-repeat;
-        background-position: center;padding-top:200px;" >
-    
+<center><h3  style="font-family: Georgia, 'Times New Roman', Times, serif;">Le centre Fleur De Lys est un centre très professionnel,<br> il vous permet de trouver le choix que vous cherchez pour votre look de mariage,<br> entre la Make up, les cheveux et les soins la jeune mariée va profiter d’un jour exceptionnel <br> et d’un look très chic</h3></center>
+<section style="background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+background-repeat: no-repeat;
+background-position:center;" ></section>     
+<div class="titre">
               <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:30px;">Réserver en ligne pour un RDV chez Centre de Fleur De Lys</h2>
               <h5 style="font-family: Georgia, 'Times New Roman', Times, serif;">Gratuitement-Paiement sur place-Confirmation immédiate </h5> 
             </div>
@@ -65,7 +65,7 @@
                
                 <div class="grid">
                 {% for item in servicefleurdelys %}
-                <a href="{{ path('main') }}" style="text-decoration: none;color:rgb(219, 48, 18)" ><div class="card">
+                <a href="{{ path('mainfleur') }}" style="text-decoration: none;color:rgb(219, 48, 18)" ><div class="card">
                      
                         <img src="/servicefleur/{{ item.image }}"  class="card-img-top" alt="image">
                         <h5 class="card-title">{{ item.nom }}</h5>
@@ -186,7 +186,7 @@
   font-size: 32px;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
-  color: #333;
+  color: rgb(10, 9, 9);
 }
 
 .polaroid-card {

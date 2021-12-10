@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendrier{% endblock %}
+
+{% block body %}
+    <style>
+        
+        #calendrier{
+            width: 100%;
+            height:90%;
+            margin-top:10px;
+        }
+        
+        section img{
+           width: 100%;
+            height:600px;
+            
+            
+        }
+        h1{
+       
+        font-family: 'Playfair Display', serif;
+        color: rgb(252, 252, 250);
+        font-size:45px;
+        text-shadow: 3px 4px 0 rgba(14, 12, 12, 0.2); 
+
+        }
+
+    </style>
+<section>
+<div class="container-fluid">
+<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-12" style="float:left">
+				<div class="header">
+					
+					<h1>Calendrier Fleur De Lys</h1>
+                    
+                    <img src="{{ asset('css/slide/calendar3.jpg') }}" atl="image">
+					<h2 id="date"></h2>
+				</div>
+			</div>
+		
+       
+
+    <div class="col-lg-8 col-md-10 col-sm-12" style="float:right">
+    <div id="calendrier"><br>
+    
+    </div>
+    <a href="{{ path('reservationlilia_new') }}" style="position:absolute;margin-left:700px;" class="btn btn-secondary float-right">Réserver </a>
+    </div>
+</section>
+<script>
+    window.onload = () => {
+        let calendarElt = document.querySelector("#calendrier")
+        let calendar = new FullCalendar.Calendar(calendarElt, {
+            initialView: 'timeGridWeek',
+            locale: 'fr',
+            timeZone: 'Afrique/Tunis',
+            buttonText:{
+                today:'Aujourdhui',
+                month:'Mois',
+                week:'Semaine',
+                day:'Jour',
+                list:'Liste'
+            },
+            
+
+            headerToolbar: {
+                start: 'prev,next today',
+                center: 'title',
+                end: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+            },
+            events: {{ data|raw }},
+            initialDate: new Date(),
+            editable: true,
+            selectable: true,
+            navLinks: true,
+            eventResizableFromStart: true
+        })
+        calendar.on('eventChange', (e) => {
+            let url = `/api/${e.event.id}/edit`
+            let donnees = {
+                "titre": e.event.titre,
+                "description": e.event.description,
+                "start": e.event.start,
+                "end": e.event.end,
+                "backgroundColor": e.event.backgroundColor,
+                "borderColor": e.event.borderColor,
+                "textColor": e.event.textColor,
+                "allDay": e.event.allDay
+            }
+            
+            let xhr = new XMLHttpRequest
+            xhr.open("PUT", url)
+            xhr.send(JSON.stringify(donnees))
+        })
+        calendar.render()
+    }
+</script>
+
+{% endblock %}
