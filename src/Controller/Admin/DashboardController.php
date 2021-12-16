@@ -6,7 +6,6 @@ use App\Entity\User;
 use App\Entity\Services;
 use App\Entity\Publicite;
 use App\Entity\Commentaire;
-use App\Entity\Reservation;
 use App\Entity\Centresdebeaute;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,12 +31,12 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('user', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('publicite', 'fas fa-ad', Publicite::class);
-        yield MenuItem::linkToCrud('commentaire', 'fas fa-comment', Commentaire::class);
-        yield MenuItem::linkToCrud('centresdebeaute', 'fas fa-heartbeat', Centresdebeaute::class);
-        yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
-        yield MenuItem::linkToCrud('reservation', 'fas fa-tags', Reservation::class);
+        yield MenuItem::linkToCrud('User', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Publicite', 'fas fa-tags', Publicite::class);
+        yield MenuItem::linkToCrud('Commentaire', 'fas fa-comment', Commentaire::class);
+        yield MenuItem::linkToCrud('Centresdebeaute', 'fas fa-heartbeat', Centresdebeaute::class);
+        yield MenuItem::linkToCrud('Services', 'fas fa-tags', Services::class);
+        
         
     }
 }

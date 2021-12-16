@@ -110,32 +110,40 @@
 </div>
 <div class="col-lg-6 col-md-10 col-sm-12">
  <section id="commentaires" style="margin-top:25px;">
+    
     <h2>Avis Clients:</h2>
+    {% if is_granted('ROLE_USER') %}
     <h6>{{ centresdebeaute.commentaires | length }} Clients ont donné leur avis: </h6>
    {% for commentaire in centresdebeaute.commentaires %}
    <div class="comment">
        <div class="row">
-           <div class="col-3">
-              {{commentaire.nomdeutilisateur}} (<small>{{commentaire.date | date('d/m/y à H:i' )}}</small>)
+           <div class="col-md-4">
+              <h5>{{commentaire.nomdeutilisateur}} (<small>{{commentaire.date | date('d/m/y à H:i' )}}</small>)</h5>
            </div>   
-           <div class="col-9">
-              {{commentaire.description | raw}}
+           <div class="col-md-8">
+              <h5> {{commentaire.description | raw}}</h5>
            </div>
        </div>
 
    </div>
    {% endfor %}
-
-   
-
+   <div class="row">
+   <div class="col-md-2">
    {{ form_start(commentaireForm) }}
    {{ form_row(commentaireForm.nomdeutilisateur, {'attr': {'placeholder': "Votre nom"}}) }}
+   </div>
+   <div class="col-md-8">
    {{ form_row(commentaireForm.description, {'attr': {'placeholder': "Votre commentaire"}}) }}
-
+   </div>
+   <div class="col-md-2" style="margin-top:33px;">
    <button type="submit" class="btn btn-secondary">Commenter !</button>
    {{ form_end(commentaireForm) }}
-
+   </div>
+   </div>
  </section>
+ {% else %}
+                    <a href="{{path('app_login')}}" class="btn btn-link">Connectez vous pour commenter</a>
+    {% endif %}
 </div>
 </div>
 </div>

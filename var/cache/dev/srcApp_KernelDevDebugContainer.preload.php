@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerPfFxxbx/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerNx7KBVA/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -49,14 +49,18 @@ $classes[] = 'App\Controller\CalendarmahassenController';
 $classes[] = 'App\Controller\CalendarvioletteController';
 $classes[] = 'App\Controller\CentresdebeauteController';
 $classes[] = 'App\Controller\ContactController';
+$classes[] = 'App\Controller\Fleurdelys\CalendarfleurCrudController';
 $classes[] = 'App\Controller\Fleurdelys\FleurdelysController';
+$classes[] = 'App\Controller\Fleurdelys\ReservationfleurCrudController';
 $classes[] = 'App\Controller\Fleurdelys\ServicefleurdelysCrudController';
 $classes[] = 'App\Controller\Fleurdelys\ServicesCrudController';
 $classes[] = 'App\Controller\HomeController';
+$classes[] = 'App\Controller\Liliabenaziza\CalendarCrudController';
 $classes[] = 'App\Controller\Liliabenaziza\LiliabenazizaController';
 $classes[] = 'App\Controller\Liliabenaziza\ReservationliliaCrudController';
 $classes[] = 'App\Controller\Liliabenaziza\ServiceliliaCrudController';
 $classes[] = 'App\Controller\Liliabenaziza\ServicesCrudController';
+$classes[] = 'App\Controller\Mahassen\CalendarmahassenCrudController';
 $classes[] = 'App\Controller\Mahassen\MahassenController';
 $classes[] = 'App\Controller\Mahassen\ReservationmahassenCrudController';
 $classes[] = 'App\Controller\Mahassen\ServicemahassenCrudController';
@@ -76,6 +80,7 @@ $classes[] = 'App\Controller\ServiceliliaController';
 $classes[] = 'App\Controller\ServicemahassenController';
 $classes[] = 'App\Controller\ServicesController';
 $classes[] = 'App\Controller\ServicevioletteController';
+$classes[] = 'App\Controller\Violette\CalendarvioletteCrudController';
 $classes[] = 'App\Controller\Violette\ReservationvioletteCrudController';
 $classes[] = 'App\Controller\Violette\ServicesCrudController';
 $classes[] = 'App\Controller\Violette\ServicevioletteCrudController';

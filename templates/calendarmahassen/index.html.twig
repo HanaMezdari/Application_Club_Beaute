@@ -3,7 +3,8 @@
 {% block title %}Calendarmahassen index{% endblock %}
 
 {% block body %}
-    <h1>Calendarmahassen index</h1>
+     {% if is_granted('ROLE_MAHASSEN') %}
+    <h1>Calendar Mahassen </h1>
 
     <table class="table">
         <thead>
@@ -46,4 +47,7 @@
     </table>
 
     <a href="{{ path('calendarmahassen_new') }}">Create new</a>
+    {% else %}
+                    <a href="{{path('app_login')}}" class="btn btn-link">Connectez vous pour commenter</a>
+    {% endif %}
 {% endblock %}

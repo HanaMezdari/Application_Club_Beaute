@@ -3,7 +3,8 @@
 {% block title %}Calendarviolette index{% endblock %}
 
 {% block body %}
-    <h1>Calendarviolette index</h1>
+    {% if is_granted('ROLE_VIOLETTE') %}
+    <h1>Calendar Violette</h1>
 
     <table class="table">
         <thead>
@@ -46,4 +47,7 @@
     </table>
 
     <a href="{{ path('calendarviolette_new') }}">Create new</a>
+     {% else %}
+                    <a href="{{path('app_login')}}" class="btn btn-link">Connectez vous pour commenter</a>
+    {% endif %}
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block title %}Reservationmahassen{% endblock %}
 
 {% block body %}
-    <h1>Reservationmahassen</h1>
+    <h1>Reservation Mahassen</h1>
 
     <table class="table">
         <tbody>
@@ -29,10 +29,16 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('reservationmahassen_index') }}">back to list</a>
-
-    <a href="{{ path('reservationmahassen_edit', {'id': reservationmahassen.id}) }}">edit</a>
-
-    {{ include('reservationmahassen/_delete_form.html.twig') }}
+    <div>
+        <a href="{{ path('reservationmahassen_index') }}"><button class="btn btn-light" >Voir La Liste</button></a> {{ include('reservationmahassen/_delete_form.html.twig') }}
+    </div>
+    <style>
+      h1{
+         padding: 5%;
+         font-family: 'Playfair Display', serif;
+         color: rgb(252, 252, 250);
+         font-size:35px;
+         text-shadow: 3px 4px 0 rgba(14, 12, 12, 0.2); 
+      }
+    </style>
 {% endblock %}

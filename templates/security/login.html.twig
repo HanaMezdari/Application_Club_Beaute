@@ -42,9 +42,12 @@
                         <input id="submit-btn" type="submit" name="submit" class="con-btn" value="CONNEXION" />
                     </div>
                 </div>
+                <a href="{{ path('home') }}"  class="inscrit-button float-left" >Inscription</a> 
+           
+             
         </form>
     </div>
-
+    
    </section> 
 
     {#
@@ -133,7 +136,23 @@ button:hover{
         width: 90%;
     }
   }
-
+.inscrit-button{
+    color: #030303ec;
+    background-color:#f2f5f7;
+    border: 1.5px solid #ee9da1;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+	margin:7px 4px;
+	
+}
+.inscrit-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
 
 </style>
 {% endblock %}

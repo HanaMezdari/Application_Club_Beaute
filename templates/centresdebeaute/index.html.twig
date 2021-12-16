@@ -5,69 +5,27 @@
 {% block body %}
  <header>
        
-       <div class="content-width" >
+<div class="content-width" >
   <div class="slideshow" >
     <!-- Slideshow Items -->
     <div class="slideshow-items">
+    {% for item in publicite %}
       <div class="item">
         <div class="item-image-container">
-          <img class="item-image" src="{{ asset('css/slide/s2.jpg') }}" alt="image" style="height: 600px;width: 100%;" />
+          <img class="item-image" src="/css/slide/{{ item.image }}" alt="image" style="height: 600px;width: 100%;" />
         </div>
         <!-- Staggered Header Elements -->
         <div class="item-header">
-          <span class="vertical-part"><b>Bienvenu : <em style="color:#8c0c3c;">Lilia Ben Aziza</em></b></span>
+          <span class="vertical-part"><b>Bienvenu :<em style="color:#8c0c3c;">{{ item.nom }}</b></span>
         </div>
         <!-- Staggered Description Elements -->
         <div class="item-description">
           <span class="vertical-part">
-            <a href="{{ path('services') }}"style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
-          </span>  
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-image-container">
-          <img class="item-image" src="{{ asset('css/slide/s4.jpg') }}" alt="image" style="height: 600px;width: 100%;" />
-        </div>
-        <!-- Staggered Header Elements -->
-        <div class="item-header">
-          <span class="vertical-part"><b>Bienvenu : <em style="color:#8c0c3c;">Mahassen</em></b></span>
-        </div>
-        <!-- Staggered Description Elements -->
-        <div class="item-description">
-          <span class="vertical-part">
-             <a href="{{ path('services') }}" style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
+             <a href="{{ path('services') }}" style="color:#fff;" ><b>{{ item.description }}</b> </a> 
           </span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-image-container">
-          <img class="item-image" src="{{ asset('css/slide/s3.jpg') }}" alt="image" style="height: 600px;width: 100%;" />
-        </div>
-        <!-- Staggered Header Elements -->
-        <div class="item-header">
-          <span class="vertical-part"><b>Bienvenu : <em style="color:#8c0c3c;">Fleur De Lys</em></b></span>
-        </div>
-        <!-- Staggered Description Elements -->
-        <div class="item-description">
-          <span class="vertical-part">
-             <a href="{{ path('services') }}" style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
-          </span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-image-container">
-          <img class="item-image" src="{{ asset('css/slide/s1.jpg') }}" alt="image" style="height: 600px;width: 100%;" />
-        </div>
-        <!-- Staggered Header Elements -->
-        <div class="item-header">
-          <span class="vertical-part"><b>Bienvenu :<em style="color:#8c0c3c;">Violette</b></span>
-        </div>
-        <!-- Staggered Description Elements -->
-        <div class="item-description">
-          <span class="vertical-part">
-             <a href="{{ path('services') }}" style="color:#fff;" ><b>Réserver en ligne un RDV avec un centre de beauté</b> </a> 
-          </span>
-          <div class="controls">
+          
+        </div> 
+        <div class="controls">
       <ul>
         <li class="control" data-index="0"></li>
         <li class="control" data-index="1"></li>
@@ -75,11 +33,9 @@
         <li class="control" data-index="3"></li>
       </ul>
     </div>
-        </div>
-        
       </div>
+    {% endfor %}
     </div>
-    
   </div>
 </div>
   
@@ -367,7 +323,7 @@ slider.init();
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 crossorigin=""></script>
 <script>
-   var carte = L.map('maCarte').setView([36.8064835, 10.1815426], 13);
+   var carte = L.map('maCarte').setView([36.8064835, 10.1815426], 15);
        
        // On charge les "tuiles"
        L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
@@ -380,7 +336,7 @@ crossorigin=""></script>
        {% for item in centresdebeaute %}  
            // On crée le marqueur et on lui attribue une popup
            var marqueur = L.marker([{{ item.lat }}, {{ item.lon }}]).addTo(carte); //.addTo(carte);
-           marqueur.bindPopup("<h3>{{ item.nom }}</h3>");
+           marqueur.bindPopup("<h6>{{ item.nom }}</h6>");
 
        {% endfor %}
 </script>

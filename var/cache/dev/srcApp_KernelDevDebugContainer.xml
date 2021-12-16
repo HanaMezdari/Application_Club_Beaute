@@ -466,12 +466,28 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ContactController"/>
       </call>
     </service>
+    <service id="App\Controller\Fleurdelys\CalendarfleurCrudController" class="App\Controller\Fleurdelys\CalendarfleurCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\CalendarfleurCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="ea.dashboard_controller"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.JEaLqsX.App\Controller\Fleurdelys\FleurdelysController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Fleurdelys\ReservationfleurCrudController" class="App\Controller\Fleurdelys\ReservationfleurCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\ReservationfleurCrudController"/>
       </call>
     </service>
     <service id="App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" public="true" autowire="true" autoconfigure="true">
@@ -496,6 +512,14 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\HomeController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Liliabenaziza\CalendarCrudController" class="App\Controller\Liliabenaziza\CalendarCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\CalendarCrudController"/>
       </call>
     </service>
     <service id="App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" public="true" autowire="true" autoconfigure="true">
@@ -528,6 +552,14 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ServicesCrudController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Mahassen\CalendarmahassenCrudController" class="App\Controller\Mahassen\CalendarmahassenCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Mahassen\CalendarmahassenCrudController"/>
       </call>
     </service>
     <service id="App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" public="true" autowire="true" autoconfigure="true">
@@ -667,6 +699,14 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\ServicevioletteController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Violette\CalendarvioletteCrudController" class="App\Controller\Violette\CalendarvioletteCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="ea.crud_controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ky4eP1x.App\Controller\Violette\CalendarvioletteCrudController"/>
       </call>
     </service>
     <service id="App\Controller\Violette\ReservationvioletteCrudController" class="App\Controller\Violette\ReservationvioletteCrudController" public="true" autowire="true" autoconfigure="true">
@@ -6192,10 +6232,18 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Fleurdelys\CalendarfleurCrudController" class="App\Controller\Fleurdelys\CalendarfleurCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Fleurdelys\CalendarfleurCrudController" class="App\Controller\Fleurdelys\CalendarfleurCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Fleurdelys\CalendarfleurCrudController" class="App\Controller\Fleurdelys\CalendarfleurCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Fleurdelys\CalendarfleurCrudController" class="App\Controller\Fleurdelys\CalendarfleurCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Fleurdelys\FleurdelysController" class="App\Controller\Fleurdelys\FleurdelysController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Fleurdelys\ReservationfleurCrudController" class="App\Controller\Fleurdelys\ReservationfleurCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Fleurdelys\ReservationfleurCrudController" class="App\Controller\Fleurdelys\ReservationfleurCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Fleurdelys\ReservationfleurCrudController" class="App\Controller\Fleurdelys\ReservationfleurCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Fleurdelys\ReservationfleurCrudController" class="App\Controller\Fleurdelys\ReservationfleurCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="App\Controller\Fleurdelys\ServicefleurdelysCrudController" autowire="true" abstract="true"/>
@@ -6207,6 +6255,10 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Liliabenaziza\CalendarCrudController" class="App\Controller\Liliabenaziza\CalendarCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\CalendarCrudController" class="App\Controller\Liliabenaziza\CalendarCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Liliabenaziza\CalendarCrudController" class="App\Controller\Liliabenaziza\CalendarCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Liliabenaziza\CalendarCrudController" class="App\Controller\Liliabenaziza\CalendarCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Liliabenaziza\LiliabenazizaController" class="App\Controller\Liliabenaziza\LiliabenazizaController" autowire="true" abstract="true"/>
@@ -6223,6 +6275,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Liliabenaziza\ServicesCrudController" class="App\Controller\Liliabenaziza\ServicesCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Liliabenaziza\ServicesCrudController" class="App\Controller\Liliabenaziza\ServicesCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Liliabenaziza\ServicesCrudController" class="App\Controller\Liliabenaziza\ServicesCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Mahassen\CalendarmahassenCrudController" class="App\Controller\Mahassen\CalendarmahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Mahassen\CalendarmahassenCrudController" class="App\Controller\Mahassen\CalendarmahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Mahassen\CalendarmahassenCrudController" class="App\Controller\Mahassen\CalendarmahassenCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Mahassen\CalendarmahassenCrudController" class="App\Controller\Mahassen\CalendarmahassenCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Mahassen\MahassenController" class="App\Controller\Mahassen\MahassenController" autowire="true" abstract="true"/>
@@ -6284,6 +6340,10 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ServicevioletteController" class="App\Controller\ServicevioletteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ServicevioletteController" class="App\Controller\ServicevioletteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ServicevioletteController" class="App\Controller\ServicevioletteController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Violette\CalendarvioletteCrudController" class="App\Controller\Violette\CalendarvioletteCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Violette\CalendarvioletteCrudController" class="App\Controller\Violette\CalendarvioletteCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Violette\CalendarvioletteCrudController" class="App\Controller\Violette\CalendarvioletteCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Violette\CalendarvioletteCrudController" class="App\Controller\Violette\CalendarvioletteCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Violette\ReservationvioletteCrudController" class="App\Controller\Violette\ReservationvioletteCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Violette\ReservationvioletteCrudController" class="App\Controller\Violette\ReservationvioletteCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Violette\ReservationvioletteCrudController" class="App\Controller\Violette\ReservationvioletteCrudController" autowire="true" abstract="true"/>
@@ -6960,7 +7020,7 @@
         <argument key="repository" type="service_closure" id="App\Repository\ServicevioletteRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.f3CpPE4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.B_DRqL9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CentresdebeauteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
@@ -7107,7 +7167,49 @@
         <argument key="App\Controller\CalendarvioletteController::index" type="service_closure" id=".service_locator.bqSs3Yx"/>
         <argument key="App\Controller\CalendarvioletteController::show" type="service_closure" id=".service_locator.BXyDLJr"/>
         <argument key="App\Controller\CentresdebeauteController::show" type="service_closure" id=".service_locator.8rpL3Ir"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Fleurdelys\FleurdelysController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -7151,6 +7253,27 @@
         <argument key="App\Controller\Fleurdelys\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Fleurdelys\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\HomeController::show" type="service_closure" id=".service_locator.pi4EZ2T"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Liliabenaziza\LiliabenazizaController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
         <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
@@ -7215,6 +7338,27 @@
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Mahassen\MahassenController::configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
         <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Mahassen\ReservationmahassenCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
@@ -7305,6 +7449,27 @@
         <argument key="App\Controller\ServiceliliaController::index" type="service_closure" id=".service_locator.zs.f5lW"/>
         <argument key="App\Controller\ServicemahassenController::index" type="service_closure" id=".service_locator.nCGKyVR"/>
         <argument key="App\Controller\ServicevioletteController::index" type="service_closure" id=".service_locator.jA5bYur"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController::updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Violette\ReservationvioletteCrudController::autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Violette\ReservationvioletteCrudController::batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Violette\ReservationvioletteCrudController::configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -7513,7 +7678,49 @@
         <argument key="App\Controller\CalendarvioletteController:index" type="service_closure" id=".service_locator.bqSs3Yx"/>
         <argument key="App\Controller\CalendarvioletteController:show" type="service_closure" id=".service_locator.BXyDLJr"/>
         <argument key="App\Controller\CentresdebeauteController:show" type="service_closure" id=".service_locator.8rpL3Ir"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\CalendarfleurCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Fleurdelys\FleurdelysController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Fleurdelys\ReservationfleurCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Fleurdelys\ServicefleurdelysCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -7557,6 +7764,27 @@
         <argument key="App\Controller\Fleurdelys\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Fleurdelys\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\HomeController:show" type="service_closure" id=".service_locator.pi4EZ2T"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Liliabenaziza\CalendarCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Liliabenaziza\LiliabenazizaController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
         <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ReservationliliaCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
@@ -7621,6 +7849,27 @@
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Liliabenaziza\ServicesCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Mahassen\CalendarmahassenCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Mahassen\MahassenController:configureUserMenu" type="service_closure" id=".service_locator.RLVVpop"/>
         <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Mahassen\ReservationmahassenCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
@@ -7711,6 +7960,27 @@
         <argument key="App\Controller\ServiceliliaController:index" type="service_closure" id=".service_locator.zs.f5lW"/>
         <argument key="App\Controller\ServicemahassenController:index" type="service_closure" id=".service_locator.nCGKyVR"/>
         <argument key="App\Controller\ServicevioletteController:index" type="service_closure" id=".service_locator.jA5bYur"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:configureAssets" type="service_closure" id=".service_locator.hVQViHK"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:configureCrud" type="service_closure" id=".service_locator.7I.FzBw"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:configureFilters" type="service_closure" id=".service_locator.82KoR2v"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:configureResponseParameters" type="service_closure" id=".service_locator._L8Y8bZ"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:createEditForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.jrmEAfi"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:createNewForm" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.1ZmGw6X"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:delete" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:deleteEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:detail" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:edit" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:index" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:new" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:persistEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:renderFilters" type="service_closure" id=".service_locator.h2tplhS"/>
+        <argument key="App\Controller\Violette\CalendarvioletteCrudController:updateEntity" type="service_closure" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\Violette\ReservationvioletteCrudController:autocomplete" type="service_closure" id=".service_locator.h2tplhS"/>
         <argument key="App\Controller\Violette\ReservationvioletteCrudController:batchDelete" type="service_closure" id=".service_locator.huuTAyO"/>
         <argument key="App\Controller\Violette\ReservationvioletteCrudController:configureActions" type="service_closure" id=".service_locator.eGAETcz"/>
@@ -8103,14 +8373,19 @@
         <argument>App\Controller\Admin\ReservationCrudController</argument>
         <argument>App\Controller\Admin\ServicesCrudController</argument>
         <argument>App\Controller\Admin\UserCrudController</argument>
+        <argument>App\Controller\Fleurdelys\CalendarfleurCrudController</argument>
+        <argument>App\Controller\Fleurdelys\ReservationfleurCrudController</argument>
         <argument>App\Controller\Fleurdelys\ServicefleurdelysCrudController</argument>
         <argument>App\Controller\Fleurdelys\ServicesCrudController</argument>
+        <argument>App\Controller\Liliabenaziza\CalendarCrudController</argument>
         <argument>App\Controller\Liliabenaziza\ReservationliliaCrudController</argument>
         <argument>App\Controller\Liliabenaziza\ServiceliliaCrudController</argument>
         <argument>App\Controller\Liliabenaziza\ServicesCrudController</argument>
+        <argument>App\Controller\Mahassen\CalendarmahassenCrudController</argument>
         <argument>App\Controller\Mahassen\ReservationmahassenCrudController</argument>
         <argument>App\Controller\Mahassen\ServicemahassenCrudController</argument>
         <argument>App\Controller\Mahassen\ServicesCrudController</argument>
+        <argument>App\Controller\Violette\CalendarvioletteCrudController</argument>
         <argument>App\Controller\Violette\ReservationvioletteCrudController</argument>
         <argument>App\Controller\Violette\ServicesCrudController</argument>
         <argument>App\Controller\Violette\ServicevioletteCrudController</argument>
@@ -8276,11 +8551,23 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\CalendarfleurCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Fleurdelys\CalendarfleurCrudController"/>
+      <argument>App\Controller\Fleurdelys\CalendarfleurCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
     <service id=".service_locator.JEaLqsX.App\Controller\Fleurdelys\FleurdelysController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Fleurdelys\FleurdelysController"/>
       <argument>App\Controller\Fleurdelys\FleurdelysController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.JEaLqsX" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\ReservationfleurCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Fleurdelys\ReservationfleurCrudController"/>
+      <argument>App\Controller\Fleurdelys\ReservationfleurCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
     </service>
     <service id=".service_locator.ky4eP1x.App\Controller\Fleurdelys\ServicefleurdelysCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Fleurdelys\ServicefleurdelysCrudController"/>
@@ -8299,6 +8586,12 @@
       <argument>App\Controller\HomeController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\CalendarCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Liliabenaziza\CalendarCrudController"/>
+      <argument>App\Controller\Liliabenaziza\CalendarCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
     </service>
     <service id=".service_locator.JEaLqsX.App\Controller\Liliabenaziza\LiliabenazizaController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Liliabenaziza\LiliabenazizaController"/>
@@ -8321,6 +8614,12 @@
     <service id=".service_locator.ky4eP1x.App\Controller\Liliabenaziza\ServicesCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Liliabenaziza\ServicesCrudController"/>
       <argument>App\Controller\Liliabenaziza\ServicesCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Mahassen\CalendarmahassenCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Mahassen\CalendarmahassenCrudController"/>
+      <argument>App\Controller\Mahassen\CalendarmahassenCrudController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ky4eP1x" method="withContext"/>
     </service>
@@ -8437,6 +8736,12 @@
       <argument>App\Controller\ServicevioletteController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.ky4eP1x.App\Controller\Violette\CalendarvioletteCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Violette\CalendarvioletteCrudController"/>
+      <argument>App\Controller\Violette\CalendarvioletteCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ky4eP1x" method="withContext"/>
     </service>
     <service id=".service_locator.ky4eP1x.App\Controller\Violette\ReservationvioletteCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Violette\ReservationvioletteCrudController"/>
@@ -8618,12 +8923,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.f3CpPE4"/>
+      <argument type="service" id=".service_locator.B_DRqL9"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.f3CpPE4"/>
+      <argument type="service" id=".service_locator.B_DRqL9"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -9068,7 +9373,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.f3CpPE4"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.B_DRqL9"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

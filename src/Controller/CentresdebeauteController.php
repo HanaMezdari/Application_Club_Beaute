@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Publicite;
 use App\Entity\Commentaire;
 use App\Form\CommentaireType;
 use App\Entity\Centresdebeaute;
@@ -24,10 +25,12 @@ class CentresdebeauteController extends AbstractController
      */
     public function index(): Response
     {
+        $publicite = $this->entityManager->getRepository(Publicite::class)->findAll();
         $centresdebeaute = $this->entityManager->getRepository(Centresdebeaute::class)->findAll();
          
         return $this->render('centresdebeaute/index.html.twig', [
-            'centresdebeaute' =>$centresdebeaute
+            'centresdebeaute' =>$centresdebeaute,
+            'publicite' => $publicite,
         ]);
     }
      /**
@@ -35,6 +38,7 @@ class CentresdebeauteController extends AbstractController
      */
     public function show(Centresdebeaute $centresdebeaute, Request $request, EntityManagerInterface  $manager)
     {
+        
         $commentaire = new Commentaire();
         $form = $this->createForm(CommentaireType::class, $commentaire);
 
@@ -51,7 +55,7 @@ class CentresdebeauteController extends AbstractController
         }
 
         return $this->render('centresdebeaute/show.html.twig', [
-
+            
             'centresdebeaute' => $centresdebeaute,
             'commentaireForm' => $form->createView()
             

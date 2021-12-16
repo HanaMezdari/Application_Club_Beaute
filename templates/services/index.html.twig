@@ -10,20 +10,24 @@
   font-size:70px;
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2);padding-top:50px;
 ">Découvrez Nos Professionnels</h1></center>
+<h6>Tous Nos Actualités Avec Nos Centres De Beauté</h6>
+ <section style="margin-top:-100px;">
+     {{ include('include/actualite.html.twig') }}  
 
-<center ><h2 style="font-family: 'Times New Roman', Times, serif;padding-top:50px;
+ </section>
+<center ><h2 style="font-family: 'Times New Roman', Times, serif;margin-top:-50px;
   color: white;
   font-size:30px;
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
-">Avec Nos Centres De Beauté</h2</center>
+">Choisir Votre Services Avec Nos Centres De Beauté</h2</center>
 </header>
 <section>
      <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="our-team">
                 <a href="{{ path('servicelilia') }}"><div class="team-img" style="border-radius: 0 0 20px 0;">
-                      <img src="{{ asset('css/logo/s1.jpeg') }}" style="width: 300px;height: 400px;" >
+                      <img src="{{ asset('/centre/25841c7790d83ed8c23f87d97b27a8f297c5ea78.png') }}" style="width: 250px;height: 250px;box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);" >
                     </div>
                     <div class="team-content">
                         <h3 class="name">Lilia Ben Aziza</h3></a>
@@ -33,10 +37,10 @@
                 </div>
             </div>
 
-            <div class="col-md-3 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="our-team">
                 <a href="{{ path('serviceviolette') }}" ><div class="team-img">
-                        <img src="{{ asset('css/logo/s2.gif') }}"style="width: 300px;height: 400px;">
+                        <img src="{{ asset('/centre/c96ca386cd23ed6e9c3d13587f4ec1eb58996c89.png') }}"style="width: 250px;height: 250px;box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);">
                     </div>
                     <div class="team-content">
                         <h3 class="name">Violette</h3></a>
@@ -46,10 +50,10 @@
                 </div>
             </div>
 
-            <div class="col-md-3 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="our-team">
                 <a href="{{ path('servicefleurdelys') }}" ><div class="team-img">
-                        <img src="{{ asset('css/logo/s3.jpg') }}"style="width: 300px;height: 400px;">
+                        <img src="{{ asset('/centre/9378833698dab89a8fd38d8713da7df48724cbde.png') }}"style="width: 250px;height: 250px;box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);">
                     </div>
                     <div class="team-content">
                         <h3 class="name">Fleur De Lys</h3></a>
@@ -58,10 +62,10 @@
                     
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="our-team" >
                 <a href="{{ path('servicemahassen') }}"  ><div class="team-img">
-                        <img src="{{ asset('css/logo/s4.jpeg') }}"style="width: 300px;height: 400px;">
+                        <img src="{{ asset('/centre/7da4ac36faacadaa4648ea760f731d56fa03fbd5.png') }}"style="width: 250px;height: 250px;box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);">
                     </div>
                     <div class="team-content">
                         <h3 class="name">Mahassen</h3></a>

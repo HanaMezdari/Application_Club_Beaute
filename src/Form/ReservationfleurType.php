@@ -2,10 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\User;
 use App\Entity\Reservationfleur;
 use App\Entity\Servicefleurdelys;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Security\Core\User\User;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -34,7 +34,7 @@ class ReservationfleurType extends AbstractType
         ->add('description')
        
         
-        ->add('servicelilia', EntityType::class,['class'=>Servicefleurdelys::class,
+        ->add('servicefleurdelys', EntityType::class,['class'=>Servicefleurdelys::class,
         'choice_label'=>'nom',
        'label'=>'service Fleur De Lys'
    ])

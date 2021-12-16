@@ -3,7 +3,8 @@
 {% block title %}Calendar index{% endblock %}
 
 {% block body %}
-    <h1>Calendar index</h1>
+   {% if is_granted('ROLE_LILIA') %}
+    <h1>Calendar Lilia Ben Aziza</h1>
 
     <table class="table">
         <thead>
@@ -46,4 +47,7 @@
     </table>
 
     <a href="{{ path('calendar_new') }}">Create new</a>
+    {% else %}
+                    <a href="{{path('app_login')}}" class="btn btn-link">Connectez vous pour commenter</a>
+    {% endif %}
 {% endblock %}

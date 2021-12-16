@@ -4,6 +4,7 @@ namespace App\Controller\Violette;
 
 use App\Entity\Services;
 use App\Entity\Serviceviolette;
+use App\Entity\Calendarviolette;
 use App\Entity\Reservationviolette;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,5 +34,7 @@ class VioletteController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Serviceviolette', 'fas fa-user-tag', Serviceviolette::class);
         yield MenuItem::linkToCrud('Services', 'fas fa-tags', Services::class);
         yield MenuItem::linkToCrud('Reservation Violette', 'fas fa-tags', Reservationviolette::class);
+        yield MenuItem::linkToCrud('Calendrier Violette', 'fas fa-tags', Calendarviolette::class);
+
     }
 }

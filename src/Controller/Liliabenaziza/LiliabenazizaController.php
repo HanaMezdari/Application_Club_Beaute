@@ -2,6 +2,7 @@
 
 namespace App\Controller\Liliabenaziza;
 
+use App\Entity\Calendar;
 use App\Entity\Services;
 use App\Entity\Servicelilia;
 use App\Entity\Reservationlilia;
@@ -33,5 +34,6 @@ class LiliabenazizaController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Service Lilia', 'fas fa-user-tag', Servicelilia::class);
         yield MenuItem::linkToCrud('Services', 'fas fa-tags', Services::class);
         yield MenuItem::linkToCrud('Reservation Lilia', 'fas fa-tags', Reservationlilia::class);
+        yield MenuItem::linkToCrud('Calendrier Lilia', 'fas fa-tags', Calendar::class);
     }
 }

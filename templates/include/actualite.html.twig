@@ -1,0 +1,324 @@
+<body>
+  <div class="container main-container">
+    <header>
+      <div class="row">
+        
+        <div class="col-sm-12 filter-group-wrapper">
+          <div class="filter-group">
+              <button class="filter-button" id="all-meals"><h6>Tous </h6></button>
+              <button class="filter-button" id="breakfast"><h6>Promotions</h6></button>
+              <button class="filter-button" id="lunch"><h6>Nouveautés</h6></button>
+              <button class="filter-button" id="shakes"><h6>Offres</h6></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+      <section class="meal-display">
+        <div class="row meal-display-container">
+        </div>
+
+      </section>
+
+  </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+    <script src="dist/js/script.js"></script>
+<style>
+
+body {
+  
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 166, 0, 0.089);
+}
+@media screen and (max-width: 500px) {
+  body {
+    text-align: left;
+  }
+}
+h6 {
+    padding: 1% 1% 1% 1%;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size:30px;
+    text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+}  
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+a:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 255, 0.315);
+  transition: color 0.5s ease;
+}
+
+[class*=col-] {
+  height: 100%;
+  padding: 0px;
+}
+
+.main-container {
+  height: 100%;
+  width: 100%;
+  margin-top:50px;
+}
+
+header {
+  display: relative;
+  text-align: center !important;
+}
+header .head-column-title {
+  font-weight: 600;
+  text-align: center !important;
+}
+header hr {
+  border: solid 1px black;
+  width: 10%;
+}
+header .filter-group-wrapper {
+  margin-top: 20px;
+}
+header .filter-group-wrapper .filter-button {
+  margin: 0px 10px;
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 1px rgb(236, 190, 163);
+  background: rgb(236, 190, 163);
+  transition: background 0.3s ease;
+  outline: none;
+  
+}
+header .filter-group-wrapper .filter-button:hover {
+  cursor: pointer;
+  background: none;
+  transition: background 0.3s ease;
+}
+
+.meal-display {
+  
+  display: relative;
+}
+.meal-display-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.meal-display .menu-item {
+  min-height: 200px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  margin: 30px 0px;
+}
+.meal-display .menu-item-image {
+  background: url("css/logo");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  border: solid 1px rgba(255, 166, 0, 0.596);
+}
+.meal-display .menu-item .menu-copy-header {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.meal-display .menu-item .menu-copy-header-title {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+.meal-display .menu-item .menu-copy-header .price {
+  margin-bottom: 0;
+}
+.meal-display .menu-item hr {
+  width: 95%;
+  border: solid 0.5px rgba(128, 128, 128, 0.26);
+  margin: 0 auto;
+}
+.meal-display .menu-item .menu-copy-body {
+  text-align: left;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+</style>
+<script>
+     class Meal {
+    constructor(id, img, name, price, desc, tag) {
+        this.id = id,
+        this.img = img,
+        this.name = name,
+        this.price = price,
+        this.desc = desc,
+        this.tag = tag
+    }
+}
+
+const allMeals = [
+    (btrmlkPncks = new Meal(
+        1,
+        "css/logo/offrevio.jpg",
+        "Violette",
+        "300",
+        "✔️ Pour une cure (3séances) de soin 💓💓💓 de soin capillaire spécifique vous obtenez -30% de réduction sur les produits de vente.",
+        "shake"
+    )),
+    (dnrDbl = new Meal(
+        2,
+        "css/logo/promolilia.png",
+        "Lilia Ben Aziza",
+        "799",
+        "✔️ Makeup faux cils Coiffure extension Épilation visage coup d’écla Manucure pédicure Robe et accessoires.",
+        "breakfast"
+    )),
+    (gdzlaMlksk = new Meal(
+        3,
+        "css/logo/mahassen.png",
+        "Mahassen",
+        "699",
+        "✔️ Des promo blackfriday jusqu’au -60% coloration hydrafacial spa microneedling eylash gelnails makeup profitez...",
+        "breakfast"
+    )),
+    (ctryDlt = new Meal(
+        4,
+        "css/logo/promolilia1.png",
+        "Fleur De Lys",
+        "1300",
+        "✔️ Beauté naturelle, maquillage pour mariées et filles, 💓💓💓 les dernières marques internationales, robes de soirée, mariages, mariages, occasions, toutes tailles, la dernière mode internationale, avec un succès durable et un éclat continu.",
+        "lunch"
+    )),
+    (eggAtk = new Meal(
+        5,
+        "css/logo/hammamvio.jpg",
+        "Violette",
+        "130",
+        "✔️Pour un Hammem+Massage 30min VIOLETTE vous ofre une coupe et brushing gratuit.",
+        "shake"
+    )),
+    (nyRubn = new Meal(
+        6,
+        "css/logo/promolilia2.png",
+        "Lilia Ben Aziza ",
+        "1200",
+        "✔️-25% sur chaque reservation mariage du 01 jusqu'au 31 Décembre 💓 ,-50% pour la location des robes de mariage",
+        "shake"
+    )),
+    (crqMsr = new Meal(
+        7,
+        "css/logo/promomahassen.png",
+        "Mahassen",
+        "150",
+        "✔️Soin Eclat Soin Des Mains et Des Pieds 💓💓💓 Epilation des Sourcils Teinture Ou Mèches Coupe+ Brushing.",
+        "lunch"
+    )),
+    (mtbls = new Meal(
+        8,
+        "css/logo/viopromo.png",
+        "Violette",
+        "350",
+        "✔️najla_violette :nouvellecollection 2022 nouvelletendanc Comme d’habitude violette gâte toujours ses clientes 💓💓💓 -30%_make_up_by_violette.",
+        "breakfast"
+    )),
+    (oreoShk = new Meal(
+        9,
+        "css/logo/offre.png",
+        "Lilia Ben Aziza",
+        "175",
+        "✔️Chez LBA Beauty:50% sur toutes prestation, Keratine 179dt toutes longues de cheveux du 01/12 au 31/12.",
+        "lunch"
+    )),
+    (bananShk = new Meal(
+        10,
+        "css/logo/khotbafleur.png",
+        "Fleur De Lys",
+        "320",
+        "✔️Epilation lèvres / Sourcils / 2 PosesVernis 💓 Maquillage / Coiffeur / Faux cils / Extension.",
+        "breakfast"
+    )),
+]
+
+const elements = {
+    mealContainer: document.querySelector(".meal-display-container"),
+    menuItem: document.querySelector(".menu-item"),
+    menuItemImg: document.querySelector(".menu-item-image"),
+    menuTitle: document.querySelector(".menu-copy-header-title"),
+    menuPrice: document.querySelector(".price"),
+    menuDesc: document.querySelector(".menu-copy-body"),
+    allBtn: document.querySelector("#all-meals"),
+    breakBtn: document.querySelector("#breakfast"),
+    lnchBtn: document.querySelector("#lunch"),
+    shksBtn: document.querySelector("#shakes")
+}
+
+elements.allBtn.addEventListener("click", function(){
+    renderMeals(allMeals)
+});
+
+elements.breakBtn.addEventListener("click", function() {
+    filterMeals(tag = "breakfast")
+})
+
+elements.lnchBtn.addEventListener("click", function() {
+    filterMeals(tag = "lunch")
+})
+
+elements.shksBtn.addEventListener("click", function() {
+    filterMeals(tag = "shake")
+})
+
+
+
+
+function renderMeals(meals) {
+    elements.mealContainer.innerHTML = "";
+    for(meal of meals) {
+        let newMeal = `
+        <div class="col-sm-12 col-md-6 menu-item" id="${meal.id}">
+        <div class="col-5 menu-item-image" style="background-image: url(${meal.img});"></div>
+        <div class="col-7 menu-copy">
+          <div class="menu-copy-header">
+            <h5 class="menu-copy-header-title">${meal.name}</h5>
+            <p class="price">D ${meal.price}</p>
+          </div>
+          <hr>
+          <div class="menu-copy-body">
+            <p>${meal.desc}</p>
+          </div>
+        </div>
+      </div>
+        `
+        elements.mealContainer.insertAdjacentHTML('beforeend', newMeal)
+    }
+}
+
+function filterMeals(taggie) {
+    let filterList = allMeals.filter(meal => meal.tag === taggie);
+    renderMeals(filterList)
+}
+
+(function init() {
+    renderMeals(allMeals)
+})();
+
+</script>
+</body>
+

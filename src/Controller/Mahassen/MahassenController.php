@@ -4,6 +4,7 @@ namespace App\Controller\Mahassen;
 
 use App\Entity\Services;
 use App\Entity\Servicemahassen;
+use App\Entity\Calendarmahassen;
 use App\Entity\Reservationmahassen;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,5 +34,6 @@ class MahassenController extends AbstractDashboardController
         yield MenuItem::linkToCrud('servicemahassen', 'fas fa-list', Servicemahassen::class);
         yield MenuItem::linkToCrud('services', 'fas fa-tags', Services::class);
         yield MenuItem::linkToCrud('Reservation Mahassen', 'fas fa-tags', Reservationmahassen::class);
+        yield MenuItem::linkToCrud('Calendrier Mahassen', 'fas fa-tags', Calendarmahassen::class);
     }
 }
